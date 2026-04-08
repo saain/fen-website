@@ -26,6 +26,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Force Faruma on ALL elements when in RTL/Dhivehi mode */
+[dir="rtl"] {
+  font-family: 'Faruma', 'MV Waheed', 'MV Boli', Tahoma, sans-serif !important;
+}
+
+[dir="rtl"] * {
+  font-family: inherit;
+}
+
+[dir="rtl"] .logo {
+  font-family: 'Instrument Serif', serif;
+}
+
 ::selection {
   background: #2d6a4f;
   color: #faf9f6;
