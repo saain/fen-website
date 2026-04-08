@@ -2,346 +2,314 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-const ARTICLES = [
-  {
-    id: 1, category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#2d6a4f',
-    title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition',
-    excerpt: 'Over 50% of adults don\'t get enough magnesium. Here\'s what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.',
-    date: 'Apr 7, 2026', readTime: '12 min read', featured: true,
+const t = {
+  en: {
+    dir: 'ltr',
+    langLabel: 'ދިވެހި',
+    navItems: ['Articles', 'Evidence Library', 'About', 'Newsletter'],
+    heroLabel: 'Natural Health · Evidence-Based · Independent',
+    heroTitle1: 'Health knowledge',
+    heroTitle2: 'rooted in evidence',
+    heroSubtitle: 'We examine supplements, herbal remedies, teas, and wellness practices through the lens of peer-reviewed research — so you can make informed choices about your health, not guesses.',
+    emailPlaceholder: 'your@email.com',
+    joinBtn: 'Join the newsletter',
+    subscribedBtn: '✓ Subscribed',
+    heroMeta: 'Free weekly edition · No spam · Unsubscribe anytime',
+    tickerItems: ['Supplements', 'Herbal Medicine', 'Nutrition Science', 'Functional Teas', 'Movement', 'Gut Health', 'Adaptogens'],
+    featuredLabel: 'Latest',
+    featuredTitle: 'Featured Research',
+    featuredImageText: 'Featured Article',
+    readBtn: 'Read Article →',
+    archiveLabel: 'Archive',
+    archiveTitle: 'Recent Articles',
+    viewAll: 'View all articles →',
+    exploreLabel: 'Explore',
+    exploreTitle: 'What We Cover',
+    exploreSubtitle: 'Every article is graded by evidence quality — from strong (multiple RCTs) to emerging (early-stage research). No hype. No pseudoscience.',
+    methodLabel: 'Our Standard',
+    methodTitle: 'How We Rate Evidence',
+    newsletterTitle: 'The Saturday Edition',
+    newsletterDesc: 'One email per week. The latest evidence on supplements, herbal remedies, nutrition, and wellness — curated, graded, and explained in plain language. No product pushing. No spam. Just research you can use.',
+    subscribeBtn: 'Subscribe free',
+    subscribedBtnAlt: "✓ You're in",
+    newsletterMeta: 'Join 0 readers · Free forever · Unsubscribe in one click',
+    aboutLabel: 'Why This Exists',
+    aboutTitle: 'About fen',
+    aboutP1: 'The natural health space is full of noise — miracle cures, influencer endorsements, and marketing dressed up as medicine. We started fen because we believe people deserve better.',
+    aboutP2: "Every article we publish cites peer-reviewed research. Every supplement, herb, and practice gets an honest evidence rating. We don't sell products — we help you understand what the science actually says, so you can make your own decisions.",
+    aboutP3: "fen is named after natural wetland ecosystems — places where diverse life thrives in balance. That's what we believe health should be: grounded, diverse, and rooted in nature's own evidence.",
+    footerTagline: 'Evidence-based natural health education.\nIndependent. Transparent. Free.',
+    footerExplore: 'Explore',
+    footerExploreLinks: ['Articles', 'Evidence Library', 'Newsletter Archive', 'Start Here'],
+    footerTopics: 'Topics',
+    footerTopicLinks: ['Supplements', 'Herbal Remedies', 'Teas & Coffees', 'Fitness', 'Gut Health'],
+    footerConnect: 'Connect',
+    footerConnectLinks: ['Instagram', 'YouTube', 'X / Twitter', 'About', 'Contact'],
+    footerDisclaimer: 'Content is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for personal medical decisions.',
+    footerCopy: '© 2026 fen. All rights reserved.',
+    articles: [
+      { id: 1, category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read' },
+      { id: 2, category: 'HERBAL REMEDIES', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Turmeric vs. Curcumin Supplements: A Bioavailability Breakdown', excerpt: 'The golden spice has thousands of studies behind it — but most supplements fail at one critical thing.', date: 'Apr 4, 2026', readTime: '9 min read' },
+      { id: 3, category: 'FUNCTIONAL BEVERAGES', tag: 'Emerging Research', tagColor: '#6c757d', title: "Lion's Mane Coffee: Cognitive Hype or Genuine Nootropic?", excerpt: "Mushroom coffee is everywhere. We examined 12 studies on lion's mane and neurogenesis to separate marketing from science.", date: 'Apr 1, 2026', readTime: '8 min read' },
+      { id: 4, category: 'NUTRITION SCIENCE', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'The Omega-3 Index: Why This Blood Test Matters More Than Cholesterol', excerpt: "Your omega-3 index may be one of the strongest predictors of cardiovascular health.", date: 'Mar 28, 2026', readTime: '11 min read' },
+      { id: 5, category: 'MOVEMENT', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Walking 7,000 Steps: The New Threshold Backed by Mortality Data', excerpt: 'Forget 10,000 steps. A 2024 meta-analysis of 47 studies found the sweet spot may be lower than you think.', date: 'Mar 25, 2026', readTime: '7 min read' },
+      { id: 6, category: 'GUT HEALTH', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Probiotics After Antibiotics: Timing, Strains, and What Actually Helps', excerpt: 'We reviewed 22 RCTs to find which probiotic protocols have real evidence behind them.', date: 'Mar 21, 2026', readTime: '10 min read' },
+    ],
+    pillars: [
+      { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🌿' },
+      { name: 'Supplements', desc: 'Evidence ratings for vitamins, minerals, and compounds', icon: '💊' },
+      { name: 'Teas & Coffees', desc: 'Functional beverages and their therapeutic profiles', icon: '🍵' },
+      { name: 'Fitness & Movement', desc: 'Exercise science distilled into practical protocols', icon: '🏃' },
+      { name: 'Mind & Wellness', desc: 'Sleep, stress, fasting, and the gut-brain axis', icon: '🧠' },
+    ],
+    evidence: [
+      { level: 'Strong', color: '#2d6a4f', desc: 'Multiple randomised controlled trials or meta-analyses with consistent results across diverse populations.' },
+      { level: 'Moderate', color: '#b5651d', desc: 'Limited RCTs or observational studies with plausible mechanisms. Promising but needs more research.' },
+      { level: 'Emerging', color: '#6c757d', desc: 'Preliminary findings from animal studies, in vitro research, or small pilot trials. Early-stage only.' },
+      { level: 'Insufficient', color: '#9e2a2b', desc: 'Anecdotal, traditional use only, or contradictory findings. We include it but flag the uncertainty.' },
+    ],
   },
-  {
-    id: 2, category: 'HERBAL REMEDIES', tag: 'Moderate Evidence', tagColor: '#b5651d',
-    title: 'Turmeric vs. Curcumin Supplements: A Bioavailability Breakdown',
-    excerpt: 'The golden spice has thousands of studies behind it — but most supplements fail at one critical thing. We reviewed the evidence on absorption and efficacy.',
-    date: 'Apr 4, 2026', readTime: '9 min read',
+  dv: {
+    dir: 'rtl',
+    langLabel: 'English',
+    navItems: ['ލިޔުންތައް', 'ހެކި ލައިބްރަރީ', 'އަޅުގަނޑުމެން', 'ނިއުސްލެޓަރ'],
+    heroLabel: 'ޤުދުރަތީ ޞިއްޙަތު · ހެއްކަށް ބިނާކޮށް · މިނިވަން',
+    heroTitle1: 'ޞިއްޙީ މަޢުލޫމާތު',
+    heroTitle2: 'ހެއްކާއެކު ބިންވަޅު ނެގިފައި',
+    heroSubtitle: 'އަޅުގަނޑުމެން ސަޕްލިމެންޓްސް، ފަތްޕިލާވެލީގެ ބޭސް، ސައި، އަދި ދުޅަހެޔޮ ޞިއްޙަތާ ގުޅޭ އާދަކާދަތައް ދިރާސާކުރަނީ ޕިއަރ-ރިވިއުޑް ދިރާސާތަކުގެ އެހީގައި — ތިބާއަށް ޞިއްޙީ ކަންކަމުގައި ރަނގަޅު ނިންމުން ނިންމޭނެ ގޮތަށް.',
+    emailPlaceholder: 'your@email.com',
+    joinBtn: 'ނިއުސްލެޓަރާ ގުޅޭ',
+    subscribedBtn: '✓ ސަބްސްކްރައިބް ވެއްޖެ',
+    heroMeta: 'ހިލޭ ހަފްތާ އެޑިޝަން · ސްޕޭމް ނެތް · ކޮންމެ ވަގުތެއްގައި ވެސް އަންސަބްސްކްރައިބް ކުރެވޭނެ',
+    tickerItems: ['ސަޕްލިމެންޓްސް', 'ފަތްޕިލާވެލީގެ ބޭސް', 'ނިއުޓްރިޝަން ސައިންސް', 'ބުއިންތައް', 'ކަސްރަތު', 'ގޮހޮރުގެ ޞިއްޙަތު', 'އެޑެޕްޓޮޖެންސް'],
+    featuredLabel: 'އެންމެ ފަހުގެ',
+    featuredTitle: 'ފީޗަރޑް ދިރާސާ',
+    featuredImageText: 'ފީޗަރޑް ލިޔުން',
+    readBtn: 'ލިޔުން ކިޔާ ←',
+    archiveLabel: 'އާކައިވް',
+    archiveTitle: 'ފަހުގެ ލިޔުންތައް',
+    viewAll: 'ހުރިހާ ލިޔުންތައް ބަލާ ←',
+    exploreLabel: 'ހޯދާ',
+    exploreTitle: 'އަޅުގަނޑުމެން ކަވަރުކުރާ ދާއިރާތައް',
+    exploreSubtitle: 'ކޮންމެ ލިޔުމެއްގެ ހެކީގެ ފެންވަރު ގްރޭޑް ކުރެވިފައިވޭ — ވަރުގަދަ (ގިނަ ރެންޑަމައިޒްޑް ޓްރައަލް) އިން ފެށިގެން އުފެދެމުންދާ (ކުރީކޮޅު ދިރާސާ) އާ ހަމައަށް.',
+    methodLabel: 'އަޅުގަނޑުމެންގެ މިންގަނޑު',
+    methodTitle: 'ހެކި ރޭޓްކުރާ ގޮތް',
+    newsletterTitle: 'ހޮނިހިރު އެޑިޝަން',
+    newsletterDesc: 'ހަފްތާއަކު އެއް އީމެއިލް. ސަޕްލިމެންޓްސް، ފަތްޕިލާވެލީގެ ބޭސް، ނިއުޓްރިޝަން، އަދި ދުޅަހެޔޮ ޞިއްޙަތާ ގުޅޭ އެންމެ ފަހުގެ ހެކި — ކިޔައިދޭ ފަސޭހަ ބަހުން.',
+    subscribeBtn: 'ހިލޭ ސަބްސްކްރައިބް ކުރޭ',
+    subscribedBtnAlt: '✓ ގުޅިއްޖެ',
+    newsletterMeta: '0 ކިޔުންތެރިންނާ ގުޅޭ · އަބަދަށް ހިލޭ · އެއް ކްލިކުން އަންސަބްސްކްރައިބް',
+    aboutLabel: 'މިކަން އޮތީ ކީއްވެ',
+    aboutTitle: 'fen އާ ބެހޭ',
+    aboutP1: 'ޤުދުރަތީ ޞިއްޙަތުގެ ދާއިރާ ފުރިފައިވަނީ އަޑުފަށް — މުޢުޖިޒާތީ ފަރުވާ، އިންފްލުއެންސަރ ތާއީދު، އަދި ވިޔަފާރި ބޭސްވެރިކަމުގެ ގޮތުގައި ހެދުން އެޅީ. އަޅުގަނޑުމެން fen ފެށީ މީހުންނަށް މިއަށްވުރެ ރަނގަޅު ގޮތެއް ޙައްޤުވާ ކަމަށް ޤަބޫލުކުރާތީ.',
+    aboutP2: 'އަޅުގަނޑުމެން ޝާއިޢުކުރާ ކޮންމެ ލިޔުމެއްގައި ޕިއަރ-ރިވިއުޑް ދިރާސާތައް ހަވާލާ ދެވިފައިވޭ. ކޮންމެ ސަޕްލިމެންޓެއް، ބޭހެއް، އަދި ޕްރެކްޓިސްއަކަށް ތެދުވެރި ހެކީގެ ރޭޓިންގެއް ލިބޭ.',
+    aboutP3: 'fen ގެ ނަން ނެގިފައިވަނީ ޤުދުރަތީ ޗަސް ބިމުގެ ނިޒާމުން — ތަފާތު ދިރުންތައް ހަމަހަމަކަމުގައި ދިރިއުޅޭ ތަންތަން. ޞިއްޙަތަކީ ވެސް އެފަދައިން ވާންޖެހޭ ކަމެއް.',
+    footerTagline: 'ހެއްކަށް ބިނާކޮށް ޤުދުރަތީ ޞިއްޙީ ތަޢުލީމު.\nމިނިވަން. ދެފުށް ފެންނަ. ހިލޭ.',
+    footerExplore: 'ހޯދާ',
+    footerExploreLinks: ['ލިޔުންތައް', 'ހެކި ލައިބްރަރީ', 'ނިއުސްލެޓަރ އާކައިވް', 'ފަށާ'],
+    footerTopics: 'މައުޟޫޢުތައް',
+    footerTopicLinks: ['ސަޕްލިމެންޓްސް', 'ފަތްޕިލާވެލީ ބޭސް', 'ސައި އާއި ކޮފީ', 'ކަސްރަތު', 'ގޮހޮރުގެ ޞިއްޙަތު'],
+    footerConnect: 'ގުޅާ',
+    footerConnectLinks: ['އިންސްޓަގްރާމް', 'ޔޫޓިއުބް', 'އެކްސް / ޓްވިޓަރ', 'އަޅުގަނޑުމެން', 'ގުޅޭ'],
+    footerDisclaimer: 'މި ކޮންޓެންޓަކީ ތަޢުލީމީ ބޭނުމަށް އެކަނި ތައްޔާރުކޮށްފައިވާ އެއްޗެކެވެ. ޞިއްޙީ ލަފާ ދިނުމެއް ނޫނެވެ.',
+    footerCopy: '© 2026 fen. ހުރިހާ ޙައްޤެއް ލިބިގެންވޭ.',
+    articles: [
+      { id: 1, category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް' },
+      { id: 2, category: 'ފަތްޕިލާވެލީ ބޭސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'ރީނދޫ vs. ކާކިއުމިން ސަޕްލިމެންޓްސް: ބަޔޯއެވެއިލަބިލިޓީ', excerpt: 'ރަން ހަވާދުގައި އެތައް ހާސް ދިރާސާއެއް — ގިނަ ސަޕްލިމެންޓްތައް ފެއިލްވަނީ އެއް ކަމެއްގައި.', date: 'އެޕްރީލް 4، 2026', readTime: '9 މިނެޓް' },
+      { id: 3, category: 'ބުއިންތައް', tag: 'އުފެދެމުންދާ ދިރާސާ', tagColor: '#6c757d', title: 'ލަޔަންސް މެއިން ކޮފީ: ސިކުނޑީގެ ހައިޕް ނޫނީ ޙަޤީޤީ ނޫޓްރޮޕިކް؟', excerpt: 'މަޝްރޫމް ކޮފީ ކޮންމެ ތަނެއްގައި. 12 ދިރާސާ ބެލީމެވެ — މާކެޓިން އާއި ސައިންސް ވަކިކުރަން.', date: 'އެޕްރީލް 1، 2026', readTime: '8 މިނެޓް' },
+      { id: 4, category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އޮމެގާ-3 އިންޑެކްސް: ކޮލެސްޓްރޯލަށް ވުރެ މުހިންމު ޓެސްޓެއް', excerpt: 'އޮމެގާ-3 އިންޑެކްސް އަކީ ހިތުގެ ޞިއްޙަތުގެ އެންމެ ވަރުގަދަ ލަފާކުރާ.', date: 'މާރިޗް 28، 2026', readTime: '11 މިނެޓް' },
+      { id: 5, category: 'ކަސްރަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: '7,000 ފިޔަވަޅު ހިނގުން: މަރުގެ ޑާޓާއިން ސާބިތުވާ އައު ތެރެޝޯލްޑް', excerpt: '10,000 ފިޔަވަޅު ހަނދާން ނައްތާ. 47 ދިރާސާގެ މެޓާ-އެނާލިސިސް.', date: 'މާރިޗް 25، 2026', readTime: '7 މިނެޓް' },
+      { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޯޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް' },
+    ],
+    pillars: [
+      { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🌿' },
+      { name: 'ސަޕްލިމެންޓްސް', desc: 'ވިޓަމިންސް، މިނެރަލްސް ގެ ހެކީ ރޭޓިން', icon: '💊' },
+      { name: 'ސައި އާއި ކޮފީ', desc: 'ފަންކްޝަނަލް ބުއިންތަކުގެ ބޭސްވެރި ޕްރޮފައިލް', icon: '🍵' },
+      { name: 'ކަސްރަތު', desc: 'ޢަމަލީ ޕްރޮޓޮކޯލްތަކަށް ބަދަލުކޮށްފައިވާ ކަސްރަތު ސައިންސް', icon: '🏃' },
+      { name: 'ސިކުނޑި އާއި ދުޅަހެޔޮކަން', desc: 'ނިދި، ސްޓްރެސް، ރޯދަ، ގޮހޮރު-ސިކުނޑި ގުޅުން', icon: '🧠' },
+    ],
+    evidence: [
+      { level: 'ވަރުގަދަ', color: '#2d6a4f', desc: 'ގިނަ ރެންޑަމައިޒްޑް ކޮންޓްރޯލްޑް ޓްރައަލް ނުވަތަ މެޓާ-އެނާލިސިސް، ތަފާތު މީހުންގެ ތެރޭގައި އެއް ގޮތް ނަތީޖާ.' },
+      { level: 'މެދުމިން', color: '#b5651d', desc: 'މަދު ޓްރައަލް ނުވަތަ ބެލުންތެރި ދިރާސާ. އުންމީދީ ނަމަވެސް އިތުރު ދިރާސާ ބޭނުންވޭ.' },
+      { level: 'އުފެދެމުންދާ', color: '#6c757d', desc: 'ޖަނަވާރު ދިރާސާ، ލެބޯޓަރީ ދިރާސާ، ނުވަތަ ކުދި ޕައިލެޓް ޓްރައަލް.' },
+      { level: 'ނުފުދޭ', color: '#9e2a2b', desc: 'އެނެކްޑޯޓަލް، ޒަމާނީ ބޭނުމެއް އެކަނި، ނުވަތަ ފުށުއެރުން ހޯދުން.' },
+    ],
   },
-  {
-    id: 3, category: 'FUNCTIONAL BEVERAGES', tag: 'Emerging Research', tagColor: '#6c757d',
-    title: "Lion's Mane Coffee: Cognitive Hype or Genuine Nootropic?",
-    excerpt: "Mushroom coffee is everywhere. We examined 12 studies on lion's mane and neurogenesis to separate marketing claims from what the science actually supports.",
-    date: 'Apr 1, 2026', readTime: '8 min read',
-  },
-  {
-    id: 4, category: 'NUTRITION SCIENCE', tag: 'Strong Evidence', tagColor: '#2d6a4f',
-    title: 'The Omega-3 Index: Why This Blood Test Matters More Than Cholesterol',
-    excerpt: 'Emerging research suggests your omega-3 index is one of the strongest predictors of cardiovascular health. Here\'s what to aim for and how to get there.',
-    date: 'Mar 28, 2026', readTime: '11 min read',
-  },
-  {
-    id: 5, category: 'MOVEMENT', tag: 'Strong Evidence', tagColor: '#2d6a4f',
-    title: 'Walking 7,000 Steps: The New Threshold Backed by Mortality Data',
-    excerpt: 'Forget 10,000 steps. A landmark 2024 meta-analysis of 47 studies found the sweet spot may be lower than you think — with diminishing returns above it.',
-    date: 'Mar 25, 2026', readTime: '7 min read',
-  },
-  {
-    id: 6, category: 'GUT HEALTH', tag: 'Moderate Evidence', tagColor: '#b5651d',
-    title: 'Probiotics After Antibiotics: Timing, Strains, and What Actually Helps',
-    excerpt: 'The gut microbiome takes months to recover from antibiotics. We reviewed 22 RCTs to find which probiotic protocols have real evidence behind them.',
-    date: 'Mar 21, 2026', readTime: '10 min read',
-  },
-];
-
-const PILLARS = [
-  { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🌿' },
-  { name: 'Supplements', desc: 'Evidence ratings for vitamins, minerals, and compounds', icon: '💊' },
-  { name: 'Teas & Coffees', desc: 'Functional beverages and their therapeutic profiles', icon: '🍵' },
-  { name: 'Fitness & Movement', desc: 'Exercise science distilled into practical protocols', icon: '🏃' },
-  { name: 'Mind & Wellness', desc: 'Sleep, stress, fasting, and the gut-brain axis', icon: '🧠' },
-];
-
-const EVIDENCE_LEVELS = [
-  { level: 'Strong', color: '#2d6a4f', desc: 'Multiple randomised controlled trials or meta-analyses with consistent results across diverse populations.' },
-  { level: 'Moderate', color: '#b5651d', desc: 'Limited RCTs or observational studies with plausible mechanisms. Promising but needs more research.' },
-  { level: 'Emerging', color: '#6c757d', desc: 'Preliminary findings from animal studies, in vitro research, or small pilot trials. Early-stage only.' },
-  { level: 'Insufficient', color: '#9e2a2b', desc: 'Anecdotal, traditional use only, or contradictory findings. We include it but flag the uncertainty.' },
-];
+};
 
 function useIntersectionObserver() {
   const [visible, setVisible] = useState(new Set());
   const refs = useRef({});
-
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible((prev) => new Set([...prev, entry.target.dataset.section]));
-          }
-        });
-      },
+      (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) setVisible((prev) => new Set([...prev, entry.target.dataset.section])); }); },
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     );
-
-    Object.values(refs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
+    Object.values(refs.current).forEach((ref) => { if (ref) observer.observe(ref); });
     return () => observer.disconnect();
   }, []);
-
   return { visible, refs };
 }
 
 export default function Home() {
+  const [lang, setLang] = useState('en');
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { visible, refs } = useIntersectionObserver();
-
+  const c = t[lang];
+  const isRtl = c.dir === 'rtl';
   const isVisible = (id) => visible.has(id);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setTimeout(() => setSubscribed(false), 4000);
-      setEmail('');
-    }
+    if (email) { setSubscribed(true); setTimeout(() => setSubscribed(false), 4000); setEmail(''); }
   };
 
+  const bodyFont = isRtl ? "'MV Waheed', 'Faruma', 'MV Boli', Tahoma, sans-serif" : "'DM Sans', sans-serif";
+  const headingFont = isRtl ? "'MV Waheed', 'Faruma', 'MV Boli', Tahoma, serif" : "'Instrument Serif', serif";
+
   return (
-    <>
-      {/* NAVIGATION */}
+    <div dir={c.dir} style={{ fontFamily: bodyFont }}>
+      {/* NAV */}
       <nav className="nav">
         <div className="nav-inner">
-          <div>
-            <a href="/" className="logo">fen<span className="logo-dot">.</span></a>
-          </div>
+          <div><a href="/" className="logo">fen<span className="logo-dot">.</span></a></div>
           <div className="nav-links">
-            {['Articles', 'Evidence Library', 'About', 'Newsletter'].map((item) => (
-              <a key={item} className="nav-link" href={`#${item.toLowerCase().replace(' ', '-')}`}>{item}</a>
-            ))}
+            {c.navItems.map((item, i) => (<a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>{item}</a>))}
+            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'MV Waheed','Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
           </div>
-          <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? '✕' : '☰'}
-          </button>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} className="mobile-toggle" style={{ fontFamily: lang === 'en' ? "'MV Waheed','Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '4px 10px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
+            <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? '✕' : '☰'}</button>
+          </div>
         </div>
-        {menuOpen && (
-          <div className="mobile-menu">
-            {['Articles', 'Evidence Library', 'About', 'Newsletter'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`}
-                onClick={() => setMenuOpen(false)}>{item}</a>
-            ))}
-          </div>
-        )}
+        {menuOpen && (<div className="mobile-menu">{c.navItems.map((item, i) => (<a key={i} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>{item}</a>))}</div>)}
       </nav>
 
       {/* HERO */}
       <section className="hero" data-section="hero" ref={(el) => (refs.current['hero'] = el)}>
-        <div className="hero-inner">
-          <p className={`hero-label fade-up ${isVisible('hero') ? 'visible' : ''}`}>
-            Natural Health · Evidence-Based · Independent
-          </p>
-          <h1 className={`hero-title fade-up stagger-1 ${isVisible('hero') ? 'visible' : ''}`}>
-            Health knowledge<br /><em>rooted in evidence</em>
-          </h1>
-          <p className={`hero-subtitle fade-up stagger-2 ${isVisible('hero') ? 'visible' : ''}`}>
-            We examine supplements, herbal remedies, teas, and wellness practices through
-            the lens of peer-reviewed research — so you can make informed choices about
-            your health, not guesses.
-          </p>
-          <form onSubmit={handleSubscribe}
-            className={`hero-form fade-up stagger-3 ${isVisible('hero') ? 'visible' : ''}`}>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com" required />
-            <button type="submit" className="cta-btn">
-              {subscribed ? '✓ Subscribed' : 'Join the newsletter'}
-            </button>
+        <div className="hero-inner" style={{ maxWidth: isRtl ? 900 : 800 }}>
+          <p className={`hero-label fade-up ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.heroLabel}</p>
+          <h1 className={`hero-title fade-up stagger-1 ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: headingFont, fontSize: isRtl ? 48 : undefined }}>{c.heroTitle1}<br /><em style={{ fontFamily: headingFont }}>{c.heroTitle2}</em></h1>
+          <p className={`hero-subtitle fade-up stagger-2 ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>{c.heroSubtitle}</p>
+          <form onSubmit={handleSubscribe} className={`hero-form fade-up stagger-3 ${isVisible('hero') ? 'visible' : ''}`}>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={c.emailPlaceholder} required style={{ direction: 'ltr', textAlign: isRtl ? 'right' : 'left' }} />
+            <button type="submit" className="cta-btn" style={{ fontFamily: bodyFont }}>{subscribed ? c.subscribedBtn : c.joinBtn}</button>
           </form>
-          <p className={`hero-meta fade-up stagger-4 ${isVisible('hero') ? 'visible' : ''}`}>
-            Free weekly edition · No spam · Unsubscribe anytime
-          </p>
+          <p className={`hero-meta fade-up stagger-4 ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.heroMeta}</p>
         </div>
       </section>
 
       {/* TICKER */}
-      <div className="ticker">
-        <div className="ticker-track">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="ticker-slide">
-              {['Supplements', 'Herbal Medicine', 'Nutrition Science', 'Functional Teas', 'Movement', 'Gut Health', 'Adaptogens'].map((item) => (
-                <span key={`${i}-${item}`}>
-                  <span className="ticker-item">{item}</span>
-                  <span className="ticker-dot" style={{ margin: '0 12px' }}>·</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <div className="ticker"><div className="ticker-track">{[...Array(2)].map((_, i) => (<div key={i} className="ticker-slide">{c.tickerItems.map((item, j) => (<span key={`${i}-${j}`}><span className="ticker-item" style={{ fontFamily: headingFont }}>{item}</span><span className="ticker-dot" style={{ margin: '0 12px' }}>·</span></span>))}</div>))}</div></div>
 
-      {/* FEATURED ARTICLE */}
-      <section className="section" id="articles" data-section="featured"
-        ref={(el) => (refs.current['featured'] = el)}>
+      {/* FEATURED */}
+      <section className="section" data-section="featured" ref={(el) => (refs.current['featured'] = el)}>
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('featured') ? 'visible' : ''}`}>Latest</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('featured') ? 'visible' : ''}`}>
-              Featured Research
-            </h2>
+            <p className={`section-label fade-up ${isVisible('featured') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.featuredLabel}</p>
+            <h2 className={`section-title fade-up stagger-1 ${isVisible('featured') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.featuredTitle}</h2>
           </div>
           <div className={`featured-grid fade-up stagger-2 ${isVisible('featured') ? 'visible' : ''}`}>
-            <div>
-              <div className="featured-image">
-                <span style={{ fontSize: 48 }}>🧪</span>
-                <span className="featured-image-text">Featured Article</span>
-              </div>
-            </div>
+            <div><div className="featured-image"><span style={{ fontSize: 48 }}>🧪</span><span className="featured-image-text">{c.featuredImageText}</span></div></div>
             <div>
               <div className="featured-meta">
-                <span className="evidence-tag" style={{ background: ARTICLES[0].tagColor }}>
-                  {ARTICLES[0].tag}
-                </span>
-                <span className="category-label">{ARTICLES[0].category}</span>
+                <span className="evidence-tag" style={{ background: c.articles[0].tagColor, fontFamily: bodyFont }}>{c.articles[0].tag}</span>
+                <span className="category-label" style={{ fontFamily: bodyFont }}>{c.articles[0].category}</span>
               </div>
-              <h3 className="featured-title">{ARTICLES[0].title}</h3>
-              <p className="featured-excerpt">{ARTICLES[0].excerpt}</p>
-              <div className="featured-footer">
-                <span className="date-text">{ARTICLES[0].date}</span>
-                <span style={{ color: '#ccc' }}>·</span>
-                <span className="date-text">{ARTICLES[0].readTime}</span>
-              </div>
-              <a href="#" className="cta-btn">Read Article →</a>
+              <h3 className="featured-title" style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.6 : undefined }}>{c.articles[0].title}</h3>
+              <p className="featured-excerpt" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{c.articles[0].excerpt}</p>
+              <div className="featured-footer"><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span><span style={{ color: '#ccc' }}>·</span><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span></div>
+              <a href="#" className="cta-btn" style={{ fontFamily: bodyFont }}>{c.readBtn}</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ARTICLES GRID */}
-      <section className="section section-alt" data-section="articles"
-        ref={(el) => (refs.current['articles'] = el)}>
+      {/* ARTICLES */}
+      <section className="section section-alt" data-section="articles" ref={(el) => (refs.current['articles'] = el)}>
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('articles') ? 'visible' : ''}`}>Archive</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('articles') ? 'visible' : ''}`}>
-              Recent Articles
-            </h2>
+            <p className={`section-label fade-up ${isVisible('articles') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.archiveLabel}</p>
+            <h2 className={`section-title fade-up stagger-1 ${isVisible('articles') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.archiveTitle}</h2>
           </div>
           <div className="articles-grid">
-            {ARTICLES.slice(1).map((article, i) => (
-              <div key={article.id}
-                className={`article-card fade-up stagger-${i + 1} ${isVisible('articles') ? 'visible' : ''}`}>
+            {c.articles.slice(1).map((article, i) => (
+              <div key={article.id} className={`article-card fade-up stagger-${i + 1} ${isVisible('articles') ? 'visible' : ''}`}>
                 <div className="article-card-inner">
-                  <span className="evidence-tag evidence-tag-sm" style={{ background: article.tagColor }}>
-                    {article.tag}
-                  </span>
-                  <span className="article-category">{article.category}</span>
-                  <h3 className="article-title">{article.title}</h3>
-                  <p className="article-excerpt">{article.excerpt}</p>
-                  <div className="article-footer">
-                    <span>{article.date}</span>
-                    <span>{article.readTime}</span>
-                  </div>
+                  <span className="evidence-tag evidence-tag-sm" style={{ background: article.tagColor, fontFamily: bodyFont }}>{article.tag}</span>
+                  <span className="article-category" style={{ fontFamily: bodyFont }}>{article.category}</span>
+                  <h3 className="article-title" style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.6 : undefined }}>{article.title}</h3>
+                  <p className="article-excerpt" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{article.excerpt}</p>
+                  <div className="article-footer" style={{ fontFamily: bodyFont }}><span>{article.date}</span><span>{article.readTime}</span></div>
                 </div>
               </div>
             ))}
           </div>
-          <div className={`view-all fade-up stagger-6 ${isVisible('articles') ? 'visible' : ''}`}>
-            <a href="#" className="nav-link">View all articles →</a>
-          </div>
+          <div className={`view-all fade-up stagger-6 ${isVisible('articles') ? 'visible' : ''}`}><a href="#" className="nav-link" style={{ fontFamily: bodyFont }}>{c.viewAll}</a></div>
         </div>
       </section>
 
-      {/* CONTENT PILLARS */}
-      <section className="section" data-section="pillars"
-        ref={(el) => (refs.current['pillars'] = el)}>
+      {/* PILLARS */}
+      <section className="section" data-section="pillars" ref={(el) => (refs.current['pillars'] = el)}>
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('pillars') ? 'visible' : ''}`}>Explore</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('pillars') ? 'visible' : ''}`}>
-              What We Cover
-            </h2>
-            <p className={`section-subtitle fade-up stagger-2 ${isVisible('pillars') ? 'visible' : ''}`}>
-              Every article is graded by evidence quality — from strong (multiple RCTs) to
-              emerging (early-stage research). No hype. No pseudoscience.
-            </p>
+            <p className={`section-label fade-up ${isVisible('pillars') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.exploreLabel}</p>
+            <h2 className={`section-title fade-up stagger-1 ${isVisible('pillars') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.exploreTitle}</h2>
+            <p className={`section-subtitle fade-up stagger-2 ${isVisible('pillars') ? 'visible' : ''}`} style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined, maxWidth: isRtl ? 700 : undefined }}>{c.exploreSubtitle}</p>
           </div>
           <div className="pillars-grid">
-            {PILLARS.map((pillar, i) => (
-              <div key={pillar.name}
-                className={`pillar-card fade-up stagger-${i + 1} ${isVisible('pillars') ? 'visible' : ''}`}>
+            {c.pillars.map((pillar, i) => (
+              <div key={i} className={`pillar-card fade-up stagger-${i + 1} ${isVisible('pillars') ? 'visible' : ''}`}>
                 <span className="pillar-icon">{pillar.icon}</span>
-                <h3 className="pillar-name">{pillar.name}</h3>
-                <p className="pillar-desc">{pillar.desc}</p>
+                <h3 className="pillar-name" style={{ fontFamily: headingFont }}>{pillar.name}</h3>
+                <p className="pillar-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.8 : undefined }}>{pillar.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* EVIDENCE METHODOLOGY */}
-      <section className="section section-dark" id="evidence-library" data-section="method"
-        ref={(el) => (refs.current['method'] = el)}>
+      {/* METHODOLOGY */}
+      <section className="section section-dark" data-section="method" ref={(el) => (refs.current['method'] = el)}>
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('method') ? 'visible' : ''}`}>Our Standard</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('method') ? 'visible' : ''}`}>
-              How We Rate Evidence
-            </h2>
+            <p className={`section-label fade-up ${isVisible('method') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.methodLabel}</p>
+            <h2 className={`section-title fade-up stagger-1 ${isVisible('method') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.methodTitle}</h2>
           </div>
           <div className={`method-grid fade-up stagger-2 ${isVisible('method') ? 'visible' : ''}`}>
-            {EVIDENCE_LEVELS.map((item) => (
-              <div key={item.level} className="method-card">
-                <div className="method-dot" style={{ background: item.color }} />
-                <h4 className="method-level">{item.level}</h4>
-                <p className="method-desc">{item.desc}</p>
-              </div>
-            ))}
+            {c.evidence.map((item) => (<div key={item.level} className="method-card"><div className="method-dot" style={{ background: item.color }} /><h4 className="method-level" style={{ fontFamily: headingFont }}>{item.level}</h4><p className="method-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{item.desc}</p></div>))}
           </div>
         </div>
       </section>
 
-      {/* NEWSLETTER CTA */}
-      <section className="section section-green" id="newsletter" data-section="newsletter"
-        ref={(el) => (refs.current['newsletter'] = el)}>
+      {/* NEWSLETTER */}
+      <section className="section section-green" data-section="newsletter" ref={(el) => (refs.current['newsletter'] = el)}>
         <div className="container">
           <div className={`newsletter-inner fade-up ${isVisible('newsletter') ? 'visible' : ''}`}>
-            <h2 className="newsletter-title">The Saturday Edition</h2>
-            <p className="newsletter-desc">
-              One email per week. The latest evidence on supplements, herbal remedies,
-              nutrition, and wellness — curated, graded, and explained in plain language.
-              No product pushing. No spam. Just research you can use.
-            </p>
+            <h2 className="newsletter-title" style={{ fontFamily: headingFont }}>{c.newsletterTitle}</h2>
+            <p className="newsletter-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>{c.newsletterDesc}</p>
             <form onSubmit={handleSubscribe} className="newsletter-form">
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com" required />
-              <button type="submit" className="newsletter-btn">
-                {subscribed ? '✓ You\'re in' : 'Subscribe free'}
-              </button>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={c.emailPlaceholder} required style={{ direction: 'ltr', textAlign: isRtl ? 'right' : 'left' }} />
+              <button type="submit" className="newsletter-btn" style={{ fontFamily: bodyFont }}>{subscribed ? c.subscribedBtnAlt : c.subscribeBtn}</button>
             </form>
-            <p className="newsletter-meta">
-              Join 0 readers · Free forever · Unsubscribe in one click
-            </p>
+            <p className="newsletter-meta" style={{ fontFamily: bodyFont }}>{c.newsletterMeta}</p>
           </div>
         </div>
       </section>
 
       {/* ABOUT */}
-      <section className="section" id="about" data-section="about"
-        ref={(el) => (refs.current['about'] = el)}>
+      <section className="section" data-section="about" ref={(el) => (refs.current['about'] = el)}>
         <div className="container" style={{ maxWidth: 680 }}>
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('about') ? 'visible' : ''}`}>Why This Exists</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('about') ? 'visible' : ''}`}>
-              About fen
-            </h2>
+            <p className={`section-label fade-up ${isVisible('about') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.aboutLabel}</p>
+            <h2 className={`section-title fade-up stagger-1 ${isVisible('about') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.aboutTitle}</h2>
           </div>
           <div className={`fade-up stagger-2 ${isVisible('about') ? 'visible' : ''}`}>
-            <p className="about-text">
-              The natural health space is full of noise — miracle cures, influencer endorsements,
-              and marketing dressed up as medicine. We started <em>fen</em> because we believe
-              people deserve better.
-            </p>
-            <p className="about-text">
-              Every article we publish cites peer-reviewed research. Every supplement, herb,
-              and practice gets an honest evidence rating. We don&apos;t sell products — we help
-              you understand what the science actually says, so you can make your own decisions.
-            </p>
-            <p className="about-text">
-              <em>fen</em> is named after natural wetland ecosystems — places where diverse life
-              thrives in balance. That&apos;s what we believe health should be: grounded, diverse,
-              and rooted in nature&apos;s own evidence.
-            </p>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.1 : undefined }}>{c.aboutP1}</p>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.1 : undefined }}>{c.aboutP2}</p>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.1 : undefined }}>{c.aboutP3}</p>
           </div>
         </div>
       </section>
@@ -352,38 +320,18 @@ export default function Home() {
           <div className="footer-grid">
             <div>
               <span className="footer-logo">fen<span style={{ color: '#52b788' }}>.</span></span>
-              <p className="footer-tagline">
-                Evidence-based natural health education.<br />Independent. Transparent. Free.
-              </p>
+              <p className="footer-tagline" style={{ fontFamily: bodyFont, whiteSpace: 'pre-line', lineHeight: isRtl ? 2 : undefined }}>{c.footerTagline}</p>
             </div>
-            <div>
-              <h4 className="footer-heading">Explore</h4>
-              {['Articles', 'Evidence Library', 'Newsletter Archive', 'Start Here'].map((link) => (
-                <a key={link} href="#">{link}</a>
-              ))}
-            </div>
-            <div>
-              <h4 className="footer-heading">Topics</h4>
-              {['Supplements', 'Herbal Remedies', 'Teas & Coffees', 'Fitness', 'Gut Health'].map((link) => (
-                <a key={link} href="#">{link}</a>
-              ))}
-            </div>
-            <div>
-              <h4 className="footer-heading">Connect</h4>
-              {['Instagram', 'YouTube', 'X / Twitter', 'About', 'Contact'].map((link) => (
-                <a key={link} href="#">{link}</a>
-              ))}
-            </div>
+            <div><h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerExplore}</h4>{c.footerExploreLinks.map((link, i) => (<a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>))}</div>
+            <div><h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerTopics}</h4>{c.footerTopicLinks.map((link, i) => (<a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>))}</div>
+            <div><h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerConnect}</h4>{c.footerConnectLinks.map((link, i) => (<a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>))}</div>
           </div>
           <div className="footer-bottom">
-            <p className="footer-disclaimer">
-              Content is for educational purposes only and does not constitute medical advice.
-              Always consult a qualified healthcare provider for personal medical decisions.
-            </p>
-            <p className="footer-copy">© 2026 fen. All rights reserved.</p>
+            <p className="footer-disclaimer" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>{c.footerDisclaimer}</p>
+            <p className="footer-copy" style={{ fontFamily: bodyFont }}>{c.footerCopy}</p>
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
