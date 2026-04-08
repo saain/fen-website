@@ -166,8 +166,8 @@ export default function Home() {
     if (email) { setSubscribed(true); setTimeout(() => setSubscribed(false), 4000); setEmail(''); }
   };
 
-  const bodyFont = isRtl ? "'MV Waheed', 'Faruma', 'MV Boli', Tahoma, sans-serif" : "'DM Sans', sans-serif";
-  const headingFont = isRtl ? "'MV Waheed', 'Faruma', 'MV Boli', Tahoma, serif" : "'Instrument Serif', serif";
+  const bodyFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, sans-serif" : "'DM Sans', sans-serif";
+  const headingFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif" : "'Instrument Serif', serif";
 
   return (
     <div dir={c.dir} style={{ fontFamily: bodyFont }}>
@@ -177,10 +177,10 @@ export default function Home() {
           <div><a href="/" className="logo">fen<span className="logo-dot">.</span></a></div>
           <div className="nav-links">
             {c.navItems.map((item, i) => (<a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>{item}</a>))}
-            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'MV Waheed','Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
+            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} className="mobile-toggle" style={{ fontFamily: lang === 'en' ? "'MV Waheed','Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '4px 10px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
+            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} className="mobile-toggle" style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '4px 10px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
             <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? '✕' : '☰'}</button>
           </div>
         </div>
