@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
 
 const en = {
   back: '\u2190 Back to Home',
@@ -174,13 +173,18 @@ const refs = [
   'Guerrero-Romero F, et al. "Magnesium improves beta-cell function." Eur J Clin Invest. 2011;41(4):405\u2013410.',
 ];
 
-export default function MagnesiumArticle() {
-  const searchParams = useSearchParams();
+function MagnesiumArticleInner() {
   const [lang, setLang] = useState('en');
   useEffect(() => {
-    const urlLang = searchParams.get('lang');
-    if (urlLang === 'dv') setLang('dv');
-  }, [searchParams]);
+    try {
+      const saved = window.sessionStorage.getItem('fen-lang');
+      if (saved === 'dv') setLang('dv');
+    } catch(e) {}
+  }, []);
+  const changeLang = (newLang) => {
+    setLang(newLang);
+    try { window.sessionStorage.setItem('fen-lang', newLang); } catch(e) {}
+  };
   const c = lang === 'en' ? en : dv;
   const isRtl = lang === 'dv';
   const bf = isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif";
@@ -205,7 +209,7 @@ export default function MagnesiumArticle() {
         <div><a href="/" className="logo">fen<span className="logo-dot">.</span></a></div>
         <div className="nav-links">
           <a className="nav-link" href="/" style={{ fontFamily: bf }}>{c.back}</a>
-          <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{lang === 'en' ? '\u078B\u07A8\u0788\u07AC\u0780\u07A8' : 'English'}</button>
+          <button onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{lang === 'en' ? '\u078B\u07A8\u0788\u07AC\u0780\u07A8' : 'English'}</button>
         </div>
       </div></nav>
 
@@ -274,8 +278,12 @@ export default function MagnesiumArticle() {
 
       <footer className="footer"><div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
         <span className="footer-logo">fen<span style={{ color: '#52b788' }}>.</span></span>
-        <p className="footer-copy">\u00A9 2026 fen. All rights reserved.</p>
+        <p className="footer-copy">{'\u00A9'} 2026 fen. All rights reserved.</p>
       </div></footer>
     </div>
   );
+}
+
+export default function MagnesiumArticle() {
+  return <MagnesiumArticleInner />;
 }

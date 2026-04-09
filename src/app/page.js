@@ -157,6 +157,18 @@ export default function Home() {
   const [subscribed, setSubscribed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { visible, refs } = useIntersectionObserver();
+
+  const changeLang = (newLang) => {
+    setLang(newLang);
+    try { window.sessionStorage.setItem('fen-lang', newLang); } catch(e) {}
+  };
+
+  useEffect(() => {
+    try {
+      const saved = window.sessionStorage.getItem('fen-lang');
+      if (saved === 'dv') setLang('dv');
+    } catch(e) {}
+  }, []);
   const c = t[lang];
   const isRtl = c.dir === 'rtl';
   const isVisible = (id) => visible.has(id);
@@ -177,10 +189,10 @@ export default function Home() {
           <div><a href="/" className="logo">fen<span className="logo-dot">.</span></a></div>
           <div className="nav-links">
             {c.navItems.map((item, i) => (<a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>{item}</a>))}
-            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
+            <button onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            <button onClick={() => setLang(lang === 'en' ? 'dv' : 'en')} className="mobile-toggle" style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '4px 10px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
+            <button onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')} className="mobile-toggle" style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '4px 10px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
             <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? '✕' : '☰'}</button>
           </div>
         </div>
@@ -221,7 +233,7 @@ export default function Home() {
               <h3 className="featured-title" style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.6 : undefined }}>{c.articles[0].title}</h3>
               <p className="featured-excerpt" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{c.articles[0].excerpt}</p>
               <div className="featured-footer"><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span><span style={{ color: '#ccc' }}>·</span><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span></div>
-              <a href={`/articles/magnesium?lang=${lang}`} className="cta-btn" style={{ fontFamily: bodyFont }}>{c.readBtn}</a>
+              <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>{c.readBtn}</a>
             </div>
           </div>
         </div>
