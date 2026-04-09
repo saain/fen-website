@@ -221,7 +221,7 @@ export default function Home() {
               <h3 className="featured-title" style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.6 : undefined }}>{c.articles[0].title}</h3>
               <p className="featured-excerpt" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{c.articles[0].excerpt}</p>
               <div className="featured-footer"><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span><span style={{ color: '#ccc' }}>·</span><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span></div>
-              <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>{c.readBtn}</a>
+              <a href={`/articles/magnesium?lang=${lang}`} className="cta-btn" style={{ fontFamily: bodyFont }}>{c.readBtn}</a>
             </div>
           </div>
         </div>

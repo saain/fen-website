@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const en = {
   back: '\u2190 Back to Home',
@@ -174,7 +175,12 @@ const refs = [
 ];
 
 export default function MagnesiumArticle() {
+  const searchParams = useSearchParams();
   const [lang, setLang] = useState('en');
+  useEffect(() => {
+    const urlLang = searchParams.get('lang');
+    if (urlLang === 'dv') setLang('dv');
+  }, [searchParams]);
   const c = lang === 'en' ? en : dv;
   const isRtl = lang === 'dv';
   const bf = isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif";
