@@ -178,8 +178,8 @@ export default function Home() {
     if (email) { setSubscribed(true); setTimeout(() => setSubscribed(false), 4000); setEmail(''); }
   };
 
-  const bodyFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, sans-serif" : "'DM Sans', sans-serif";
-  const headingFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif" : "'Instrument Serif', serif";
+  const bodyFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, sans-serif" : "'Inter', 'DM Sans', sans-serif";
+  const headingFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif" : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
 
   return (
     <div dir={c.dir} style={{ fontFamily: bodyFont }}>
