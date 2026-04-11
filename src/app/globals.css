@@ -1238,6 +1238,8 @@ body {
   [dir="rtl"] .newsletter-title { font-size: 26px !important; }
   [dir="rtl"] .pillars-grid { grid-template-columns: 1fr !important; }
   [dir="rtl"] .ticker-item { font-size: 36px !important; }
+  [dir="rtl"] .article-editorial-item { grid-template-columns: 1fr !important; }
+  [dir="rtl"] .featured-editorial { grid-template-columns: 1fr !important; }
 }
 
 /* ========== RESPONSIVE ========== */
