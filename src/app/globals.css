@@ -280,7 +280,7 @@ body {
 .hero-subtitle {
   font-size: 16px;
   line-height: 1.7;
-  color: rgba(237, 244, 255, 0.52);
+  color: rgba(237, 244, 255, 0.75);
   max-width: 520px;
   margin-bottom: 36px;
   font-weight: 300;
@@ -464,7 +464,7 @@ body {
 .section-subtitle {
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(237, 244, 255, 0.48);
+  color: rgba(237, 244, 255, 0.72);
   max-width: 540px;
   margin-top: 16px;
   font-weight: 300;
@@ -693,7 +693,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(237, 244, 255, 0.32);
+  color: rgba(237, 244, 255, 0.60);
   font-weight: 500;
   display: block;
   margin-bottom: 0;
@@ -718,7 +718,7 @@ body {
 .article-excerpt {
   font-size: 14px;
   line-height: 1.65;
-  color: rgba(237, 244, 255, 0.42);
+  color: rgba(237, 244, 255, 0.75);
   font-weight: 300;
   max-width: 640px;
 }
@@ -728,7 +728,7 @@ body {
   gap: 16px;
   margin-top: 14px;
   font-size: 11px;
-  color: rgba(237, 244, 255, 0.25);
+  color: rgba(237, 244, 255, 0.50);
   font-weight: 300;
   letter-spacing: 0.04em;
 }
@@ -784,7 +784,7 @@ body {
 .pillar-desc {
   font-size: 12px;
   line-height: 1.55;
-  color: rgba(237, 244, 255, 0.38);
+  color: rgba(237, 244, 255, 0.65);
   font-weight: 300;
   transition: color 0.3s;
 }
@@ -828,7 +828,7 @@ body {
 .method-desc {
   font-size: 13px;
   line-height: 1.65;
-  color: rgba(237, 244, 255, 0.42);
+  color: rgba(237, 244, 255, 0.75);
   font-weight: 300;
 }
 
@@ -853,7 +853,7 @@ body {
 .newsletter-desc {
   font-size: 15px;
   line-height: 1.75;
-  color: rgba(237, 244, 255, 0.50);
+  color: rgba(237, 244, 255, 0.75);
   margin-bottom: 36px;
   font-weight: 300;
 }
@@ -883,7 +883,7 @@ body {
 }
 
 .newsletter-form input::placeholder {
-  color: rgba(237, 244, 255, 0.28);
+  color: rgba(237, 244, 255, 0.55);
 }
 
 .newsletter-btn {
@@ -909,7 +909,7 @@ body {
 
 .newsletter-meta {
   font-size: 12px;
-  color: rgba(237, 244, 255, 0.25);
+  color: rgba(237, 244, 255, 0.50);
   font-weight: 300;
 }
 
@@ -957,7 +957,7 @@ body {
 .footer-tagline {
   font-size: 13px;
   line-height: 1.7;
-  color: rgba(237, 244, 255, 0.28);
+  color: rgba(237, 244, 255, 0.55);
   font-weight: 300;
 }
 
@@ -967,13 +967,13 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 16px;
-  color: rgba(237, 244, 255, 0.35);
+  color: rgba(237, 244, 255, 0.65);
 }
 
 .footer a {
   display: block;
   font-size: 13px;
-  color: rgba(237, 244, 255, 0.32);
+  color: rgba(237, 244, 255, 0.60);
   text-decoration: none;
   margin-bottom: 10px;
   font-weight: 300;
