@@ -1223,6 +1223,10 @@ body {
   display: none;
 }
 
+[dir="rtl"] .article-thumbnail {
+  display: none;
+}
+
 [dir="rtl"] .featured-editorial {
   grid-template-columns: 1fr;
 }
