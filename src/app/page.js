@@ -276,7 +276,7 @@ export default function Home() {
         That's it — the overlay handles the dark gradient automatically.
       */}
       <section
-        className="hero-cinematic"
+        className="hero-cinematic has-photo"
         data-section="hero"
         ref={(el) => (refs.current['hero'] = el)}
       >
