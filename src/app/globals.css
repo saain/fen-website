@@ -1216,14 +1216,10 @@ body {
 }
 
 [dir="rtl"] .article-editorial-item {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 120px;
 }
 
 [dir="rtl"] .article-editorial-index {
-  display: none;
-}
-
-[dir="rtl"] .article-thumbnail {
   display: none;
 }
 
