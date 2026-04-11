@@ -276,7 +276,7 @@ export default function Home() {
         That's it — the overlay handles the dark gradient automatically.
       */}
       <section
-        className="hero-cinematic has-photo"
+        className="hero-cinematic"
         data-section="hero"
         ref={(el) => (refs.current['hero'] = el)}
       >
@@ -404,6 +404,9 @@ export default function Home() {
                 {c.readBtn}
               </a>
             </div>
+            <div className="featured-editorial-image">
+              <img src="/images/featured.jpg" alt={c.articles[0].title} />
+            </div>
           </div>
         </div>
       </section>
@@ -467,6 +470,9 @@ export default function Home() {
                     <span>{article.date}</span>
                     <span>{article.readTime}</span>
                   </div>
+                </div>
+                <div className="article-thumbnail">
+                  <img src={`/images/article-${article.id}.jpg`} alt={article.title} />
                 </div>
               </div>
             ))}
