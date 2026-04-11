@@ -1224,7 +1224,7 @@ body {
 }
 
 [dir="rtl"] .featured-editorial {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 280px;
 }
 
 [dir="rtl"] .featured-editorial-number {
