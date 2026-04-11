@@ -118,8 +118,8 @@ const t = {
       { id: 2, category: 'ފަތްޕިލާވެލީ ބޭސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'ރީނދޫ vs. ކާކިއުމިން ސަޕްލިމެންޓްސް: ބަޔޯއެވެއިލަބިލިޓީ', excerpt: 'ރަން ހަވާދުގައި އެތައް ހާސް ދިރާސާއެއް — ގިނަ ސަޕްލިމެންޓްތައް ފެއިލްވަނީ އެއް ކަމެއްގައި.', date: 'އެޕްރީލް 4، 2026', readTime: '9 މިނެޓް' },
       { id: 3, category: 'ބުއިންތައް', tag: 'އުފެދެމުންދާ ދިރާސާ', tagColor: '#6c757d', title: 'ލަޔަންސް މެއިން ކޮފީ: ސިކުނޑީގެ ހައިޕް ނޫނީ ޙަޤީޤީ ނޫޓްރޮޕިކް؟', excerpt: 'މަޝްރޫމް ކޮފީ ކޮންމެ ތަނެއްގައި. 12 ދިރާސާ ބެލީމެވެ — މާކެޓިން އާއި ސައިންސް ވަކިކުރަން.', date: 'އެޕްރީލް 1، 2026', readTime: '8 މިނެޓް' },
       { id: 4, category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އޮމެގާ-3 އިންޑެކްސް: ކޮލެސްޓްރޯލަށް ވުރެ މުހިންމު ޓެސްޓެއް', excerpt: 'އޮމެގާ-3 އިންޑެކްސް އަކީ ހިތުގެ ޞިއްޙަތުގެ އެންމެ ވަރުގަދަ ލަފާކުރާ.', date: 'މާރިޗް 28، 2026', readTime: '11 މިނެޓް' },
-      { id: 5, category: 'ކަސްރަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: '7,000 ފިޔަވަޅު ހިނގުން: މަރުގެ ޑާޓާއިން ސާބިތުވާ އައު ތެރެޝޯލްޑް', excerpt: '10,000 ފިޔަވަޅު ހަނދާން ނައްތާ. 47 ދިރާސާގެ މެޓާ-އެނާލިސިސް.', date: 'މާރިޗް 25، 2026', readTime: '7 މިނެޓް' },
-      { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޯޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް' },
+      { id: 5, category: 'ކަސްރަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: '7,000 ފިޔަވަޅު ހިނގުން: މަރުގެ ޑާޓާއިން ސާބިތުވާ އައު ތެރެޝޯލްޑް', excerpt: '10,000 ފިޔަވަޅު ހަނދާން ނެތިގެން. 47 ދިރާސާގެ މެޓާ-އެނާލިސިސް.', date: 'މާރިޗް 25، 2026', readTime: '7 މިނެޓް' },
+      { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޮޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް' },
     ],
     pillars: [
       { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🌿' },
@@ -140,14 +140,24 @@ const t = {
 function useIntersectionObserver() {
   const [visible, setVisible] = useState(new Set());
   const refs = useRef({});
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) setVisible((prev) => new Set([...prev, entry.target.dataset.section])); }); },
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible((prev) => new Set([...prev, entry.target.dataset.section]));
+          }
+        });
+      },
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     );
-    Object.values(refs.current).forEach((ref) => { if (ref) observer.observe(ref); });
+    Object.values(refs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
     return () => observer.disconnect();
   }, []);
+
   return { visible, refs };
 }
 
@@ -160,190 +170,503 @@ export default function Home() {
 
   const changeLang = (newLang) => {
     setLang(newLang);
-    try { window.sessionStorage.setItem('fen-lang', newLang); } catch(e) {}
+    try { window.sessionStorage.setItem('fen-lang', newLang); } catch (e) {}
   };
 
   useEffect(() => {
     try {
       const saved = window.sessionStorage.getItem('fen-lang');
       if (saved === 'dv') setLang('dv');
-    } catch(e) {}
+    } catch (e) {}
   }, []);
+
   const c = t[lang];
   const isRtl = c.dir === 'rtl';
   const isVisible = (id) => visible.has(id);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
-    if (email) { setSubscribed(true); setTimeout(() => setSubscribed(false), 4000); setEmail(''); }
+    if (email) {
+      setSubscribed(true);
+      setTimeout(() => setSubscribed(false), 4000);
+      setEmail('');
+    }
   };
 
-  const bodyFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, sans-serif" : "'Inter', 'DM Sans', sans-serif";
-  const headingFont = isRtl ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif" : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
+  const bodyFont = isRtl
+    ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, sans-serif"
+    : "'Inter', 'DM Sans', sans-serif";
+  const headingFont = isRtl
+    ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif"
+    : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
 
   return (
     <div dir={c.dir} style={{ fontFamily: bodyFont }}>
-      {/* NAV */}
+
+      {/* ── NAV ── */}
       <nav className="nav">
         <div className="nav-inner">
-          <div><a href="/" className="logo">fen<span className="logo-dot">.</span></a></div>
+          <a href="/" className="logo">
+            fen<span className="logo-dot">.</span>
+          </a>
           <div className="nav-links">
-            {c.navItems.map((item, i) => (<a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>{item}</a>))}
-            <button onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')} style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
+            {c.navItems.map((item, i) => (
+              <a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>
+                {item}
+              </a>
+            ))}
+            <button
+              onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
+              style={{
+                fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter','DM Sans',sans-serif",
+                fontSize: 12,
+                background: 'none',
+                border: '1px solid rgba(237,244,255,0.18)',
+                borderRadius: 999,
+                padding: '6px 16px',
+                cursor: 'pointer',
+                color: 'rgba(237,244,255,0.65)',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase',
+                transition: 'all 0.2s',
+              }}
+            >
+              {c.langLabel}
+            </button>
           </div>
+          {/* Mobile row */}
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            <button onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')} className="mobile-toggle" style={{ fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(0,0,0,0.15)', borderRadius: 4, padding: '4px 10px', cursor: 'pointer', color: '#1a1a1a' }}>{c.langLabel}</button>
-            <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? '✕' : '☰'}</button>
+            <button
+              onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
+              className="mobile-toggle"
+              style={{
+                fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter',sans-serif",
+                fontSize: 12,
+                background: 'none',
+                border: '1px solid rgba(237,244,255,0.18)',
+                borderRadius: 999,
+                padding: '4px 12px',
+                cursor: 'pointer',
+                color: 'rgba(237,244,255,0.65)',
+              }}
+            >
+              {c.langLabel}
+            </button>
+            <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+              {menuOpen ? '✕' : '☰'}
+            </button>
           </div>
         </div>
-        {menuOpen && (<div className="mobile-menu">{c.navItems.map((item, i) => (<a key={i} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>{item}</a>))}</div>)}
+        {menuOpen && (
+          <div className="mobile-menu">
+            {c.navItems.map((item, i) => (
+              <a key={i} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
+                {item}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
-      {/* HERO */}
-      <section className="hero" data-section="hero" ref={(el) => (refs.current['hero'] = el)}>
-        <div className="hero-inner" style={{ maxWidth: isRtl ? 900 : 800 }}>
-          <p className={`hero-label fade-up ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.heroLabel}</p>
-          <h1 className={`hero-title fade-up stagger-1 ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: headingFont, fontSize: isRtl ? 48 : undefined }}>{c.heroTitle1}<br /><em style={{ fontFamily: headingFont }}>{c.heroTitle2}</em></h1>
-          <p className={`hero-subtitle fade-up stagger-2 ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>{c.heroSubtitle}</p>
-          <form onSubmit={handleSubscribe} className={`hero-form fade-up stagger-3 ${isVisible('hero') ? 'visible' : ''}`}>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={c.emailPlaceholder} required style={{ direction: 'ltr', textAlign: isRtl ? 'right' : 'left' }} />
-            <button type="submit" className="cta-btn" style={{ fontFamily: bodyFont }}>{subscribed ? c.subscribedBtn : c.joinBtn}</button>
+      {/* ── HERO — CINEMATIC FULL SCREEN ── */}
+      {/*
+        TO ADD YOUR PHOTO LATER:
+        1. Drop your image at public/images/hero.jpg
+        2. Add className="hero-cinematic has-photo" below
+        That's it — the overlay handles the dark gradient automatically.
+      */}
+      <section
+        className="hero-cinematic"
+        data-section="hero"
+        ref={(el) => (refs.current['hero'] = el)}
+      >
+        <div className="hero-overlay" />
+        <div className="hero-content">
+          <p
+            className={`hero-label fade-up ${isVisible('hero') ? 'visible' : ''}`}
+            style={{ fontFamily: bodyFont }}
+          >
+            {c.heroLabel}
+          </p>
+          <h1
+            className={`hero-title fade-up stagger-1 ${isVisible('hero') ? 'visible' : ''}`}
+            style={{ fontFamily: headingFont }}
+          >
+            {c.heroTitle1}
+            <br />
+            <em style={{ fontFamily: headingFont }}>{c.heroTitle2}</em>
+          </h1>
+          <p
+            className={`hero-subtitle fade-up stagger-2 ${isVisible('hero') ? 'visible' : ''}`}
+            style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+          >
+            {c.heroSubtitle}
+          </p>
+          <form
+            onSubmit={handleSubscribe}
+            className={`hero-form fade-up stagger-3 ${isVisible('hero') ? 'visible' : ''}`}
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={c.emailPlaceholder}
+              required
+              style={{ direction: 'ltr', textAlign: isRtl ? 'right' : 'left' }}
+            />
+            <button type="submit" className="cta-btn" style={{ fontFamily: bodyFont }}>
+              {subscribed ? c.subscribedBtn : c.joinBtn}
+            </button>
           </form>
-          <p className={`hero-meta fade-up stagger-4 ${isVisible('hero') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.heroMeta}</p>
+          <p
+            className={`hero-meta fade-up stagger-4 ${isVisible('hero') ? 'visible' : ''}`}
+            style={{ fontFamily: bodyFont }}
+          >
+            {c.heroMeta}
+          </p>
+        </div>
+        {/* Scroll indicator */}
+        <div className="hero-scroll">
+          <div className="hero-scroll-line" />
         </div>
       </section>
 
-      {/* TICKER */}
-      <div className="ticker"><div className="ticker-track">{[...Array(2)].map((_, i) => (<div key={i} className="ticker-slide">{c.tickerItems.map((item, j) => (<span key={`${i}-${j}`}><span className="ticker-item" style={{ fontFamily: headingFont }}>{item}</span><span className="ticker-dot" style={{ margin: '0 12px' }}>·</span></span>))}</div>))}</div></div>
+      {/* ── TICKER ── */}
+      <div className="ticker">
+        <div className="ticker-track">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="ticker-slide">
+              {c.tickerItems.map((item, j) => (
+                <span key={`${i}-${j}`}>
+                  <span className="ticker-item" style={{ fontFamily: headingFont }}>{item}</span>
+                  <span className="ticker-dot" style={{ margin: '0 16px' }}>·</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {/* FEATURED */}
-      <section className="section" data-section="featured" ref={(el) => (refs.current['featured'] = el)}>
+      {/* ── FEATURED — EDITORIAL MOMENT ── */}
+      <section
+        className="section"
+        data-section="featured"
+        ref={(el) => (refs.current['featured'] = el)}
+      >
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('featured') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.featuredLabel}</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('featured') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.featuredTitle}</h2>
+            <p
+              className={`section-label fade-up ${isVisible('featured') ? 'visible' : ''}`}
+              style={{ fontFamily: bodyFont }}
+            >
+              {c.featuredLabel}
+            </p>
+            <h2
+              className={`section-title fade-up stagger-1 ${isVisible('featured') ? 'visible' : ''}`}
+              style={{ fontFamily: headingFont }}
+            >
+              {c.featuredTitle}
+            </h2>
           </div>
-          <div className={`featured-grid fade-up stagger-2 ${isVisible('featured') ? 'visible' : ''}`}>
-            <div><div className="featured-image"><span style={{ fontSize: 48 }}>🧪</span><span className="featured-image-text">{c.featuredImageText}</span></div></div>
-            <div>
+
+          <div className={`featured-editorial fade-up stagger-2 ${isVisible('featured') ? 'visible' : ''}`}>
+            <div className="featured-editorial-number">01</div>
+            <div className="featured-editorial-content">
               <div className="featured-meta">
-                <span className="evidence-tag" style={{ background: c.articles[0].tagColor, fontFamily: bodyFont }}>{c.articles[0].tag}</span>
-                <span className="category-label" style={{ fontFamily: bodyFont }}>{c.articles[0].category}</span>
+                <span
+                  className="evidence-tag"
+                  style={{ background: c.articles[0].tagColor, fontFamily: bodyFont }}
+                >
+                  {c.articles[0].tag}
+                </span>
+                <span className="category-label" style={{ fontFamily: bodyFont }}>
+                  {c.articles[0].category}
+                </span>
               </div>
-              <h3 className="featured-title" style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.6 : undefined }}>{c.articles[0].title}</h3>
-              <p className="featured-excerpt" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{c.articles[0].excerpt}</p>
-              <div className="featured-footer"><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span><span style={{ color: '#ccc' }}>·</span><span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span></div>
-              <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>{c.readBtn}</a>
+              <h3
+                className="featured-title"
+                style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.7 : undefined }}
+              >
+                {c.articles[0].title}
+              </h3>
+              <p
+                className="featured-excerpt"
+                style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+              >
+                {c.articles[0].excerpt}
+              </p>
+              <div className="featured-footer">
+                <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span>
+                <span style={{ color: 'rgba(237,244,255,0.2)' }}>·</span>
+                <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span>
+              </div>
+              <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>
+                {c.readBtn}
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ARTICLES */}
-      <section className="section section-alt" data-section="articles" ref={(el) => (refs.current['articles'] = el)}>
+      {/* ── ARTICLES — EDITORIAL LIST ── */}
+      <section
+        className="section section-alt"
+        data-section="articles"
+        ref={(el) => (refs.current['articles'] = el)}
+      >
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('articles') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.archiveLabel}</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('articles') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.archiveTitle}</h2>
+            <p
+              className={`section-label fade-up ${isVisible('articles') ? 'visible' : ''}`}
+              style={{ fontFamily: bodyFont }}
+            >
+              {c.archiveLabel}
+            </p>
+            <h2
+              className={`section-title fade-up stagger-1 ${isVisible('articles') ? 'visible' : ''}`}
+              style={{ fontFamily: headingFont }}
+            >
+              {c.archiveTitle}
+            </h2>
           </div>
-          <div className="articles-grid">
+
+          <div className="articles-editorial">
             {c.articles.slice(1).map((article, i) => (
-              <div key={article.id} className={`article-card fade-up stagger-${i + 1} ${isVisible('articles') ? 'visible' : ''}`}>
-                <div className="article-card-inner">
-                  <span className="evidence-tag evidence-tag-sm" style={{ background: article.tagColor, fontFamily: bodyFont }}>{article.tag}</span>
-                  <span className="article-category" style={{ fontFamily: bodyFont }}>{article.category}</span>
-                  <h3 className="article-title" style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.6 : undefined }}>{article.title}</h3>
-                  <p className="article-excerpt" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{article.excerpt}</p>
-                  <div className="article-footer" style={{ fontFamily: bodyFont }}><span>{article.date}</span><span>{article.readTime}</span></div>
+              <div
+                key={article.id}
+                className={`article-editorial-item fade-up stagger-${i + 1} ${isVisible('articles') ? 'visible' : ''}`}
+              >
+                <div className="article-editorial-index">
+                  {String(i + 2).padStart(2, '0')}
+                </div>
+                <div className="article-editorial-body">
+                  <div className="article-editorial-meta">
+                    <span
+                      className="evidence-tag evidence-tag-sm"
+                      style={{ background: article.tagColor, fontFamily: bodyFont }}
+                    >
+                      {article.tag}
+                    </span>
+                    <span className="article-category" style={{ fontFamily: bodyFont }}>
+                      {article.category}
+                    </span>
+                  </div>
+                  <h3
+                    className="article-title"
+                    style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.7 : undefined }}
+                  >
+                    {article.title}
+                  </h3>
+                  <p
+                    className="article-excerpt"
+                    style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+                  >
+                    {article.excerpt}
+                  </p>
+                  <div className="article-footer" style={{ fontFamily: bodyFont }}>
+                    <span>{article.date}</span>
+                    <span>{article.readTime}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className={`view-all fade-up stagger-6 ${isVisible('articles') ? 'visible' : ''}`}><a href="#" className="nav-link" style={{ fontFamily: bodyFont }}>{c.viewAll}</a></div>
+
+          <div className={`view-all fade-up stagger-6 ${isVisible('articles') ? 'visible' : ''}`}>
+            <a href="#" className="cta-btn" style={{ fontFamily: bodyFont }}>
+              {c.viewAll}
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* PILLARS */}
-      <section className="section" data-section="pillars" ref={(el) => (refs.current['pillars'] = el)}>
+      {/* ── PILLARS ── */}
+      <section
+        className="section"
+        data-section="pillars"
+        ref={(el) => (refs.current['pillars'] = el)}
+      >
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('pillars') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.exploreLabel}</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('pillars') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.exploreTitle}</h2>
-            <p className={`section-subtitle fade-up stagger-2 ${isVisible('pillars') ? 'visible' : ''}`} style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined, maxWidth: isRtl ? 700 : undefined }}>{c.exploreSubtitle}</p>
+            <p
+              className={`section-label fade-up ${isVisible('pillars') ? 'visible' : ''}`}
+              style={{ fontFamily: bodyFont }}
+            >
+              {c.exploreLabel}
+            </p>
+            <h2
+              className={`section-title fade-up stagger-1 ${isVisible('pillars') ? 'visible' : ''}`}
+              style={{ fontFamily: headingFont }}
+            >
+              {c.exploreTitle}
+            </h2>
+            <p
+              className={`section-subtitle fade-up stagger-2 ${isVisible('pillars') ? 'visible' : ''}`}
+              style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+            >
+              {c.exploreSubtitle}
+            </p>
           </div>
           <div className="pillars-grid">
             {c.pillars.map((pillar, i) => (
-              <div key={i} className={`pillar-card fade-up stagger-${i + 1} ${isVisible('pillars') ? 'visible' : ''}`}>
+              <div
+                key={i}
+                className={`pillar-card fade-up stagger-${i + 1} ${isVisible('pillars') ? 'visible' : ''}`}
+              >
                 <span className="pillar-icon">{pillar.icon}</span>
                 <h3 className="pillar-name" style={{ fontFamily: headingFont }}>{pillar.name}</h3>
-                <p className="pillar-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.8 : undefined }}>{pillar.desc}</p>
+                <p className="pillar-desc" style={{ fontFamily: bodyFont }}>{pillar.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* METHODOLOGY */}
-      <section className="section section-dark" data-section="method" ref={(el) => (refs.current['method'] = el)}>
+      {/* ── METHODOLOGY ── */}
+      <section
+        className="section section-dark"
+        data-section="method"
+        ref={(el) => (refs.current['method'] = el)}
+      >
         <div className="container">
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('method') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.methodLabel}</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('method') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.methodTitle}</h2>
+            <p
+              className={`section-label fade-up ${isVisible('method') ? 'visible' : ''}`}
+              style={{ fontFamily: bodyFont }}
+            >
+              {c.methodLabel}
+            </p>
+            <h2
+              className={`section-title fade-up stagger-1 ${isVisible('method') ? 'visible' : ''}`}
+              style={{ fontFamily: headingFont }}
+            >
+              {c.methodTitle}
+            </h2>
           </div>
           <div className={`method-grid fade-up stagger-2 ${isVisible('method') ? 'visible' : ''}`}>
-            {c.evidence.map((item) => (<div key={item.level} className="method-card"><div className="method-dot" style={{ background: item.color }} /><h4 className="method-level" style={{ fontFamily: headingFont }}>{item.level}</h4><p className="method-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 1.9 : undefined }}>{item.desc}</p></div>))}
+            {c.evidence.map((item) => (
+              <div key={item.level} className="method-card">
+                <div className="method-dot" style={{ background: item.color }} />
+                <h4 className="method-level" style={{ fontFamily: headingFont }}>{item.level}</h4>
+                <p className="method-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* NEWSLETTER */}
-      <section className="section section-green" data-section="newsletter" ref={(el) => (refs.current['newsletter'] = el)}>
+      {/* ── NEWSLETTER ── */}
+      <section
+        className="section section-green"
+        data-section="newsletter"
+        ref={(el) => (refs.current['newsletter'] = el)}
+      >
         <div className="container">
           <div className={`newsletter-inner fade-up ${isVisible('newsletter') ? 'visible' : ''}`}>
-            <h2 className="newsletter-title" style={{ fontFamily: headingFont }}>{c.newsletterTitle}</h2>
-            <p className="newsletter-desc" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>{c.newsletterDesc}</p>
+            <h2 className="newsletter-title" style={{ fontFamily: headingFont }}>
+              {c.newsletterTitle}
+            </h2>
+            <p
+              className="newsletter-desc"
+              style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+            >
+              {c.newsletterDesc}
+            </p>
             <form onSubmit={handleSubscribe} className="newsletter-form">
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={c.emailPlaceholder} required style={{ direction: 'ltr', textAlign: isRtl ? 'right' : 'left' }} />
-              <button type="submit" className="newsletter-btn" style={{ fontFamily: bodyFont }}>{subscribed ? c.subscribedBtnAlt : c.subscribeBtn}</button>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={c.emailPlaceholder}
+                required
+                style={{ direction: 'ltr', textAlign: isRtl ? 'right' : 'left' }}
+              />
+              <button type="submit" className="newsletter-btn" style={{ fontFamily: bodyFont }}>
+                {subscribed ? c.subscribedBtnAlt : c.subscribeBtn}
+              </button>
             </form>
             <p className="newsletter-meta" style={{ fontFamily: bodyFont }}>{c.newsletterMeta}</p>
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="section" data-section="about" ref={(el) => (refs.current['about'] = el)}>
-        <div className="container" style={{ maxWidth: 680 }}>
+      {/* ── ABOUT ── */}
+      <section
+        className="section section-alt"
+        data-section="about"
+        ref={(el) => (refs.current['about'] = el)}
+      >
+        <div className="container" style={{ maxWidth: 700 }}>
           <div className="section-header">
-            <p className={`section-label fade-up ${isVisible('about') ? 'visible' : ''}`} style={{ fontFamily: bodyFont }}>{c.aboutLabel}</p>
-            <h2 className={`section-title fade-up stagger-1 ${isVisible('about') ? 'visible' : ''}`} style={{ fontFamily: headingFont }}>{c.aboutTitle}</h2>
+            <p
+              className={`section-label fade-up ${isVisible('about') ? 'visible' : ''}`}
+              style={{ fontFamily: bodyFont }}
+            >
+              {c.aboutLabel}
+            </p>
+            <h2
+              className={`section-title fade-up stagger-1 ${isVisible('about') ? 'visible' : ''}`}
+              style={{ fontFamily: headingFont }}
+            >
+              {c.aboutTitle}
+            </h2>
           </div>
           <div className={`fade-up stagger-2 ${isVisible('about') ? 'visible' : ''}`}>
-            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.1 : undefined }}>{c.aboutP1}</p>
-            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.1 : undefined }}>{c.aboutP2}</p>
-            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.1 : undefined }}>{c.aboutP3}</p>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP1}</p>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP2}</p>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP3}</p>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="container">
           <div className="footer-grid">
             <div>
-              <span className="footer-logo">fen<span style={{ color: '#52b788' }}>.</span></span>
-              <p className="footer-tagline" style={{ fontFamily: bodyFont, whiteSpace: 'pre-line', lineHeight: isRtl ? 2 : undefined }}>{c.footerTagline}</p>
+              <span className="footer-logo">
+                fen<span style={{ color: '#00C4A0' }}>.</span>
+              </span>
+              <p
+                className="footer-tagline"
+                style={{ fontFamily: bodyFont, whiteSpace: 'pre-line', lineHeight: isRtl ? 2 : undefined }}
+              >
+                {c.footerTagline}
+              </p>
             </div>
-            <div><h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerExplore}</h4>{c.footerExploreLinks.map((link, i) => (<a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>))}</div>
-            <div><h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerTopics}</h4>{c.footerTopicLinks.map((link, i) => (<a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>))}</div>
-            <div><h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerConnect}</h4>{c.footerConnectLinks.map((link, i) => (<a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>))}</div>
+            <div>
+              <h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerExplore}</h4>
+              {c.footerExploreLinks.map((link, i) => (
+                <a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>
+              ))}
+            </div>
+            <div>
+              <h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerTopics}</h4>
+              {c.footerTopicLinks.map((link, i) => (
+                <a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>
+              ))}
+            </div>
+            <div>
+              <h4 className="footer-heading" style={{ fontFamily: bodyFont }}>{c.footerConnect}</h4>
+              {c.footerConnectLinks.map((link, i) => (
+                <a key={i} href="#" style={{ fontFamily: bodyFont }}>{link}</a>
+              ))}
+            </div>
           </div>
           <div className="footer-bottom">
-            <p className="footer-disclaimer" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}>{c.footerDisclaimer}</p>
+            <p
+              className="footer-disclaimer"
+              style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+            >
+              {c.footerDisclaimer}
+            </p>
             <p className="footer-copy" style={{ fontFamily: bodyFont }}>{c.footerCopy}</p>
           </div>
         </div>
       </footer>
+
     </div>
   );
 }
