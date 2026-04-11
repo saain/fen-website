@@ -1262,14 +1262,16 @@ body {
 
   .section { padding: 64px 20px; }
 
-  .featured-editorial { grid-template-columns: 1fr; gap: 24px; }
+  .featured-editorial { grid-template-columns: 1fr; gap: 20px; }
   .featured-editorial-number { display: none; }
-  .featured-editorial-image { display: none; }
+  .featured-editorial-image { display: block; width: 100%; height: 220px; aspect-ratio: unset; order: -1; }
+  .featured-editorial-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
   .featured-title { font-size: 28px !important; }
 
   .article-editorial-item { grid-template-columns: 1fr; gap: 0; }
   .article-editorial-index { display: none; }
-  .article-thumbnail { display: none; }
+  .article-thumbnail { display: block; width: 100%; height: 180px; order: -1; margin-bottom: 14px; }
+  .article-thumbnail img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
   .article-editorial-item { padding: 28px 0; }
 
   .pillars-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
