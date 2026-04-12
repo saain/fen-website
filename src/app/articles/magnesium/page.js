@@ -237,18 +237,19 @@ function MagnesiumArticleInner() {
   const lh = isRtl ? 2.3 : 1.85;
   const hlh = isRtl ? 1.7 : 1.15;
 
-  /* Dark-theme palette */
-  const TEXT_PRIMARY   = '#EDF4FF';
-  const TEXT_BODY      = 'rgba(237, 244, 255, 0.92)';
-  const TEXT_SECONDARY = 'rgba(237, 244, 255, 0.78)';
-  const TEXT_MUTED     = 'rgba(237, 244, 255, 0.60)';
-  const TEXT_EVIDENCE  = 'rgba(237, 244, 255, 0.85)';
-  const BORDER_SUBTLE  = 'rgba(237, 244, 255, 0.08)';
-  const BORDER_MED     = 'rgba(237, 244, 255, 0.12)';
-  const BG_TAKEAWAY    = 'rgba(0, 196, 160, 0.10)';
-  const BG_DISCLAIMER  = 'rgba(237, 244, 255, 0.04)';
-  const BG_EVIDENCE    = 'rgba(237, 244, 255, 0.03)';
-  const TEAL           = '#00C4A0';
+  /* Light cream reading palette */
+  const PAGE_BG        = '#FAF8F4';
+  const TEXT_PRIMARY   = '#1C1C1E';
+  const TEXT_BODY      = '#3A3A3C';
+  const TEXT_SECONDARY = '#555555';
+  const TEXT_MUTED     = '#888888';
+  const TEXT_EVIDENCE  = '#444444';
+  const BORDER_SUBTLE  = 'rgba(0, 0, 0, 0.07)';
+  const BORDER_MED     = 'rgba(0, 0, 0, 0.11)';
+  const BG_TAKEAWAY    = '#EAF4F0';
+  const BG_DISCLAIMER  = '#F0EDE8';
+  const BG_EVIDENCE    = 'rgba(0, 0, 0, 0.02)';
+  const TEAL           = '#0D7A6A';
 
   const Sec = ({ title, ps, ev }) => (
     <div style={{ marginBottom: 40 }}>
@@ -277,7 +278,7 @@ function MagnesiumArticleInner() {
   );
 
   return (
-    <div dir={isRtl ? 'rtl' : 'ltr'} style={{ fontFamily: bf }}>
+    <div dir={isRtl ? 'rtl' : 'ltr'} style={{ fontFamily: bf, background: PAGE_BG, minHeight: '100vh' }}>
       <nav className="nav">
         <div className="nav-inner">
           <div>
@@ -291,7 +292,7 @@ function MagnesiumArticleInner() {
             </a>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
-              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: `1px solid ${BORDER_MED}`, borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: TEXT_PRIMARY }}
+              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#EDF4FF' }}
             >
               {lang === 'en' ? 'ދިވެހި' : 'English'}
             </button>
@@ -299,7 +300,7 @@ function MagnesiumArticleInner() {
         </div>
       </nav>
 
-      <article style={{ maxWidth: 720, margin: '0 auto', padding: '60px 32px 100px' }}>
+      <article style={{ maxWidth: 720, margin: '0 auto', padding: '60px 32px 100px', background: PAGE_BG }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
             <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
