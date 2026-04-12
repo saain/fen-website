@@ -252,11 +252,11 @@ function MagnesiumArticleInner() {
 
   const Sec = ({ title, ps, ev }) => (
     <div style={{ marginBottom: 40 }}>
-      <h2 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
+      <h2 style={{ fontFamily: hf, fontSize: isRtl ? 26 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
         {title}
       </h2>
       {ps.map((p, i) => (
-        <p key={i} style={{ fontFamily: bf, fontSize: isRtl ? 15 : 16, lineHeight: lh, color: TEXT_BODY, marginBottom: 18, fontWeight: 300 }}>
+        <p key={i} style={{ fontFamily: bf, fontSize: isRtl ? 17 : 16, lineHeight: lh, color: TEXT_BODY, marginBottom: 18, fontWeight: 300 }}>
           {p}
         </p>
       ))}
@@ -264,10 +264,10 @@ function MagnesiumArticleInner() {
         <div style={{ background: BG_EVIDENCE, border: `1px solid ${ev.color}40`, borderRadius: 8, padding: '16px 20px', marginBottom: 20, display: 'flex', alignItems: 'flex-start', gap: 12 }}>
           <div style={{ width: 10, height: 10, borderRadius: '50%', background: ev.color, marginTop: 6, flexShrink: 0 }} />
           <div>
-            <span style={{ fontSize: 12, fontWeight: 600, color: ev.color, display: 'block', marginBottom: 4, fontFamily: bf }}>
+            <span style={{ fontSize: isRtl ? 14 : 12, fontWeight: 600, color: ev.color, display: 'block', marginBottom: 4, fontFamily: bf }}>
               {ev.level}
             </span>
-            <span style={{ fontSize: 13, lineHeight: isRtl ? 2 : 1.7, color: TEXT_EVIDENCE, fontWeight: 300, fontFamily: bf }}>
+            <span style={{ fontSize: isRtl ? 15 : 13, lineHeight: isRtl ? 2.2 : 1.7, color: TEXT_EVIDENCE, fontWeight: 300, fontFamily: bf }}>
               {ev.text}
             </span>
           </div>
@@ -309,10 +309,10 @@ function MagnesiumArticleInner() {
               {c.category}
             </span>
           </div>
-          <h1 style={{ fontFamily: hf, fontSize: isRtl ? 30 : 44, fontWeight: 400, lineHeight: hlh, letterSpacing: '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: hf, fontSize: isRtl ? 34 : 44, fontWeight: 400, lineHeight: hlh, letterSpacing: isRtl ? 0 : '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
             {c.title}
           </h1>
-          <p style={{ fontSize: isRtl ? 15 : 17, lineHeight: lh, color: TEXT_SECONDARY, fontWeight: 300, marginBottom: 20, fontFamily: bf }}>
+          <p style={{ fontSize: isRtl ? 18 : 17, lineHeight: lh, color: TEXT_SECONDARY, fontWeight: 300, marginBottom: 20, fontFamily: bf }}>
             {c.subtitle}
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', fontSize: 13, color: TEXT_MUTED, fontWeight: 300, paddingBottom: 24, borderBottom: `1px solid ${BORDER_MED}`, fontFamily: bf }}>
@@ -325,12 +325,12 @@ function MagnesiumArticleInner() {
         </div>
 
         <div style={{ background: BG_TAKEAWAY, borderRadius: 8, padding: 28, marginBottom: 40, borderLeft: isRtl ? 'none' : `4px solid ${TEAL}`, borderRight: isRtl ? `4px solid ${TEAL}` : 'none' }}>
-          <h3 style={{ fontFamily: hf, fontSize: isRtl ? 18 : 22, marginBottom: 14, color: TEAL }}>
+          <h3 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 22, marginBottom: 14, color: TEAL }}>
             {c.keyTitle}
           </h3>
           <ul style={{ paddingLeft: isRtl ? 0 : 20, paddingRight: isRtl ? 20 : 0, listStyle: 'disc' }}>
             {c.keys.map((k, i) => (
-              <li key={i} style={{ fontSize: 14, lineHeight: isRtl ? 2.4 : 1.8, color: TEXT_BODY, marginBottom: 8, fontFamily: bf }}>
+              <li key={i} style={{ fontSize: isRtl ? 16 : 14, lineHeight: isRtl ? 2.4 : 1.8, color: TEXT_BODY, marginBottom: 8, fontFamily: bf }}>
                 {k}
               </li>
             ))}
@@ -344,16 +344,16 @@ function MagnesiumArticleInner() {
         <Sec title={c.s5t} ps={c.s5} ev={c.s5e} />
 
         <div style={{ marginBottom: 40 }}>
-          <h2 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
+          <h2 style={{ fontFamily: hf, fontSize: isRtl ? 26 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
             {c.s6t}
           </h2>
           {c.s6.map((p, i) => (
-            <p key={i} style={{ fontFamily: bf, fontSize: isRtl ? 15 : 16, lineHeight: lh, color: TEXT_BODY, marginBottom: 18, fontWeight: 300 }}>
+            <p key={i} style={{ fontFamily: bf, fontSize: isRtl ? 17 : 16, lineHeight: lh, color: TEXT_BODY, marginBottom: 18, fontWeight: 300 }}>
               {p}
             </p>
           ))}
           <div style={{ overflowX: 'auto', marginBottom: 28 }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, fontFamily: bf }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: isRtl ? 15 : 14, fontFamily: bf }}>
               <thead>
                 <tr style={{ borderBottom: `2px solid rgba(0, 196, 160, 0.50)` }}>
                   {c.tHead.map((h, i) => (
@@ -376,7 +376,7 @@ function MagnesiumArticleInner() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontFamily: bf, fontSize: isRtl ? 15 : 16, lineHeight: lh, color: TEXT_BODY, marginBottom: 18, fontWeight: 300 }}>
+          <p style={{ fontFamily: bf, fontSize: isRtl ? 17 : 16, lineHeight: lh, color: TEXT_BODY, marginBottom: 18, fontWeight: 300 }}>
             {c.s6after}
           </p>
         </div>
@@ -385,7 +385,7 @@ function MagnesiumArticleInner() {
         <Sec title={c.s8t} ps={c.s8} />
 
         <div style={{ marginTop: 60, paddingTop: 32, borderTop: `2px solid ${BORDER_MED}` }}>
-          <h3 style={{ fontFamily: hf, fontSize: isRtl ? 20 : 26, marginBottom: 20, color: TEXT_PRIMARY }}>
+          <h3 style={{ fontFamily: hf, fontSize: isRtl ? 24 : 26, marginBottom: 20, color: TEXT_PRIMARY }}>
             {c.refsTitle}
           </h3>
           <ol style={{ paddingLeft: isRtl ? 0 : 24, paddingRight: isRtl ? 24 : 0, fontFamily: "'DM Sans',sans-serif" }}>
@@ -397,7 +397,7 @@ function MagnesiumArticleInner() {
           </ol>
         </div>
 
-        <div style={{ marginTop: 40, padding: 20, background: BG_DISCLAIMER, border: `1px solid ${BORDER_SUBTLE}`, borderRadius: 8, fontSize: 13, lineHeight: isRtl ? 2.2 : 1.7, color: TEXT_SECONDARY, fontStyle: 'italic', fontFamily: bf }}>
+        <div style={{ marginTop: 40, padding: 20, background: BG_DISCLAIMER, border: `1px solid ${BORDER_SUBTLE}`, borderRadius: 8, fontSize: isRtl ? 15 : 13, lineHeight: isRtl ? 2.2 : 1.7, color: TEXT_SECONDARY, fontStyle: 'italic', fontFamily: bf }}>
           <strong style={{ fontStyle: 'normal', color: TEXT_PRIMARY }}>
             {c.discL}{' '}
           </strong>
