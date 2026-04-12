@@ -24,6 +24,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Aammufk';
+  src: url('/fonts/aammufk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap');
 
 * {
@@ -1020,8 +1028,9 @@ body {
 }
 
 [dir="rtl"] .hero-title {
-  font-size: 40px !important;
-  line-height: 1.8 !important;
+  font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
+  font-size: 52px !important;
+  line-height: 1.75 !important;
   letter-spacing: 0;
   margin-bottom: 32px;
 }
@@ -1047,7 +1056,8 @@ body {
 }
 
 [dir="rtl"] .section-title {
-  font-size: 34px !important;
+  font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
+  font-size: 42px !important;
   line-height: 1.7 !important;
   letter-spacing: 0;
 }
@@ -1059,8 +1069,9 @@ body {
 }
 
 [dir="rtl"] .featured-title {
-  font-size: 28px !important;
-  line-height: 1.9 !important;
+  font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
+  font-size: 36px !important;
+  line-height: 1.85 !important;
   margin-bottom: 20px;
 }
 
@@ -1098,8 +1109,9 @@ body {
 }
 
 [dir="rtl"] .article-title {
-  font-size: 20px !important;
-  line-height: 1.9 !important;
+  font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.85 !important;
   margin-bottom: 14px;
 }
 
@@ -1233,8 +1245,8 @@ body {
 
 /* RTL mobile */
 @media (max-width: 768px) {
-  [dir="rtl"] .hero-title { font-size: 32px !important; }
-  [dir="rtl"] .section-title { font-size: 26px !important; }
+  [dir="rtl"] .hero-title { font-family: 'Aammufk','Faruma',Tahoma,sans-serif !important; font-size: 38px !important; }
+  [dir="rtl"] .section-title { font-family: 'Aammufk','Faruma',Tahoma,sans-serif !important; font-size: 30px !important; }
   [dir="rtl"] .newsletter-title { font-size: 26px !important; }
   [dir="rtl"] .pillars-grid { grid-template-columns: 1fr !important; }
   [dir="rtl"] .ticker-item { font-size: 36px !important; }

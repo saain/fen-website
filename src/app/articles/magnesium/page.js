@@ -242,7 +242,7 @@ function MagnesiumArticleInner() {
   const c = lang === 'en' ? en : dv;
   const isRtl = lang === 'dv';
   const bf = isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif";
-  const hf = isRtl ? "'Faruma','MV Waheed',Tahoma,serif" : "'Instrument Serif',serif";
+  const hf = isRtl ? "'Aammufk','Faruma','MV Waheed',Tahoma,sans-serif" : "'Instrument Serif',serif";
   const lh = isRtl ? 2.3 : 1.85;
   const hlh = isRtl ? 1.7 : 1.15;
 
@@ -263,7 +263,7 @@ function MagnesiumArticleInner() {
 
   const Sec = ({ title, ps, ev }) => (
     <div style={{ marginBottom: 40 }}>
-      <h2 style={{ fontFamily: hf, fontSize: isRtl ? 26 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
+      <h2 style={{ fontFamily: hf, fontSize: isRtl ? 32 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
         {title}
       </h2>
       {ps.map((p, i) => (
@@ -346,7 +346,7 @@ function MagnesiumArticleInner() {
               {c.category}
             </span>
           </div>
-          <h1 style={{ fontFamily: hf, fontSize: isRtl ? 34 : 44, fontWeight: 400, lineHeight: hlh, letterSpacing: isRtl ? 0 : '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: hf, fontSize: isRtl ? 42 : 44, fontWeight: 400, lineHeight: hlh, letterSpacing: isRtl ? 0 : '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
             {c.title}
           </h1>
           <p style={{ fontSize: isRtl ? 18 : 17, lineHeight: lh, color: TEXT_SECONDARY, fontWeight: 300, marginBottom: 20, fontFamily: bf }}>
@@ -381,7 +381,7 @@ function MagnesiumArticleInner() {
         <Sec title={c.s5t} ps={c.s5} ev={c.s5e} />
 
         <div style={{ marginBottom: 40 }}>
-          <h2 style={{ fontFamily: hf, fontSize: isRtl ? 26 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
+          <h2 style={{ fontFamily: hf, fontSize: isRtl ? 32 : 28, lineHeight: isRtl ? 1.8 : 1.2, color: TEXT_PRIMARY, marginBottom: 18, paddingBottom: 10, borderBottom: `1px solid ${BORDER_SUBTLE}` }}>
             {c.s6t}
           </h2>
           {c.s6.map((p, i) => (
