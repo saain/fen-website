@@ -302,27 +302,29 @@ function MagnesiumArticleInner() {
             </a>
             <button
               onClick={toggleWarm}
-              title={warm ? 'Blue light filter ON — tap to turn off' : 'Turn on blue light filter for better sleep'}
+              title={warm ? 'Blue Light Blocker is active — tap to turn off' : 'Activate Blue Light Blocker for easier reading at night'}
               style={{
-                fontSize: 11,
-                background: warm ? 'rgba(180,60,20,0.30)' : 'rgba(237,244,255,0.08)',
-                border: warm ? '1px solid rgba(200,80,30,0.55)' : '1px solid rgba(237,244,255,0.20)',
-                borderRadius: 4,
-                padding: '6px 10px',
+                fontSize: 12,
+                background: warm ? 'rgba(160,80,20,0.22)' : 'transparent',
+                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(237,244,255,0.18)',
+                borderRadius: 20,
+                padding: '6px 13px',
                 cursor: 'pointer',
-                color: warm ? '#FFCDB8' : '#EDF4FF',
+                color: warm ? '#F5C9A0' : 'rgba(237,244,255,0.70)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 5,
+                gap: 6,
                 fontFamily: "'DM Sans',sans-serif",
-                letterSpacing: '0.03em',
-                fontWeight: warm ? 500 : 400,
-                transition: 'all 0.25s',
+                letterSpacing: '0.04em',
+                fontWeight: 400,
+                transition: 'all 0.3s ease',
                 whiteSpace: 'nowrap',
+                boxShadow: warm ? '0 0 12px rgba(180,90,20,0.25)' : 'none',
               }}
             >
-              <span style={{ fontSize: 13 }}>🔴</span>
-              <span>{warm ? 'Filter: ON' : 'BL Filter'}</span>
+              <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
+              <span>Blue Light Blocker</span>
+              {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
