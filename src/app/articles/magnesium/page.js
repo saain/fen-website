@@ -346,7 +346,7 @@ function MagnesiumArticleInner() {
               {c.category}
             </span>
           </div>
-          <h1 style={{ fontFamily: hf, fontSize: isRtl ? 42 : 44, fontWeight: isRtl ? 700 : 400, lineHeight: hlh, letterSpacing: isRtl ? 0 : '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
+          <h1 style={{ fontFamily: hf, fontSize: isRtl ? 52 : 44, fontWeight: isRtl ? 700 : 400, lineHeight: isRtl ? '76px' : hlh, letterSpacing: isRtl ? 0 : '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
             {c.title}
           </h1>
           <p style={{ fontSize: isRtl ? 18 : 17, lineHeight: lh, color: TEXT_SECONDARY, fontWeight: 300, marginBottom: 20, fontFamily: bf }}>
