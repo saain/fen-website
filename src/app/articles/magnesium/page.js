@@ -242,7 +242,7 @@ function MagnesiumArticleInner() {
   const c = lang === 'en' ? en : dv;
   const isRtl = lang === 'dv';
   const bf = isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif";
-  const hf = isRtl ? "'Aammufk','Faruma','MV Waheed',Tahoma,sans-serif" : "'Instrument Serif',serif";
+  const hf = isRtl ? "'MVWaheed','Faruma','MV Waheed',Tahoma,sans-serif" : "'Instrument Serif',serif";
   const lh = isRtl ? 2.3 : 1.85;
   const hlh = isRtl ? 1.7 : 1.15;
 
