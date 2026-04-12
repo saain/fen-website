@@ -1030,6 +1030,7 @@ body {
 [dir="rtl"] .hero-title {
   font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
   font-size: 52px !important;
+  font-weight: 700 !important;
   line-height: 1.75 !important;
   letter-spacing: 0;
   margin-bottom: 32px;
@@ -1058,6 +1059,7 @@ body {
 [dir="rtl"] .section-title {
   font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
   font-size: 42px !important;
+  font-weight: 700 !important;
   line-height: 1.7 !important;
   letter-spacing: 0;
 }
@@ -1071,6 +1073,7 @@ body {
 [dir="rtl"] .featured-title {
   font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
   font-size: 36px !important;
+  font-weight: 700 !important;
   line-height: 1.85 !important;
   margin-bottom: 20px;
 }
@@ -1111,6 +1114,7 @@ body {
 [dir="rtl"] .article-title {
   font-family: 'Aammufk', 'Faruma', Tahoma, sans-serif !important;
   font-size: 26px !important;
+  font-weight: 700 !important;
   line-height: 1.85 !important;
   margin-bottom: 14px;
 }
