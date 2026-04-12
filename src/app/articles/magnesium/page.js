@@ -296,36 +296,37 @@ function MagnesiumArticleInner() {
               fen<span className="logo-dot">.</span>
             </a>
           </div>
-          <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <a className="nav-link" href="/" style={{ fontFamily: bf }}>
-              {c.back}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(237,244,255,0.60)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+              {isRtl ? 'ފުރަތަމަ ←' : '← Home'}
             </a>
             <button
               onClick={toggleWarm}
-              title={warm ? 'Blue light filter is ON — tap to turn off' : 'Turn on blue light filter for better sleep'}
+              title={warm ? 'Blue light filter ON — tap to turn off' : 'Turn on blue light filter for better sleep'}
               style={{
-                fontSize: 12,
-                background: warm ? 'rgba(180,60,20,0.28)' : 'rgba(237,244,255,0.08)',
+                fontSize: 11,
+                background: warm ? 'rgba(180,60,20,0.30)' : 'rgba(237,244,255,0.08)',
                 border: warm ? '1px solid rgba(200,80,30,0.55)' : '1px solid rgba(237,244,255,0.20)',
                 borderRadius: 4,
-                padding: '6px 12px',
+                padding: '6px 10px',
                 cursor: 'pointer',
                 color: warm ? '#FFCDB8' : '#EDF4FF',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 6,
+                gap: 5,
                 fontFamily: "'DM Sans',sans-serif",
                 letterSpacing: '0.03em',
                 fontWeight: warm ? 500 : 400,
                 transition: 'all 0.25s',
+                whiteSpace: 'nowrap',
               }}
             >
-              <span style={{ fontSize: 14 }}>🔴</span>
-              <span>{warm ? 'Blue Light Filter: ON' : 'Blue Light Filter'}</span>
+              <span style={{ fontSize: 13 }}>🔴</span>
+              <span>{warm ? 'Filter: ON' : 'BL Filter'}</span>
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
-              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#EDF4FF' }}
+              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 12px', cursor: 'pointer', color: '#EDF4FF', whiteSpace: 'nowrap' }}
             >
               {lang === 'en' ? 'ދިވެހި' : 'English'}
             </button>
@@ -333,7 +334,7 @@ function MagnesiumArticleInner() {
         </div>
       </nav>
 
-      <article style={{ maxWidth: 720, margin: '0 auto', padding: '60px 32px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
+      <article style={{ maxWidth: 720, margin: '0 auto', padding: '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
             <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
