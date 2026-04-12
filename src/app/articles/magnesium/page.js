@@ -246,20 +246,20 @@ function MagnesiumArticleInner() {
   const lh = isRtl ? 2.3 : 1.85;
   const hlh = isRtl ? 1.7 : 1.15;
 
-  /* Palette — switches between cream (normal) and amber (warm/low blue light) */
-  const PAGE_BG        = warm ? '#FDF3E3' : '#FAF8F4';
-  const TEXT_PRIMARY   = warm ? '#1C1209' : '#1C1C1E';
-  const TEXT_BODY      = warm ? '#3D2B1F' : '#3A3A3C';
-  const TEXT_SECONDARY = warm ? '#6B4C35' : '#555555';
-  const TEXT_MUTED     = warm ? '#9C7A62' : '#888888';
-  const TEXT_EVIDENCE  = warm ? '#4A3020' : '#444444';
-  const BORDER_SUBTLE  = warm ? 'rgba(120,70,20,0.10)' : 'rgba(0,0,0,0.07)';
-  const BORDER_MED     = warm ? 'rgba(120,70,20,0.16)' : 'rgba(0,0,0,0.11)';
-  const BG_TAKEAWAY    = warm ? '#F5E6CC' : '#EAF4F0';
-  const BG_DISCLAIMER  = warm ? '#F0E0C8' : '#F0EDE8';
-  const BG_EVIDENCE    = warm ? 'rgba(120,70,20,0.04)' : 'rgba(0,0,0,0.02)';
-  const TEAL           = warm ? '#9C5A1D' : '#0D7A6A';
-  const IMG_FILTER     = warm ? 'sepia(0.30) saturate(0.85) brightness(0.96)' : 'none';
+  /* Palette — switches between cream (normal) and red-shifted (blue light filter) */
+  const PAGE_BG        = warm ? '#FCE4D0' : '#FAF8F4';
+  const TEXT_PRIMARY   = warm ? '#1C0A06' : '#1C1C1E';
+  const TEXT_BODY      = warm ? '#3D1A10' : '#3A3A3C';
+  const TEXT_SECONDARY = warm ? '#6B3020' : '#555555';
+  const TEXT_MUTED     = warm ? '#9C5540' : '#888888';
+  const TEXT_EVIDENCE  = warm ? '#4A2010' : '#444444';
+  const BORDER_SUBTLE  = warm ? 'rgba(150,50,20,0.12)' : 'rgba(0,0,0,0.07)';
+  const BORDER_MED     = warm ? 'rgba(150,50,20,0.20)' : 'rgba(0,0,0,0.11)';
+  const BG_TAKEAWAY    = warm ? '#F5CEBC' : '#EAF4F0';
+  const BG_DISCLAIMER  = warm ? '#F0C8B8' : '#F0EDE8';
+  const BG_EVIDENCE    = warm ? 'rgba(150,50,20,0.05)' : 'rgba(0,0,0,0.02)';
+  const TEAL           = warm ? '#A03A18' : '#0D7A6A';
+  const IMG_FILTER     = warm ? 'sepia(0.45) saturate(0.80) brightness(0.94)' : 'none';
 
   const Sec = ({ title, ps, ev }) => (
     <div style={{ marginBottom: 40 }}>
@@ -302,25 +302,26 @@ function MagnesiumArticleInner() {
             </a>
             <button
               onClick={toggleWarm}
-              title={warm ? 'Switch to normal mode' : 'Switch to warm / low blue light mode'}
+              title={warm ? 'Blue light filter is ON — tap to turn off' : 'Turn on blue light filter for better sleep'}
               style={{
-                fontSize: 13,
-                background: warm ? 'rgba(180,100,30,0.18)' : 'rgba(237,244,255,0.08)',
-                border: warm ? '1px solid rgba(180,100,30,0.40)' : '1px solid rgba(237,244,255,0.20)',
+                fontSize: 12,
+                background: warm ? 'rgba(180,60,20,0.28)' : 'rgba(237,244,255,0.08)',
+                border: warm ? '1px solid rgba(200,80,30,0.55)' : '1px solid rgba(237,244,255,0.20)',
                 borderRadius: 4,
                 padding: '6px 12px',
                 cursor: 'pointer',
-                color: '#EDF4FF',
+                color: warm ? '#FFCDB8' : '#EDF4FF',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
                 fontFamily: "'DM Sans',sans-serif",
-                letterSpacing: '0.02em',
-                transition: 'all 0.2s',
+                letterSpacing: '0.03em',
+                fontWeight: warm ? 500 : 400,
+                transition: 'all 0.25s',
               }}
             >
-              <span style={{ fontSize: 15 }}>{warm ? '🔆' : '🌙'}</span>
-              <span>{warm ? 'Warm' : 'Normal'}</span>
+              <span style={{ fontSize: 14 }}>🔴</span>
+              <span>{warm ? 'Blue Light Filter: ON' : 'Blue Light Filter'}</span>
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
