@@ -217,17 +217,26 @@ const refs = [
 
 function MagnesiumArticleInner() {
   const [lang, setLang] = useState('en');
+  const [warm, setWarm] = useState(false);
 
   useEffect(() => {
     try {
-      const saved = window.sessionStorage.getItem('fen-lang');
-      if (saved === 'dv') setLang('dv');
+      const savedLang = window.sessionStorage.getItem('fen-lang');
+      if (savedLang === 'dv') setLang('dv');
+      const savedWarm = window.localStorage.getItem('fen-warm');
+      if (savedWarm === 'true') setWarm(true);
     } catch(e) {}
   }, []);
 
   const changeLang = (newLang) => {
     setLang(newLang);
     try { window.sessionStorage.setItem('fen-lang', newLang); } catch(e) {}
+  };
+
+  const toggleWarm = () => {
+    const next = !warm;
+    setWarm(next);
+    try { window.localStorage.setItem('fen-warm', String(next)); } catch(e) {}
   };
 
   const c = lang === 'en' ? en : dv;
@@ -237,19 +246,20 @@ function MagnesiumArticleInner() {
   const lh = isRtl ? 2.3 : 1.85;
   const hlh = isRtl ? 1.7 : 1.15;
 
-  /* Light cream reading palette */
-  const PAGE_BG        = '#FAF8F4';
-  const TEXT_PRIMARY   = '#1C1C1E';
-  const TEXT_BODY      = '#3A3A3C';
-  const TEXT_SECONDARY = '#555555';
-  const TEXT_MUTED     = '#888888';
-  const TEXT_EVIDENCE  = '#444444';
-  const BORDER_SUBTLE  = 'rgba(0, 0, 0, 0.07)';
-  const BORDER_MED     = 'rgba(0, 0, 0, 0.11)';
-  const BG_TAKEAWAY    = '#EAF4F0';
-  const BG_DISCLAIMER  = '#F0EDE8';
-  const BG_EVIDENCE    = 'rgba(0, 0, 0, 0.02)';
-  const TEAL           = '#0D7A6A';
+  /* Palette — switches between cream (normal) and amber (warm/low blue light) */
+  const PAGE_BG        = warm ? '#FDF3E3' : '#FAF8F4';
+  const TEXT_PRIMARY   = warm ? '#1C1209' : '#1C1C1E';
+  const TEXT_BODY      = warm ? '#3D2B1F' : '#3A3A3C';
+  const TEXT_SECONDARY = warm ? '#6B4C35' : '#555555';
+  const TEXT_MUTED     = warm ? '#9C7A62' : '#888888';
+  const TEXT_EVIDENCE  = warm ? '#4A3020' : '#444444';
+  const BORDER_SUBTLE  = warm ? 'rgba(120,70,20,0.10)' : 'rgba(0,0,0,0.07)';
+  const BORDER_MED     = warm ? 'rgba(120,70,20,0.16)' : 'rgba(0,0,0,0.11)';
+  const BG_TAKEAWAY    = warm ? '#F5E6CC' : '#EAF4F0';
+  const BG_DISCLAIMER  = warm ? '#F0E0C8' : '#F0EDE8';
+  const BG_EVIDENCE    = warm ? 'rgba(120,70,20,0.04)' : 'rgba(0,0,0,0.02)';
+  const TEAL           = warm ? '#9C5A1D' : '#0D7A6A';
+  const IMG_FILTER     = warm ? 'sepia(0.30) saturate(0.85) brightness(0.96)' : 'none';
 
   const Sec = ({ title, ps, ev }) => (
     <div style={{ marginBottom: 40 }}>
@@ -278,7 +288,7 @@ function MagnesiumArticleInner() {
   );
 
   return (
-    <div dir={isRtl ? 'rtl' : 'ltr'} style={{ fontFamily: bf, background: PAGE_BG, minHeight: '100vh' }}>
+    <div dir={isRtl ? 'rtl' : 'ltr'} style={{ fontFamily: bf, background: PAGE_BG, minHeight: '100vh', transition: 'background 0.4s ease, color 0.4s ease' }}>
       <nav className="nav">
         <div className="nav-inner">
           <div>
@@ -286,10 +296,32 @@ function MagnesiumArticleInner() {
               fen<span className="logo-dot">.</span>
             </a>
           </div>
-          <div className="nav-links">
+          <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <a className="nav-link" href="/" style={{ fontFamily: bf }}>
               {c.back}
             </a>
+            <button
+              onClick={toggleWarm}
+              title={warm ? 'Switch to normal mode' : 'Switch to warm / low blue light mode'}
+              style={{
+                fontSize: 13,
+                background: warm ? 'rgba(180,100,30,0.18)' : 'rgba(237,244,255,0.08)',
+                border: warm ? '1px solid rgba(180,100,30,0.40)' : '1px solid rgba(237,244,255,0.20)',
+                borderRadius: 4,
+                padding: '6px 12px',
+                cursor: 'pointer',
+                color: '#EDF4FF',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                fontFamily: "'DM Sans',sans-serif",
+                letterSpacing: '0.02em',
+                transition: 'all 0.2s',
+              }}
+            >
+              <span style={{ fontSize: 15 }}>{warm ? '🔆' : '🌙'}</span>
+              <span>{warm ? 'Warm' : 'Normal'}</span>
+            </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
               style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 14, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 14px', cursor: 'pointer', color: '#EDF4FF' }}
@@ -300,7 +332,7 @@ function MagnesiumArticleInner() {
         </div>
       </nav>
 
-      <article style={{ maxWidth: 720, margin: '0 auto', padding: '60px 32px 100px', background: PAGE_BG }}>
+      <article style={{ maxWidth: 720, margin: '0 auto', padding: '60px 32px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
             <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
