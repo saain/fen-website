@@ -633,7 +633,7 @@ export default function Home() {
           <div className="footer-grid">
             <div>
               <span className="footer-logo">
-                fen<span style={{ color: '#00C4A0' }}>.</span>
+                fen<span style={{ color: '#7B6D3E' }}>.</span>
               </span>
               <p
                 className="footer-tagline"

@@ -430,7 +430,7 @@ body {
 }
 
 .section-alt {
-  background: #E4EAE2;
+  background: #E6EDE5;
 }
 
 .section-dark {
@@ -494,8 +494,8 @@ body {
   gap: 40px;
   align-items: start;
   padding: 48px 0;
-  border-top: 1px solid rgba(45, 53, 48, 0.07);
-  border-bottom: 1px solid rgba(45, 53, 48, 0.07);
+  border-top: 1px solid rgba(45, 53, 48, 0.10);
+  border-bottom: 1px solid rgba(45, 53, 48, 0.10);
 }
 
 .featured-editorial-number {
@@ -764,18 +764,23 @@ body {
 
 .pillar-card {
   padding: 28px 20px;
-  border-radius: 4px;
-  border: 1px solid rgba(45, 53, 48, 0.07);
-  background: rgba(45, 53, 48, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(45, 53, 48, 0.10);
+  background: rgba(243, 246, 242, 0.72);
+  backdrop-filter: blur(4px);
   cursor: pointer;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 2px 12px -6px rgba(45,53,48,0.10);
+  position: relative;
+  overflow: hidden;
 }
 
 .pillar-card:hover {
-  background: rgba(123, 109, 62, 0.08);
-  border-color: rgba(123, 109, 62, 0.30);
-  transform: translateY(-2px);
+  background: rgba(243, 246, 242, 0.95);
+  border-color: rgba(123, 109, 62, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px -10px rgba(45,53,48,0.16);
 }
 
 .pillar-icon {
@@ -814,16 +819,18 @@ body {
 .method-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(45, 53, 48, 0.06);
-  border: 1px solid rgba(45, 53, 48, 0.06);
-  border-radius: 4px;
-  overflow: hidden;
+  gap: 10px;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
 }
 
 .method-card {
   padding: 32px 28px;
-  background: #E4EAE2;
+  background: rgba(243, 246, 242, 0.80);
+  border: 1px solid rgba(45, 53, 48, 0.10);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px -6px rgba(45,53,48,0.08);
 }
 
 .method-dot {
@@ -918,7 +925,7 @@ body {
 }
 
 .newsletter-btn:hover {
-  background: #00DDB7;
+  background: #6B5F35;
   transform: translateY(-1px);
   box-shadow: 0 6px 24px rgba(123, 109, 62, 0.30);
 }
@@ -948,7 +955,7 @@ body {
 
 .footer {
   padding: 64px 40px 40px;
-  background: #040C14;
+  background: #232C28;
   color: #2D3530;
   border-top: 1px solid rgba(45, 53, 48, 0.05);
 }

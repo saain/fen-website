@@ -297,7 +297,7 @@ function MagnesiumArticleInner() {
             </a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(237,244,255,0.60)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(45,53,48,0.65)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
               {isRtl ? 'ފުރަތަމަ ←' : '← Home'}
             </a>
             <button
@@ -306,11 +306,11 @@ function MagnesiumArticleInner() {
               style={{
                 fontSize: 12,
                 background: warm ? 'rgba(160,80,20,0.22)' : 'transparent',
-                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(237,244,255,0.18)',
+                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(45,53,48,0.18)',
                 borderRadius: 20,
                 padding: '6px 13px',
                 cursor: 'pointer',
-                color: warm ? '#F5C9A0' : 'rgba(237,244,255,0.70)',
+                color: warm ? '#F5C9A0' : 'rgba(45,53,48,0.65)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
@@ -328,7 +328,7 @@ function MagnesiumArticleInner() {
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
-              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 12px', cursor: 'pointer', color: '#EDF4FF', whiteSpace: 'nowrap' }}
+              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(45,53,48,0.20)', borderRadius: 4, padding: '6px 12px', cursor: 'pointer', color: '#2D3530', whiteSpace: 'nowrap' }}
             >
               {lang === 'en' ? 'ދިވެހި' : 'English'}
             </button>
