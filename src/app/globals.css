@@ -229,6 +229,7 @@ body {
   align-items: flex-end;
   position: relative;
   overflow: hidden;
+  padding-top: 80px;
   background-color: #EDF1EC;
   padding-bottom: 80px;
 }
