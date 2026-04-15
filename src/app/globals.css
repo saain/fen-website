@@ -1066,9 +1066,9 @@ body {
 }
 
 [dir="rtl"] .section-label {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 2.2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .section-title {
@@ -1094,7 +1094,7 @@ body {
 }
 
 [dir="rtl"] .featured-excerpt {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2.3 !important;
   margin-bottom: 24px;
 }
@@ -1115,15 +1115,15 @@ body {
 }
 
 [dir="rtl"] .category-label {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .article-category {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .article-title {
@@ -1135,12 +1135,12 @@ body {
 }
 
 [dir="rtl"] .article-excerpt {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 2.3 !important;
 }
 
 [dir="rtl"] .article-footer {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 2;
   margin-top: 14px;
 }
@@ -1156,7 +1156,7 @@ body {
 }
 
 [dir="rtl"] .pillar-desc {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 2.2 !important;
 }
 
@@ -1171,7 +1171,7 @@ body {
 }
 
 [dir="rtl"] .method-desc {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 2.3 !important;
 }
 
@@ -1209,13 +1209,13 @@ body {
 }
 
 [dir="rtl"] .footer-heading {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 2.2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .footer a {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 2;
   margin-bottom: 8px;
 }

@@ -336,8 +336,8 @@ function MagnesiumArticleInner() {
         </div>
       </nav>
 
-      <article style={{ maxWidth: 720, margin: '0 auto', padding: '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
-        <div style={{ marginBottom: 32 }}>
+      <article style={{ maxWidth: 720, margin: '0 auto', padding: isRtl ? '140px 24px 120px' : '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
+        <div style={{ marginBottom: isRtl ? 48 : 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
             <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
               {c.tag}
