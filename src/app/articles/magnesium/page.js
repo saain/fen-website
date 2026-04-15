@@ -33,7 +33,7 @@ const en = {
   ],
   s2e: {
     level: 'Strong',
-    color: '#2d6a4f',
+    color: '#6B7C5A',
     text: 'Multiple large meta-analyses of RCTs consistently show modest blood pressure reduction, particularly in hypertensive populations. The 2025 Hypertension meta-analysis (38 RCTs, n=2,709) is the most comprehensive to date.'
   },
   s3t: 'Depression and Mood',
@@ -131,7 +131,7 @@ const dv = {
   ],
   s2e: {
     level: 'ވަރުގަދަ',
-    color: '#2d6a4f',
+    color: '#6B7C5A',
     text: 'އާރް.ސީ.ޓީ (RCT) ތަކުގެ ގިނަ މެޓަ-އެނަލިސިސްތަކުން ދައްކާގޮތުގައި، ހާއްސަކޮށް ލޭގެ ޕްރެޝަރު މަތި މީހުންގެ ލޭގެ ޕްރެޝަރު ކޮންމެވެސް މިންވަރަކަށް ދަށްކޮށްދެއެވެ. 2025 ވަނަ އަހަރުގެ ހައިޕަރޓެންޝަން މެޓަ-އެނަލިސިސް (38 އާރް.ސީ.ޓީ، n=2,709) އަކީ މިހާތަނަށް މިކަމާ ގުޅޭގޮތުން ހެދިފައިވާ އެންމެ ފުރިހަމަ ދިރާސާއެވެ.'
   },
   s3t: 'ޑިޕްރެޝަން އަދި މޫޑު',
@@ -357,7 +357,7 @@ function MagnesiumArticleInner() {
       <article style={{ maxWidth: 720, margin: '0 auto', padding: isRtl ? '140px 24px 120px' : '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
         <div style={{ marginBottom: isRtl ? 48 : 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-            <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
+            <span className="evidence-tag" style={{ background: '#6B7C5A', fontFamily: bf }}>
               {c.tag}
             </span>
             <span style={{ fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase', color: TEXT_MUTED, fontWeight: 500, fontFamily: bf }}>
@@ -459,7 +459,7 @@ function MagnesiumArticleInner() {
           {c.disc}
         </div>
 
-        <div style={{ marginTop: 48, padding: 32, background: '#2d6a4f', borderRadius: 8, textAlign: 'center' }}>
+        <div style={{ marginTop: 48, padding: 32, background: '#4A5C42', borderRadius: 12, textAlign: 'center' }}>
           <h3 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 28, color: '#faf9f6', marginBottom: 12 }}>
             {c.ctaT}
           </h3>
@@ -475,7 +475,7 @@ function MagnesiumArticleInner() {
       <footer className="footer">
         <div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
           <span className="footer-logo">
-            fen<span style={{ color: '#52b788' }}>.</span>
+            fen<span style={{ color: '#D4A84B' }}>.</span>
           </span>
           <p className="footer-copy">© 2026 fen. All rights reserved.</p>
         </div>

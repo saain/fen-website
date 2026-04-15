@@ -56,11 +56,11 @@ const t = {
       { id: 6, category: 'GUT HEALTH', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Probiotics After Antibiotics: Timing, Strains, and What Actually Helps', excerpt: 'We reviewed 22 RCTs to find which probiotic protocols have real evidence behind them.', date: 'Mar 21, 2026', readTime: '10 min read' },
     ],
     pillars: [
-      { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🌿' },
-      { name: 'Supplements', desc: 'Evidence ratings for vitamins, minerals, and compounds', icon: '💊' },
-      { name: 'Teas & Coffees', desc: 'Functional beverages and their therapeutic profiles', icon: '🍵' },
-      { name: 'Fitness & Movement', desc: 'Exercise science distilled into practical protocols', icon: '🏃' },
-      { name: 'Mind & Wellness', desc: 'Sleep, stress, fasting, and the gut-brain axis', icon: '🧠' },
+      { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🪷' },
+      { name: 'Supplements', desc: 'Evidence ratings for vitamins, minerals, and compounds', icon: '✦' },
+      { name: 'Teas & Coffees', desc: 'Functional beverages and their therapeutic profiles', icon: '🫖' },
+      { name: 'Fitness & Movement', desc: 'Exercise science distilled into practical protocols', icon: '🌊' },
+      { name: 'Mind & Wellness', desc: 'Sleep, stress, fasting, and the gut-brain axis', icon: '🌙' },
     ],
     evidence: [
       { level: 'Strong', color: '#2d6a4f', desc: 'Multiple randomised controlled trials or meta-analyses with consistent results across diverse populations.' },
@@ -122,11 +122,11 @@ const t = {
       { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޮޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް' },
     ],
     pillars: [
-      { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🌿' },
-      { name: 'ސަޕްލިމެންޓްސް', desc: 'ވިޓަމިންސް، މިނެރަލްސް ގެ ހެކީ ރޭޓިން', icon: '💊' },
-      { name: 'ސައި އާއި ކޮފީ', desc: 'ފަންކްޝަނަލް ބުއިންތަކުގެ ބޭސްވެރި ޕްރޮފައިލް', icon: '🍵' },
-      { name: 'ކަސްރަތު', desc: 'ޢަމަލީ ޕްރޮޓޮކޯލްތަކަށް ބަދަލުކޮށްފައިވާ ކަސްރަތު ސައިންސް', icon: '🏃' },
-      { name: 'ސިކުނޑި އާއި ދުޅަހެޔޮކަން', desc: 'ނިދި، ސްޓްރެސް، ރޯދަ، ގޮހޮރު-ސިކުނޑި ގުޅުން', icon: '🧠' },
+      { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🪷' },
+      { name: 'ސަޕްލިމެންޓްސް', desc: 'ވިޓަމިންސް، މިނެރަލްސް ގެ ހެކީ ރޭޓިން', icon: '✦' },
+      { name: 'ސައި އާއި ކޮފީ', desc: 'ފަންކްޝަނަލް ބުއިންތަކުގެ ބޭސްވެރި ޕްރޮފައިލް', icon: '🫖' },
+      { name: 'ކަސްރަތު', desc: 'ޢަމަލީ ޕްރޮޓޮކޯލްތަކަށް ބަދަލުކޮށްފައިވާ ކަސްރަތު ސައިންސް', icon: '🌊' },
+      { name: 'ސިކުނޑި އާއި ދުޅަހެޔޮކަން', desc: 'ނިދި، ސްޓްރެސް، ރޯދަ، ގޮހޮރު-ސިކުނޑި ގުޅުން', icon: '🌙' },
     ],
     evidence: [
       { level: 'ވަރުގަދަ', color: '#2d6a4f', desc: 'ގިނަ ރެންޑަމައިޒްޑް ކޮންޓްރޯލްޑް ޓްރައަލް ނުވަތަ މެޓާ-އެނާލިސިސް، ތަފާތު މީހުންގެ ތެރޭގައި އެއް ގޮތް ނަތީޖާ.' },
