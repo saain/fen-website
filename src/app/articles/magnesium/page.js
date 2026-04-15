@@ -304,27 +304,45 @@ function MagnesiumArticleInner() {
               onClick={toggleWarm}
               title={warm ? 'Blue Light Blocker is active — tap to turn off' : 'Activate Blue Light Blocker for easier reading at night'}
               style={{
-                fontSize: 12,
-                background: warm ? 'rgba(160,80,20,0.22)' : 'transparent',
-                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(45,53,48,0.18)',
-                borderRadius: 20,
-                padding: '6px 13px',
-                cursor: 'pointer',
-                color: warm ? '#F5C9A0' : 'rgba(45,53,48,0.65)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 6,
-                fontFamily: "'DM Sans',sans-serif",
-                letterSpacing: '0.04em',
-                fontWeight: 400,
-                transition: 'all 0.3s ease',
+                gap: 8,
+                padding: '5px 12px 5px 6px',
+                borderRadius: 999,
+                border: warm ? '1px solid rgba(245,160,96,0.40)' : '1px solid rgba(45,53,48,0.14)',
+                background: 'transparent',
+                cursor: 'pointer',
+                fontFamily: isRtl ? "'Faruma',Tahoma,sans-serif" : "'DM Sans',sans-serif",
+                fontSize: isRtl ? 14 : 12,
+                fontWeight: 500,
+                color: warm ? '#8B4800' : 'rgba(45,53,48,0.65)',
                 whiteSpace: 'nowrap',
-                boxShadow: warm ? '0 0 12px rgba(180,90,20,0.25)' : 'none',
+                transition: 'all 0.2s ease',
               }}
             >
-              <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
-              <span>Blue Light Blocker</span>
-              {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
+              {/* iOS-style toggle track */}
+              <span style={{
+                width: 30, height: 17,
+                borderRadius: 999,
+                background: warm ? '#F5A060' : 'rgba(45,53,48,0.14)',
+                position: 'relative',
+                flexShrink: 0,
+                transition: 'background 0.25s',
+                display: 'inline-block',
+              }}>
+                <span style={{
+                  width: 13, height: 13,
+                  borderRadius: '50%',
+                  background: 'white',
+                  position: 'absolute',
+                  top: 2,
+                  left: warm ? 15 : 2,
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.22)',
+                  transition: 'left 0.25s cubic-bezier(0.34,1.56,0.64,1)',
+                  display: 'inline-block',
+                }} />
+              </span>
+              {isRtl ? 'ނޫ އަލި ހުރަސް' : 'Night mode'}
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
