@@ -1036,6 +1036,68 @@ body {
   word-spacing: 2px;
 }
 
+/* RTL — boost text contrast for Thaana readability on light palette */
+[dir="rtl"] p,
+[dir="rtl"] li {
+  color: rgba(45, 53, 48, 0.92);
+}
+
+[dir="rtl"] .hero-subtitle {
+  color: rgba(45, 53, 48, 0.85);
+}
+
+[dir="rtl"] .hero-meta {
+  color: rgba(45, 53, 48, 0.68);
+}
+
+[dir="rtl"] .section-subtitle {
+  color: rgba(45, 53, 48, 0.90);
+}
+
+[dir="rtl"] .featured-excerpt {
+  color: rgba(45, 53, 48, 0.88);
+}
+
+[dir="rtl"] .pillar-desc {
+  color: rgba(45, 53, 48, 0.80);
+}
+
+[dir="rtl"] .article-excerpt {
+  color: rgba(45, 53, 48, 0.90);
+}
+
+[dir="rtl"] .newsletter-desc {
+  color: rgba(45, 53, 48, 0.90);
+}
+
+[dir="rtl"] .newsletter-meta {
+  color: rgba(45, 53, 48, 0.68);
+}
+
+[dir="rtl"] .footer-tagline {
+  color: rgba(45, 53, 48, 0.75);
+}
+
+[dir="rtl"] .footer a {
+  color: rgba(45, 53, 48, 0.75);
+}
+
+[dir="rtl"] .footer-disclaimer {
+  color: rgba(45, 53, 48, 0.62);
+}
+
+[dir="rtl"] .footer-copy {
+  color: rgba(45, 53, 48, 0.62);
+}
+
+[dir="rtl"] .method-desc {
+  color: rgba(45, 53, 48, 0.88);
+}
+
+[dir="rtl"] .about-text {
+  color: rgba(45, 53, 48, 0.90);
+}
+
 [dir="rtl"] .hero-label {
   font-size: 14px;
   line-height: 2.4;
