@@ -1382,6 +1382,8 @@ body {
   .nav-links  { display: none !important; }
   .mobile-toggle { display: block !important; }
   .mobile-menu { padding: 0 20px 20px; }
+  /* Hide toggle text on mobile — track-only saves nav space */
+  .toggle-label { display: none !important; }
 
   .hero-cinematic { padding-bottom: 60px; }
   .hero-content   { padding: 0 20px; }

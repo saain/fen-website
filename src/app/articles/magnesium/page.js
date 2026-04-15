@@ -342,7 +342,7 @@ function MagnesiumArticleInner() {
                   display: 'inline-block',
                 }} />
               </span>
-              {isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}
+              <span className="toggle-label">{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}</span>
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
