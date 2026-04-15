@@ -228,6 +228,7 @@ export default function Home() {
                 color: 'rgba(45,53,48,0.70)',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
+                lineHeight: '1.2',
                 transition: 'all 0.2s',
               }}
             >

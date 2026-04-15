@@ -71,6 +71,13 @@ body {
 
 [dir="rtl"] .logo {
   font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.2;
+}
+
+/* Prevent base line-height 2.2 from making nav elements tall */
+[dir="rtl"] .nav-link,
+[dir="rtl"] .logo-dot {
+  line-height: 1.2;
 }
 
 ::selection {
