@@ -1037,6 +1037,12 @@ body {
   word-spacing: 2px;
 }
 
+/* RTL — hero: start from top so nav never covers content */
+[dir="rtl"] .hero-cinematic {
+  align-items: flex-start;
+  padding-top: 90px;
+}
+
 /* RTL — boost text contrast for Thaana readability on light palette */
 [dir="rtl"] p,
 [dir="rtl"] li {
@@ -1076,19 +1082,19 @@ body {
 }
 
 [dir="rtl"] .footer-tagline {
-  color: rgba(45, 53, 48, 0.75);
+  color: rgba(237, 241, 236, 0.65);
 }
 
 [dir="rtl"] .footer a {
-  color: rgba(45, 53, 48, 0.75);
+  color: rgba(237, 241, 236, 0.68);
 }
 
 [dir="rtl"] .footer-disclaimer {
-  color: rgba(45, 53, 48, 0.62);
+  color: rgba(237, 241, 236, 0.48);
 }
 
 [dir="rtl"] .footer-copy {
-  color: rgba(45, 53, 48, 0.62);
+  color: rgba(237, 241, 236, 0.48);
 }
 
 [dir="rtl"] .method-desc {
@@ -1323,11 +1329,13 @@ body {
 }
 
 [dir="rtl"] .article-editorial-item {
-  grid-template-columns: 1fr 120px;
+  grid-template-columns: 120px 1fr 56px;
 }
 
 [dir="rtl"] .article-editorial-index {
-  display: none;
+  display: block;
+  text-align: left;
+  padding-top: 4px;
 }
 
 [dir="rtl"] .featured-editorial {

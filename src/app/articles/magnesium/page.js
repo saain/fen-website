@@ -43,7 +43,7 @@ const en = {
   ],
   s3e: {
     level: 'Moderate',
-    color: '#b5651d',
+    color: '#9B7A3A',
     text: 'Seven RCTs with 325 participants show significant improvement in depression scores. Promising but limited by small sample sizes. More large-scale trials needed.'
   },
   s4t: 'Sleep Quality',
@@ -54,7 +54,7 @@ const en = {
   ],
   s4e: {
     level: 'Moderate',
-    color: '#b5651d',
+    color: '#9B7A3A',
     text: 'Observational data is supportive. RCT evidence is mixed but trends positive, particularly in magnesium-deficient individuals and older adults.'
   },
   s5t: 'Inflammation',
@@ -64,7 +64,7 @@ const en = {
   ],
   s5e: {
     level: 'Moderate',
-    color: '#b5651d',
+    color: '#9B7A3A',
     text: 'CRP reduction is consistently observed across studies. Effects on other oxidative stress markers are inconclusive.'
   },
   s6t: 'Which Form Should You Take?',
@@ -141,7 +141,7 @@ const dv = {
   ],
   s3e: {
     level: 'މެދު މިންވަރެއްގެ',
-    color: '#b5651d',
+    color: '#9B7A3A',
     text: '325 މީހުން ބައިވެރިވި ހަތް އާރް.ސީ.ޓީ އިން ޑިޕްރެޝަން ސްކޯރތަކަށް ބޮޑު ކުރިއެރުމެއް އަންނަކަން ދައްކައެވެ. މިއީ އުންމީދީ ނަތީޖާއެއް ނަމަވެސް، ބައިވެރިވި މީހުންގެ އަދަދު މަދުވުމުން މީގެ އިތުރު ބޮޑެތި ދިރާސާތައް ބޭނުންވެއެވެ.'
   },
   s4t: 'ނިދުމުގެ ފެންވަރު',
@@ -152,7 +152,7 @@ const dv = {
   ],
   s4e: {
     level: 'މެދު މިންވަރެއްގެ',
-    color: '#b5651d',
+    color: '#9B7A3A',
     text: 'އޮބްޒަވޭޝަނަލް ޑޭޓާތަކުން މިކަމަށް ތާއީދުކުރެއެވެ. އާރް.ސީ.ޓީ ހެކިތައް ހުރީ އެކި ގޮތަށެވެ، ނަމަވެސް ހާއްސަކޮށް މެގްނީޒިއަމް މަދު މީހުންނާއި އުމުރުން ދުވަސްވީ މީހުންގެ މެދުގައި މީގެ ނަތީޖާ ރަނގަޅެވެ.'
   },
   s5t: 'އިންފްލެމޭޝަން (ދުޅަވުން)',
@@ -162,7 +162,7 @@ const dv = {
   ],
   s5e: {
     level: 'މެދުމިންވަރެއްގެ',
-    color: '#b5651d',
+    color: '#9B7A3A',
     text: 'ސީ.އާރު.ޕީ (CRP) ދަށްވުން ހުރިހާ ދިރާސާތަކަކުން ވެސް އެއްގޮތަކަށް ފާހަގަކުރެވެއެވެ. އޮކްސިޑޭޓިވް ސްޓްރެސްގެ އެހެން މާކަރުތަކަށް ކުރާ އަސަރުތަކާ މެދު ވަކި ގޮތެއް ނުނިންމެއެވެ.'
   },
   s6t: 'ކޮން ބާވަތެއްގެ ސަޕްލިމެންޓެއް ހިޔާރުކުރާނީ؟',
@@ -357,7 +357,7 @@ function MagnesiumArticleInner() {
       <article style={{ maxWidth: 720, margin: '0 auto', padding: isRtl ? '140px 24px 120px' : '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
         <div style={{ marginBottom: isRtl ? 48 : 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-            <span className="evidence-tag" style={{ background: '#6B7C5A', fontFamily: bf }}>
+            <span className="evidence-tag" style={{ background: '#5A7A5A', fontFamily: bf }}>
               {c.tag}
             </span>
             <span style={{ fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase', color: TEXT_MUTED, fontWeight: 500, fontFamily: bf }}>
