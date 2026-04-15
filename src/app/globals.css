@@ -1234,8 +1234,9 @@ body {
 }
 
 [dir="rtl"] .nav-link {
-  font-size: 13px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 2.2;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .view-all a {
@@ -1260,6 +1261,18 @@ body {
 
 [dir="rtl"] .featured-editorial-number {
   display: none;
+}
+
+/* RTL — mobile menu & nav button */
+[dir="rtl"] .mobile-menu a {
+  font-family: 'MVWaheed', 'Faruma', Tahoma, sans-serif;
+  font-size: 18px;
+  line-height: 2.4;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .mobile-toggle {
+  font-size: 16px;
 }
 
 /* RTL mobile */

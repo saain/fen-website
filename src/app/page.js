@@ -221,11 +221,11 @@ export default function Home() {
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter','DM Sans',sans-serif",
                 fontSize: 12,
                 background: 'none',
-                border: '1px solid rgba(237,244,255,0.18)',
+                border: '1px solid rgba(45,53,48,0.22)',
                 borderRadius: 999,
                 padding: '6px 16px',
                 cursor: 'pointer',
-                color: 'rgba(237,244,255,0.65)',
+                color: 'rgba(45,53,48,0.70)',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 transition: 'all 0.2s',
@@ -243,11 +243,11 @@ export default function Home() {
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter',sans-serif",
                 fontSize: 12,
                 background: 'none',
-                border: '1px solid rgba(237,244,255,0.18)',
+                border: '1px solid rgba(45,53,48,0.22)',
                 borderRadius: 999,
                 padding: '4px 12px',
                 cursor: 'pointer',
-                color: 'rgba(237,244,255,0.65)',
+                color: 'rgba(45,53,48,0.70)',
               }}
             >
               {c.langLabel}
@@ -397,7 +397,7 @@ export default function Home() {
               </p>
               <div className="featured-footer">
                 <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span>
-                <span style={{ color: 'rgba(237,244,255,0.2)' }}>·</span>
+                <span style={{ color: 'rgba(45,53,48,0.25)' }}>·</span>
                 <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span>
               </div>
               <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>
