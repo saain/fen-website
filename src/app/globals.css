@@ -1099,9 +1099,10 @@ body {
 }
 
 [dir="rtl"] .hero-label {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2.4;
   letter-spacing: 0;
+  text-transform: none;
 }
 
 [dir="rtl"] .hero-title {
@@ -1129,9 +1130,10 @@ body {
 }
 
 [dir="rtl"] .section-label {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 2.2;
   letter-spacing: 0;
+  text-transform: none;
 }
 
 [dir="rtl"] .section-title {
@@ -1167,27 +1169,31 @@ body {
 }
 
 [dir="rtl"] .evidence-tag {
-  font-size: 14px;
-  padding: 6px 14px;
+  font-size: 15px;
+  padding: 6px 16px;
   line-height: 2;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .evidence-tag-sm {
-  font-size: 13px;
-  padding: 5px 12px;
+  font-size: 14px;
+  padding: 5px 13px;
   line-height: 2;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .category-label {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 2;
   letter-spacing: 0;
+  text-transform: none;
 }
 
 [dir="rtl"] .article-category {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 2;
   letter-spacing: 0;
+  text-transform: none;
 }
 
 [dir="rtl"] .article-title {
