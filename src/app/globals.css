@@ -500,13 +500,7 @@ body {
 }
 
 .featured-editorial-number {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 72px;
-  font-weight: 300;
-  color: rgba(45, 53, 48, 0.07);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  padding-top: 4px;
+  display: none;
 }
 
 .featured-editorial-content {
@@ -598,7 +592,7 @@ body {
 
 /* ── Featured image ── */
 .featured-editorial {
-  grid-template-columns: 80px 1fr 340px;
+  grid-template-columns: 1fr 340px;
 }
 
 .featured-editorial-image {
@@ -657,7 +651,7 @@ body {
 
 .article-editorial-item {
   display: grid;
-  grid-template-columns: 56px 1fr 120px;
+  grid-template-columns: 1fr 120px;
   gap: 32px;
   align-items: start;
   padding: 36px 0;
@@ -675,13 +669,7 @@ body {
 }
 
 .article-editorial-index {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 42px;
-  font-weight: 300;
-  color: rgba(45, 53, 48, 0.06);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  padding-top: 4px;
+  display: none;
 }
 
 .article-editorial-body {
@@ -1038,11 +1026,6 @@ body {
 }
 
 /* RTL — hero: start from top so nav never covers content */
-[dir="rtl"] .hero-cinematic {
-  align-items: flex-start;
-  padding-top: 90px;
-}
-
 /* RTL — boost text contrast for Thaana readability on light palette */
 [dir="rtl"] p,
 [dir="rtl"] li {
@@ -1176,16 +1159,16 @@ body {
 }
 
 [dir="rtl"] .evidence-tag {
-  font-size: 15px;
-  padding: 6px 16px;
-  line-height: 2;
+  font-size: 11px;
+  padding: 4px 12px;
+  line-height: 1.8;
   letter-spacing: 0;
 }
 
 [dir="rtl"] .evidence-tag-sm {
-  font-size: 14px;
-  padding: 5px 13px;
-  line-height: 2;
+  font-size: 10px;
+  padding: 3px 10px;
+  line-height: 1.8;
   letter-spacing: 0;
 }
 
@@ -1315,8 +1298,8 @@ body {
 }
 
 [dir="rtl"] .nav-link {
-  font-size: 16px;
-  line-height: 2.2;
+  font-size: 15px;
+  line-height: 1.5;
   letter-spacing: 0;
 }
 
@@ -1329,13 +1312,7 @@ body {
 }
 
 [dir="rtl"] .article-editorial-item {
-  grid-template-columns: 120px 1fr 56px;
-}
-
-[dir="rtl"] .article-editorial-index {
-  display: block;
-  text-align: left;
-  padding-top: 4px;
+  grid-template-columns: 1fr 120px;
 }
 
 [dir="rtl"] .featured-editorial {

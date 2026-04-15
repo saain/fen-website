@@ -46,7 +46,7 @@ const t = {
     footerConnect: 'Connect',
     footerConnectLinks: ['Instagram', 'YouTube', 'X / Twitter', 'About', 'Contact'],
     footerDisclaimer: 'Content is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for personal medical decisions.',
-    footerCopy: '© 2026 fen. All rights reserved.',
+    footerCopy: '',
     articles: [
       { id: 1, category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#5A7A5A', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read' },
       { id: 2, category: 'HERBAL REMEDIES', tag: 'Moderate Evidence', tagColor: '#9B7A3A', title: 'Turmeric vs. Curcumin Supplements: A Bioavailability Breakdown', excerpt: 'The golden spice has thousands of studies behind it — but most supplements fail at one critical thing.', date: 'Apr 4, 2026', readTime: '9 min read' },
@@ -112,7 +112,7 @@ const t = {
     footerConnect: 'ގުޅާ',
     footerConnectLinks: ['އިންސްޓަގްރާމް', 'ޔޫޓިއުބް', 'އެކްސް / ޓްވިޓަރ', 'އަޅުގަނޑުމެން', 'ގުޅޭ'],
     footerDisclaimer: 'މި ކޮންޓެންޓަކީ ތަޢުލީމީ ބޭނުމަށް އެކަނި ތައްޔާރުކޮށްފައިވާ އެއްޗެކެވެ. ޞިއްޙީ ލަފާ ދިނުމެއް ނޫނެވެ.',
-    footerCopy: '© 2026 fen. ހުރިހާ ޙައްޤެއް ލިބިގެންވޭ.',
+    footerCopy: '',
     articles: [
       { id: 1, category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#5A7A5A', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް' },
       { id: 2, category: 'ފަތްޕިލާވެލީ ބޭސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#9B7A3A', title: 'ރީނދޫ vs. ކާކިއުމިން ސަޕްލިމެންޓްސް: ބަޔޯއެވެއިލަބިލިޓީ', excerpt: 'ރަން ހަވާދުގައި އެތައް ހާސް ދިރާސާއެއް — ގިނަ ސަޕްލިމެންޓްތައް ފެއިލްވަނީ އެއް ކަމެއްގައި.', date: 'އެޕްރީލް 4، 2026', readTime: '9 މިނެޓް' },
