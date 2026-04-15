@@ -1167,14 +1167,15 @@ body {
 }
 
 [dir="rtl"] .evidence-tag {
-  font-size: 11px;
-  padding: 5px 12px;
-  line-height: 1.8;
+  font-size: 14px;
+  padding: 6px 14px;
+  line-height: 2;
 }
 
 [dir="rtl"] .evidence-tag-sm {
-  font-size: 10px;
-  padding: 4px 10px;
+  font-size: 13px;
+  padding: 5px 12px;
+  line-height: 2;
 }
 
 [dir="rtl"] .category-label {
@@ -1294,8 +1295,10 @@ body {
 }
 
 [dir="rtl"] .cta-btn {
+  font-size: 15px;
   line-height: 2;
-  padding: 10px 28px;
+  padding: 12px 32px;
+  letter-spacing: 0;
 }
 
 [dir="rtl"] .nav-link {
