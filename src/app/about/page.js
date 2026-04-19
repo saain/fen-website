@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const content = {
   en: {
@@ -66,6 +66,13 @@ const content = {
 export default function AboutPage() {
   const [lang, setLang] = useState('en');
   const isRtl = lang === 'dv';
+
+  // Read ?lang= from URL on first load
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (urlLang === 'dv') setLang('dv');
+  }, []);
   const c = content[lang];
 
   const bodyFont = isRtl
@@ -111,7 +118,7 @@ export default function AboutPage() {
           fen<span style={{ color: '#7B6D3E' }}>.</span>
         </a>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <a href="/" style={{
+          <a href={`/?lang=${lang}`} style={{
             fontFamily: bodyFont, fontSize: 13, color: 'rgba(45,53,48,0.55)',
             textDecoration: 'none', letterSpacing: '0.01em',
           }}>

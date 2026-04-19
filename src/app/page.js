@@ -177,6 +177,14 @@ export default function Home() {
 
   useEffect(() => {
     try {
+      // URL param takes priority (e.g. coming back from /about?lang=dv)
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      if (urlLang === 'dv' || urlLang === 'en') {
+        setLang(urlLang);
+        window.sessionStorage.setItem('fen-lang', urlLang);
+        return;
+      }
       const saved = window.sessionStorage.getItem('fen-lang');
       if (saved === 'dv') setLang('dv');
     } catch (e) {}
@@ -206,7 +214,7 @@ export default function Home() {
   // navItems: ['Articles','Evidence Library','About','Newsletter']
   const navSectionMap = ['articles', 'method', null, 'newsletter'];
   const scrollToSection = (i) => {
-    if (i === 2) { window.location.href = '/about'; return; } // About → dedicated page
+    if (i === 2) { window.location.href = `/about?lang=${lang}`; return; } // About → dedicated page, carry language
     const id = navSectionMap[i];
     const el = refs.current[id];
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
