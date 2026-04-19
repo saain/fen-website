@@ -35,9 +35,10 @@ const t = {
     newsletterMeta: 'Join 0 readers · Free forever · Unsubscribe in one click',
     aboutLabel: 'Why This Exists',
     aboutTitle: 'About fen',
-    aboutP1: 'fen — water. The source of all life. In the Maldives, the word carries something deeper than its translation: it is the quiet force that shapes land, sustains ecosystems, and flows beneath everything. We chose this name because we believe health is the same — not a destination you arrive at, but a current you learn to move with.',
-    aboutP2: "Modern medicine has done extraordinary things. It has saved lives, eradicated diseases, and given us decades we would not otherwise have had. But somewhere along the way, the system shifted. Today, most medical care is designed around sickness — not around keeping you well. The average consultation lasts less than ten minutes. Lifestyle, sleep, nutrition, and stress are often afterthoughts. We are living longer, but not always better. fen exists because we think healthspan matters as much as lifespan. Not just years, but the quality of those years. Not just the absence of disease, but the presence of energy, clarity, and ease.",
-    aboutP3: "We are not against medicine — we are for a wider view of health. One that holds both the rigour of science and the wisdom of tradition. That understands the body as a whole system, not a collection of symptoms. That looks at how our ancestors lived — moving daily, eating with the seasons, sleeping with the dark, spending time in nature — and asks what we have lost, and what we might reclaim. fen is an invitation to explore that territory honestly. Every article we publish is grounded in evidence. Every claim is sourced. Every practice is rated for what the research actually supports. We don't sell products or push protocols. We offer perspective — so you can think clearly and choose wisely. Welcome. We're glad you're here.",
+    aboutP1: 'fen — water. The source of all life. We named this platform fen because water is the most fundamental element of human health. Simple, pure, essential. In a world that has grown complicated, we believe the path back to health is found in things that are just as elemental — sunlight, whole foods, movement, rest, community, and faith.',
+    aboutP2: 'We are not a supplement shop. We are not a diet program. We are a space for honest, evidence-grounded writing about how to live well — and why so many of us have drifted so far from it.',
+    aboutP3: '',
+    aboutLink: 'Read our full story →',
     footerTagline: 'Evidence-based natural health education.\nIndependent. Transparent. Free.',
     footerExplore: 'Explore',
     footerExploreLinks: ['Articles', 'Evidence Library', 'Newsletter Archive', 'Start Here'],
@@ -101,9 +102,10 @@ const t = {
     newsletterMeta: '0 ކިޔުންތެރިންނާ ގުޅޭ · އަބަދަށް ހިލޭ · އެއް ކްލިކުން އަންސަބްސްކްރައިބް',
     aboutLabel: 'މިކަން އޮތީ ކީއްވެ',
     aboutTitle: 'fen އާ ބެހޭ',
-    aboutP1: 'ޤުދުރަތީ ޞިއްޙަތުގެ ދާއިރާ ފުރިފައިވަނީ އަޑުފަށް — މުޢުޖިޒާތީ ފަރުވާ، އިންފްލުއެންސަރ ތާއީދު، އަދި ވިޔަފާރި ބޭސްވެރިކަމުގެ ގޮތުގައި ހެދުން އެޅީ. އަޅުގަނޑުމެން fen ފެށީ މީހުންނަށް މިއަށްވުރެ ރަނގަޅު ގޮތެއް ޙައްޤުވާ ކަމަށް ޤަބޫލުކުރާތީ.',
-    aboutP2: 'އަޅުގަނޑުމެން ޝާއިޢުކުރާ ކޮންމެ ލިޔުމެއްގައި ޕިއަރ-ރިވިއުޑް ދިރާސާތައް ހަވާލާ ދެވިފައިވޭ. ކޮންމެ ސަޕްލިމެންޓެއް، ބޭހެއް، އަދި ޕްރެކްޓިސްއަކަށް ތެދުވެރި ހެކީގެ ރޭޓިންގެއް ލިބޭ.',
-    aboutP3: 'fen ގެ ނަން ނެގިފައިވަނީ ޤުދުރަތީ ޗަސް ބިމުގެ ނިޒާމުން — ތަފާތު ދިރުންތައް ހަމަހަމަކަމުގައި ދިރިއުޅޭ ތަންތަން. ޞިއްޙަތަކީ ވެސް އެފަދައިން ވާންޖެހޭ ކަމެއް.',
+    aboutP1: 'fen — ފެން. ހުރިހާ ދިރިތިތަކެތީގެ ސިއްރު. ފެންނަކީ ހަށިގަނޑުގެ ދުޅަހެޔޮކަމުގެ އެންމެ ބިންގާ ކަމެކެވެ. ސާދާ، ތާހިރު، ލާޒިމެވެ. ގިނަ ކަންތަކުން ހާސްވެ ދިރިއުޅުން ކHolder ވެފައިވާ ދުނިޔެއެއްގައި، ދިރިހުރުމުގެ ހަގީގީ ދިމާލަށް ދިއުމަށް ބޭނުންވަނީ ހަމަ ފެންފަދަ ކަންތަކެކެވެ — ʿ ، ތެދު ތިޔާ ތަދ، ހިތްހ ، ހިތްހ.',
+    aboutP2: 'fen އަކީ ސަޕްލިމެންޓް ފިހާރައެއް ނޫނެވެ. fen އަކީ ހެކިތަކަށް ބިނާ ތެދުވެރި ލިޔުންތައް ހިމެނޭ، ދިރިހުރުން ރަނގަޅުކޮށްލެވިދާނެ ތަނެކެވެ.',
+    aboutP3: '',
+    aboutLink: 'fen ގެ ފުރިހަމަ ވާހަކަ ކިޔާ ←',
     footerTagline: 'ހެއްކަށް ބިނާކޮށް ޤުދުރަތީ ޞިއްޙީ ތަޢުލީމު.\nމިނިވަން. ދެފުށް ފެންނަ. ހިލޭ.',
     footerExplore: 'ހޯދާ',
     footerExploreLinks: ['ލިޔުންތައް', 'ހެކި ލައިބްރަރީ', 'ނިއުސްލެޓަރ އާކައިވް', 'ފަށާ'],
@@ -200,10 +202,11 @@ export default function Home() {
     ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif"
     : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
 
-  // Nav item index → section id mapping
+  // Nav item index → section id OR page url
   // navItems: ['Articles','Evidence Library','About','Newsletter']
-  const navSectionMap = ['articles', 'method', 'about', 'newsletter'];
+  const navSectionMap = ['articles', 'method', null, 'newsletter'];
   const scrollToSection = (i) => {
+    if (i === 2) { window.location.href = '/about'; return; } // About → dedicated page
     const id = navSectionMap[i];
     const el = refs.current[id];
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -632,7 +635,17 @@ export default function Home() {
           <div className={`fade-up stagger-2 ${isVisible('about') ? 'visible' : ''}`}>
             <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP1}</p>
             <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP2}</p>
-            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP3}</p>
+            <a href="/about" style={{
+              display: 'inline-block', marginTop: '1.2rem',
+              fontFamily: bodyFont, fontSize: 14, fontWeight: 500,
+              color: '#7B6D3E', textDecoration: 'none',
+              borderBottom: '1px solid rgba(123,109,62,0.35)',
+              paddingBottom: 2,
+              letterSpacing: '0.01em',
+              transition: 'color 0.2s, border-color 0.2s',
+            }}>
+              {c.aboutLink}
+            </a>
           </div>
         </div>
       </section>
