@@ -200,6 +200,15 @@ export default function Home() {
     ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif"
     : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
 
+  // Nav item index → section id mapping
+  // navItems: ['Articles','Evidence Library','About','Newsletter']
+  const navSectionMap = ['articles', 'method', 'about', 'newsletter'];
+  const scrollToSection = (i) => {
+    const id = navSectionMap[i];
+    const el = refs.current[id];
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div dir={c.dir} style={{ fontFamily: bodyFont }}>
 
@@ -211,7 +220,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             {c.navItems.map((item, i) => (
-              <a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>
+              <a key={i} className="nav-link" href="#" onClick={(e) => { e.preventDefault(); scrollToSection(i); }} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
@@ -261,7 +270,7 @@ export default function Home() {
         {menuOpen && (
           <div className="mobile-menu">
             {c.navItems.map((item, i) => (
-              <a key={i} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
+              <a key={i} href="#" onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollToSection(i); }} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
