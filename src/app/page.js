@@ -223,11 +223,12 @@ export default function Home() {
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter','DM Sans',sans-serif",
                 fontSize: 12,
                 background: 'none',
-                border: '1px solid rgba(237,244,255,0.18)',
+                border: '1px solid rgba(237,244,255,0.45)',
                 borderRadius: 999,
                 padding: '6px 16px',
                 cursor: 'pointer',
-                color: 'rgba(237,244,255,0.65)',
+                color: 'rgba(237,244,255,0.95)',
+                background: 'rgba(237,244,255,0.08)',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 transition: 'all 0.2s',
@@ -415,6 +416,7 @@ export default function Home() {
 
       {/* ── ARTICLES — EDITORIAL LIST ── */}
       <section
+        id="articles"
         className="section section-alt"
         data-section="articles"
         ref={(el) => (refs.current['articles'] = el)}
@@ -497,6 +499,7 @@ export default function Home() {
 
       {/* ── PILLARS ── */}
       <section
+        id="pillars"
         className="section"
         data-section="pillars"
         ref={(el) => (refs.current['pillars'] = el)}
@@ -574,6 +577,7 @@ export default function Home() {
 
       {/* ── NEWSLETTER ── */}
       <section
+        id="newsletter"
         className="section section-green"
         data-section="newsletter"
         ref={(el) => (refs.current['newsletter'] = el)}
@@ -609,6 +613,7 @@ export default function Home() {
 
       {/* ── ABOUT ── */}
       <section
+        id="about"
         className="section section-alt"
         data-section="about"
         ref={(el) => (refs.current['about'] = el)}
