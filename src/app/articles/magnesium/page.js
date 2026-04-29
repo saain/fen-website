@@ -33,7 +33,7 @@ const en = {
   ],
   s2e: {
     level: 'Strong',
-    color: '#6B7C5A',
+    color: '#2d6a4f',
     text: 'Multiple large meta-analyses of RCTs consistently show modest blood pressure reduction, particularly in hypertensive populations. The 2025 Hypertension meta-analysis (38 RCTs, n=2,709) is the most comprehensive to date.'
   },
   s3t: 'Depression and Mood',
@@ -43,7 +43,7 @@ const en = {
   ],
   s3e: {
     level: 'Moderate',
-    color: '#9B7A3A',
+    color: '#b5651d',
     text: 'Seven RCTs with 325 participants show significant improvement in depression scores. Promising but limited by small sample sizes. More large-scale trials needed.'
   },
   s4t: 'Sleep Quality',
@@ -54,7 +54,7 @@ const en = {
   ],
   s4e: {
     level: 'Moderate',
-    color: '#9B7A3A',
+    color: '#b5651d',
     text: 'Observational data is supportive. RCT evidence is mixed but trends positive, particularly in magnesium-deficient individuals and older adults.'
   },
   s5t: 'Inflammation',
@@ -64,7 +64,7 @@ const en = {
   ],
   s5e: {
     level: 'Moderate',
-    color: '#9B7A3A',
+    color: '#b5651d',
     text: 'CRP reduction is consistently observed across studies. Effects on other oxidative stress markers are inconclusive.'
   },
   s6t: 'Which Form Should You Take?',
@@ -131,7 +131,7 @@ const dv = {
   ],
   s2e: {
     level: 'ވަރުގަދަ',
-    color: '#6B7C5A',
+    color: '#2d6a4f',
     text: 'އާރް.ސީ.ޓީ (RCT) ތަކުގެ ގިނަ މެޓަ-އެނަލިސިސްތަކުން ދައްކާގޮތުގައި، ހާއްސަކޮށް ލޭގެ ޕްރެޝަރު މަތި މީހުންގެ ލޭގެ ޕްރެޝަރު ކޮންމެވެސް މިންވަރަކަށް ދަށްކޮށްދެއެވެ. 2025 ވަނަ އަހަރުގެ ހައިޕަރޓެންޝަން މެޓަ-އެނަލިސިސް (38 އާރް.ސީ.ޓީ، n=2,709) އަކީ މިހާތަނަށް މިކަމާ ގުޅޭގޮތުން ހެދިފައިވާ އެންމެ ފުރިހަމަ ދިރާސާއެވެ.'
   },
   s3t: 'ޑިޕްރެޝަން އަދި މޫޑު',
@@ -141,7 +141,7 @@ const dv = {
   ],
   s3e: {
     level: 'މެދު މިންވަރެއްގެ',
-    color: '#9B7A3A',
+    color: '#b5651d',
     text: '325 މީހުން ބައިވެރިވި ހަތް އާރް.ސީ.ޓީ އިން ޑިޕްރެޝަން ސްކޯރތަކަށް ބޮޑު ކުރިއެރުމެއް އަންނަކަން ދައްކައެވެ. މިއީ އުންމީދީ ނަތީޖާއެއް ނަމަވެސް، ބައިވެރިވި މީހުންގެ އަދަދު މަދުވުމުން މީގެ އިތުރު ބޮޑެތި ދިރާސާތައް ބޭނުންވެއެވެ.'
   },
   s4t: 'ނިދުމުގެ ފެންވަރު',
@@ -152,7 +152,7 @@ const dv = {
   ],
   s4e: {
     level: 'މެދު މިންވަރެއްގެ',
-    color: '#9B7A3A',
+    color: '#b5651d',
     text: 'އޮބްޒަވޭޝަނަލް ޑޭޓާތަކުން މިކަމަށް ތާއީދުކުރެއެވެ. އާރް.ސީ.ޓީ ހެކިތައް ހުރީ އެކި ގޮތަށެވެ، ނަމަވެސް ހާއްސަކޮށް މެގްނީޒިއަމް މަދު މީހުންނާއި އުމުރުން ދުވަސްވީ މީހުންގެ މެދުގައި މީގެ ނަތީޖާ ރަނގަޅެވެ.'
   },
   s5t: 'އިންފްލެމޭޝަން (ދުޅަވުން)',
@@ -162,7 +162,7 @@ const dv = {
   ],
   s5e: {
     level: 'މެދުމިންވަރެއްގެ',
-    color: '#9B7A3A',
+    color: '#b5651d',
     text: 'ސީ.އާރު.ޕީ (CRP) ދަށްވުން ހުރިހާ ދިރާސާތަކަކުން ވެސް އެއްގޮތަކަށް ފާހަގަކުރެވެއެވެ. އޮކްސިޑޭޓިވް ސްޓްރެސްގެ އެހެން މާކަރުތަކަށް ކުރާ އަސަރުތަކާ މެދު ވަކި ގޮތެއް ނުނިންމެއެވެ.'
   },
   s6t: 'ކޮން ބާވަތެއްގެ ސަޕްލިމެންޓެއް ހިޔާރުކުރާނީ؟',
@@ -255,7 +255,7 @@ function MagnesiumArticleInner() {
   const TEXT_EVIDENCE  = warm ? '#4A2010' : '#444444';
   const BORDER_SUBTLE  = warm ? 'rgba(150,50,20,0.12)' : 'rgba(0,0,0,0.07)';
   const BORDER_MED     = warm ? 'rgba(150,50,20,0.20)' : 'rgba(0,0,0,0.11)';
-  const BG_TAKEAWAY    = warm ? '#F5CEBC' : '#EAF4F0';
+  const BG_TAKEAWAY    = warm ? '#F5CEBC' : '#E8EDE8';
   const BG_DISCLAIMER  = warm ? '#F0C8B8' : '#F0EDE8';
   const BG_EVIDENCE    = warm ? 'rgba(150,50,20,0.05)' : 'rgba(0,0,0,0.02)';
   const TEAL           = warm ? '#A03A18' : '#0D7A6A';
@@ -297,56 +297,38 @@ function MagnesiumArticleInner() {
             </a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(45,53,48,0.65)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(237,244,255,0.60)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
               {isRtl ? 'ފުރަތަމަ ←' : '← Home'}
             </a>
             <button
               onClick={toggleWarm}
               title={warm ? 'Blue Light Blocker is active — tap to turn off' : 'Activate Blue Light Blocker for easier reading at night'}
               style={{
+                fontSize: 12,
+                background: warm ? 'rgba(160,80,20,0.22)' : 'transparent',
+                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(237,244,255,0.18)',
+                borderRadius: 20,
+                padding: '6px 13px',
+                cursor: 'pointer',
+                color: warm ? '#F5C9A0' : 'rgba(237,244,255,0.70)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 8,
-                padding: '5px 12px 5px 6px',
-                borderRadius: 999,
-                border: warm ? '1px solid rgba(245,160,96,0.40)' : '1px solid rgba(45,53,48,0.14)',
-                background: 'transparent',
-                cursor: 'pointer',
-                fontFamily: isRtl ? "'Faruma',Tahoma,sans-serif" : "'DM Sans',sans-serif",
-                fontSize: isRtl ? 14 : 12,
-                fontWeight: 500,
-                color: warm ? '#8B4800' : 'rgba(45,53,48,0.65)',
+                gap: 6,
+                fontFamily: "'DM Sans',sans-serif",
+                letterSpacing: '0.04em',
+                fontWeight: 400,
+                transition: 'all 0.3s ease',
                 whiteSpace: 'nowrap',
-                transition: 'all 0.2s ease',
+                boxShadow: warm ? '0 0 12px rgba(180,90,20,0.25)' : 'none',
               }}
             >
-              {/* iOS-style toggle track */}
-              <span style={{
-                width: 30, height: 17,
-                borderRadius: 999,
-                background: warm ? '#F5A060' : 'rgba(45,53,48,0.14)',
-                position: 'relative',
-                flexShrink: 0,
-                transition: 'background 0.25s',
-                display: 'inline-block',
-              }}>
-                <span style={{
-                  width: 13, height: 13,
-                  borderRadius: '50%',
-                  background: 'white',
-                  position: 'absolute',
-                  top: 2,
-                  left: warm ? 15 : 2,
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.22)',
-                  transition: 'left 0.25s cubic-bezier(0.34,1.56,0.64,1)',
-                  display: 'inline-block',
-                }} />
-              </span>
-              <span className="toggle-label">{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}</span>
+              <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
+              <span>Blue Light Blocker</span>
+              {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
-              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(45,53,48,0.20)', borderRadius: 4, padding: '6px 12px', cursor: 'pointer', color: '#2D3530', whiteSpace: 'nowrap' }}
+              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 12px', cursor: 'pointer', color: '#EDF4FF', whiteSpace: 'nowrap' }}
             >
               {lang === 'en' ? 'ދިވެހި' : 'English'}
             </button>
@@ -354,10 +336,10 @@ function MagnesiumArticleInner() {
         </div>
       </nav>
 
-      <article style={{ maxWidth: 720, margin: '0 auto', padding: isRtl ? '140px 24px 120px' : '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
-        <div style={{ marginBottom: isRtl ? 48 : 32 }}>
+      <article style={{ maxWidth: 720, margin: '0 auto', padding: '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
+        <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-            <span className="evidence-tag" style={{ background: '#5A7A5A', fontFamily: bf }}>
+            <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
               {c.tag}
             </span>
             <span style={{ fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase', color: TEXT_MUTED, fontWeight: 500, fontFamily: bf }}>
@@ -459,7 +441,7 @@ function MagnesiumArticleInner() {
           {c.disc}
         </div>
 
-        <div style={{ marginTop: 48, padding: 32, background: '#4A5C42', borderRadius: 12, textAlign: 'center' }}>
+        <div style={{ marginTop: 48, padding: 32, background: '#2d6a4f', borderRadius: 8, textAlign: 'center' }}>
           <h3 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 28, color: '#faf9f6', marginBottom: 12 }}>
             {c.ctaT}
           </h3>
@@ -475,7 +457,7 @@ function MagnesiumArticleInner() {
       <footer className="footer">
         <div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
           <span className="footer-logo">
-            fen<span style={{ color: '#D4A84B' }}>.</span>
+            fen<span style={{ color: '#52b788' }}>.</span>
           </span>
           <p className="footer-copy">© 2026 fen. All rights reserved.</p>
         </div>
