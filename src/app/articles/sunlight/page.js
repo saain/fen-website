@@ -337,7 +337,7 @@ function SunlightArticleInner() {
           {c.disc}
         </div>
 
-        <div style={{ marginTop: 48, padding: 32, background: '#06101A', borderRadius: 8, textAlign: 'center', border: '1px solid rgba(0,196,160,0.15)' }}>
+        <div style={{ marginTop: 48, padding: 32, background: '#2d6a4f', borderRadius: 8, textAlign: 'center' }}>
           <h3 style={{ fontFamily: hf, fontSize: 28, color: '#faf9f6', marginBottom: 12 }}>
             {c.ctaT}
           </h3>
