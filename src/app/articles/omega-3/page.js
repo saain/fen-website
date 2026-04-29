@@ -171,7 +171,7 @@ function Omega3ArticleInner() {
   const TEXT_EVIDENCE  = warm ? '#4A2010' : '#444444';
   const BORDER_SUBTLE  = warm ? 'rgba(150,50,20,0.12)' : 'rgba(0,0,0,0.07)';
   const BORDER_MED     = warm ? 'rgba(150,50,20,0.20)' : 'rgba(0,0,0,0.11)';
-  const BG_TAKEAWAY    = warm ? '#F5CEBC' : '#E8EDE8';
+  const BG_TAKEAWAY    = warm ? '#F5CEBC' : 'rgba(13,122,106,0.06)';
   const BG_DISCLAIMER  = warm ? '#F0C8B8' : '#F0EDE8';
   const BG_EVIDENCE    = warm ? 'rgba(150,50,20,0.05)' : 'rgba(0,0,0,0.02)';
   const TEAL           = warm ? '#A03A18' : '#0D7A6A';
