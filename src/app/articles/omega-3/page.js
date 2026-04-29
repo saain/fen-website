@@ -221,12 +221,12 @@ function Omega3ArticleInner() {
               title={warm ? 'Blue Light Blocker is active — tap to turn off' : 'Activate Blue Light Blocker for easier reading at night'}
               style={{
                 fontSize: 12,
-                background: warm ? 'rgba(160,80,20,0.22)' : 'rgba(45,53,48,0.07)',
-                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(45,53,48,0.28)',
+                background: warm ? 'rgba(160,80,20,0.18)' : 'rgba(45,53,48,0.07)',
+                border: warm ? '1.5px solid rgba(160,80,20,0.55)' : '1px solid rgba(45,53,48,0.28)',
                 borderRadius: 20,
                 padding: '6px 13px',
                 cursor: 'pointer',
-                color: warm ? '#F5C9A0' : '#2D3530',
+                color: warm ? '#7A3010' : '#2D3530',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
