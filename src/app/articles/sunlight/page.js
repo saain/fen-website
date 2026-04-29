@@ -264,7 +264,7 @@ function SunlightArticleInner() {
       <article style={{ maxWidth: 720, margin: '0 auto', padding: '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-            <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
+            <span className="evidence-tag" style={{ background: '#5A7A5A', fontFamily: bf }}>
               {c.tag}
             </span>
             <span style={{ fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase', color: TEXT_MUTED, fontWeight: 500, fontFamily: bf }}>
@@ -337,7 +337,7 @@ function SunlightArticleInner() {
           {c.disc}
         </div>
 
-        <div style={{ marginTop: 48, padding: 32, background: '#2d6a4f', borderRadius: 8, textAlign: 'center' }}>
+        <div style={{ marginTop: 48, padding: 32, background: '#4A5C42', borderRadius: 12, textAlign: 'center' }}>
           <h3 style={{ fontFamily: hf, fontSize: 28, color: '#faf9f6', marginBottom: 12 }}>
             {c.ctaT}
           </h3>
