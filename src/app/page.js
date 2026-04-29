@@ -35,10 +35,9 @@ const t = {
     newsletterMeta: 'Join 0 readers · Free forever · Unsubscribe in one click',
     aboutLabel: 'Why This Exists',
     aboutTitle: 'About fen',
-    aboutP1: 'fen — water. The source of all life. We named this platform fen because water is the most fundamental element of human health. Simple, pure, essential. In a world that has grown complicated, we believe the path back to health is found in things that are just as elemental — sunlight, whole foods, movement, rest, community, and faith.',
-    aboutP2: 'We are not a supplement shop. We are not a diet program. We are a space for honest, evidence-grounded writing about how to live well — and why so many of us have drifted so far from it.',
-    aboutP3: '',
-    aboutLink: 'Read our full story →',
+    aboutP1: 'The natural health space is full of noise — miracle cures, influencer endorsements, and marketing dressed up as medicine. We started fen because we believe people deserve better.',
+    aboutP2: "Every article we publish cites peer-reviewed research. Every supplement, herb, and practice gets an honest evidence rating. We don't sell products — we help you understand what the science actually says, so you can make your own decisions.",
+    aboutP3: "fen is named after natural wetland ecosystems — places where diverse life thrives in balance. That's what we believe health should be: grounded, diverse, and rooted in nature's own evidence.",
     footerTagline: 'Evidence-based natural health education.\nIndependent. Transparent. Free.',
     footerExplore: 'Explore',
     footerExploreLinks: ['Articles', 'Evidence Library', 'Newsletter Archive', 'Start Here'],
@@ -47,27 +46,28 @@ const t = {
     footerConnect: 'Connect',
     footerConnectLinks: ['Instagram', 'YouTube', 'X / Twitter', 'About', 'Contact'],
     footerDisclaimer: 'Content is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for personal medical decisions.',
-    footerCopy: '',
+    footerCopy: '© 2026 fen. All rights reserved.',
     articles: [
-      { id: 1, category: 'ESSENTIAL FATS', tag: 'Strong Evidence', tagColor: '#5A7A5A', title: 'Omega-3: The Essential Fat Your Brain and Heart Cannot Make', excerpt: 'The average Maldivian eats more tuna than anyone on earth — yet not all tuna is equal. Here is what 134,000-participant meta-analyses say about EPA, DHA, and when a supplement is worth it.', date: 'Apr 25, 2026', readTime: '14 min read', url: '/articles/omega-3', image: '/images/omega-3.jpg' },
-      { id: 2, category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#5A7A5A', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read', url: '/articles/magnesium', image: '/images/featured.jpg' },
-      { id: 3, category: 'HERBAL REMEDIES', tag: 'Moderate Evidence', tagColor: '#9B7A3A', title: 'Turmeric vs. Curcumin Supplements: A Bioavailability Breakdown', excerpt: 'The golden spice has thousands of studies behind it — but most supplements fail at one critical thing.', date: 'Apr 4, 2026', readTime: '9 min read', url: '#', image: '/images/article-3.jpg' },
-      { id: 4, category: 'FUNCTIONAL BEVERAGES', tag: 'Emerging Research', tagColor: '#5A6E7A', title: "Lion's Mane Coffee: Cognitive Hype or Genuine Nootropic?", excerpt: "Mushroom coffee is everywhere. We examined 12 studies on lion's mane and neurogenesis to separate marketing from science.", date: 'Apr 1, 2026', readTime: '8 min read', url: '#', image: '/images/article-4.jpg' },
-      { id: 5, category: 'MOVEMENT', tag: 'Strong Evidence', tagColor: '#5A7A5A', title: 'Walking 7,000 Steps: The New Threshold Backed by Mortality Data', excerpt: 'Forget 10,000 steps. A 2024 meta-analysis of 47 studies found the sweet spot may be lower than you think.', date: 'Mar 25, 2026', readTime: '7 min read', url: '#', image: '/images/article-5.jpg' },
-      { id: 6, category: 'GUT HEALTH', tag: 'Moderate Evidence', tagColor: '#9B7A3A', title: 'Probiotics After Antibiotics: Timing, Strains, and What Actually Helps', excerpt: 'We reviewed 22 RCTs to find which probiotic protocols have real evidence behind them.', date: 'Mar 21, 2026', readTime: '10 min read', url: '#', image: '/images/article-6.jpg' },
+      { id: 1, category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read' },
+      { id: 2, category: 'HERBAL REMEDIES', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Turmeric vs. Curcumin Supplements: A Bioavailability Breakdown', excerpt: 'The golden spice has thousands of studies behind it — but most supplements fail at one critical thing.', date: 'Apr 4, 2026', readTime: '9 min read' },
+      { id: 3, category: 'FUNCTIONAL BEVERAGES', tag: 'Emerging Research', tagColor: '#6c757d', title: "Lion's Mane Coffee: Cognitive Hype or Genuine Nootropic?", excerpt: "Mushroom coffee is everywhere. We examined 12 studies on lion's mane and neurogenesis to separate marketing from science.", date: 'Apr 1, 2026', readTime: '8 min read' },
+      { id: 4, slug: 'omega-3', category: 'NUTRITION SCIENCE', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Omega-3: The Essential Fat Your Brain and Heart Cannot Make', excerpt: 'The average Maldivian eats more tuna than anyone on earth — yet not all tuna is equal when it comes to omega-3. What 15 studies say about EPA, DHA, and when a supplement is worth it.', date: 'Apr 24, 2026', readTime: '14 min read' },
+      { id: 5, category: 'MOVEMENT', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Walking 7,000 Steps: The New Threshold Backed by Mortality Data', excerpt: 'Forget 10,000 steps. A 2024 meta-analysis of 47 studies found the sweet spot may be lower than you think.', date: 'Mar 25, 2026', readTime: '7 min read' },
+      { id: 6, category: 'GUT HEALTH', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Probiotics After Antibiotics: Timing, Strains, and What Actually Helps', excerpt: 'We reviewed 22 RCTs to find which probiotic protocols have real evidence behind them.', date: 'Mar 21, 2026', readTime: '10 min read' },
+      { id: 7, slug: 'sunlight', category: 'NATURAL HEALTH', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'The Sun, Reconsidered: What the Science Actually Says About Sunlight and Your Health', excerpt: 'For fifty years the message was to avoid the sun. A growing body of research shows sunlight regulates sleep, mood, blood pressure, immunity, and cellular energy. Here is what 21 studies actually say.', date: 'Apr 27, 2026', readTime: '16 min read' },
     ],
     pillars: [
-      { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🪷' },
-      { name: 'Supplements', desc: 'Evidence ratings for vitamins, minerals, and compounds', icon: '✦' },
-      { name: 'Teas & Coffees', desc: 'Functional beverages and their therapeutic profiles', icon: '🫖' },
-      { name: 'Fitness & Movement', desc: 'Exercise science distilled into practical protocols', icon: '🌊' },
-      { name: 'Mind & Wellness', desc: 'Sleep, stress, fasting, and the gut-brain axis', icon: '🌙' },
+      { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🌿' },
+      { name: 'Supplements', desc: 'Evidence ratings for vitamins, minerals, and compounds', icon: '💊' },
+      { name: 'Teas & Coffees', desc: 'Functional beverages and their therapeutic profiles', icon: '🍵' },
+      { name: 'Fitness & Movement', desc: 'Exercise science distilled into practical protocols', icon: '🏃' },
+      { name: 'Mind & Wellness', desc: 'Sleep, stress, fasting, and the gut-brain axis', icon: '🧠' },
     ],
     evidence: [
-      { level: 'Strong', color: '#5A7A5A', desc: 'Multiple randomised controlled trials or meta-analyses with consistent results across diverse populations.' },
-      { level: 'Moderate', color: '#9B7A3A', desc: 'Limited RCTs or observational studies with plausible mechanisms. Promising but needs more research.' },
-      { level: 'Emerging', color: '#5A6E7A', desc: 'Preliminary findings from animal studies, in vitro research, or small pilot trials. Early-stage only.' },
-      { level: 'Insufficient', color: '#8A6070', desc: 'Anecdotal, traditional use only, or contradictory findings. We include it but flag the uncertainty.' },
+      { level: 'Strong', color: '#2d6a4f', desc: 'Multiple randomised controlled trials or meta-analyses with consistent results across diverse populations.' },
+      { level: 'Moderate', color: '#b5651d', desc: 'Limited RCTs or observational studies with plausible mechanisms. Promising but needs more research.' },
+      { level: 'Emerging', color: '#6c757d', desc: 'Preliminary findings from animal studies, in vitro research, or small pilot trials. Early-stage only.' },
+      { level: 'Insufficient', color: '#9e2a2b', desc: 'Anecdotal, traditional use only, or contradictory findings. We include it but flag the uncertainty.' },
     ],
   },
   dv: {
@@ -102,10 +102,9 @@ const t = {
     newsletterMeta: '0 ކިޔުންތެރިންނާ ގުޅޭ · އަބަދަށް ހިލޭ · އެއް ކްލިކުން އަންސަބްސްކްރައިބް',
     aboutLabel: 'މިކަން އޮތީ ކީއްވެ',
     aboutTitle: 'fen އާ ބެހޭ',
-    aboutP1: 'އަޅުގަނޑުމެން މި ޕްލެޓްފޯމަށް "ފެން" މި ނަން ދިނީ، އިންސާނާގެ ދުޅަހެޔޮކަމުގެ އެންމެ އަސާސީ ބަހާއަކީ ފެން ކަމަށްވާތީއެވެ. ސާދާ، ސާފު، ކޮންމެހެން ބޭނުންތެރި. ދުޅަހެޔޮކަމަށް އެނބުރި ދެވެން އޮތް މަގަކީ ހަމަ ފެންފަދަ އަސާސީ ކަންތައްތަކެވެ — އިރުގެ އަލި، ގުދުރަތީ ކާނާ، ހަރަކާތް، އަރާމު، ގުޅުން، އަދި އީމާންތެރިކަން.',
-    aboutP2: '"ފެން" އަކީ ސަޕްލިމެންޓް ވިއްކާ ތަނެއް ނޫނެވެ. ހެކިތަކަށް ބިނާ ތެދުވެރި ލިޔުންތަކެއް ހިމެނޭ، ރަނގަޅަށް ދިރިއުުޅެން ދަސްކޮށްދޭ ތަނެކެވެ.',
-    aboutP3: '',
-    aboutLink: 'fen ގެ ވާހަކަ ކިޔާ ←',
+    aboutP1: 'ޤުދުރަތީ ޞިއްޙަތުގެ ދާއިރާ ފުރިފައިވަނީ އަޑުފަށް — މުޢުޖިޒާތީ ފަރުވާ، އިންފްލުއެންސަރ ތާއީދު، އަދި ވިޔަފާރި ބޭސްވެރިކަމުގެ ގޮތުގައި ހެދުން އެޅީ. އަޅުގަނޑުމެން fen ފެށީ މީހުންނަށް މިއަށްވުރެ ރަނގަޅު ގޮތެއް ޙައްޤުވާ ކަމަށް ޤަބޫލުކުރާތީ.',
+    aboutP2: 'އަޅުގަނޑުމެން ޝާއިޢުކުރާ ކޮންމެ ލިޔުމެއްގައި ޕިއަރ-ރިވިއުޑް ދިރާސާތައް ހަވާލާ ދެވިފައިވޭ. ކޮންމެ ސަޕްލިމެންޓެއް، ބޭހެއް، އަދި ޕްރެކްޓިސްއަކަށް ތެދުވެރި ހެކީގެ ރޭޓިންގެއް ލިބޭ.',
+    aboutP3: 'fen ގެ ނަން ނެގިފައިވަނީ ޤުދުރަތީ ޗަސް ބިމުގެ ނިޒާމުން — ތަފާތު ދިރުންތައް ހަމަހަމަކަމުގައި ދިރިއުޅޭ ތަންތަން. ޞިއްޙަތަކީ ވެސް އެފަދައިން ވާންޖެހޭ ކަމެއް.',
     footerTagline: 'ހެއްކަށް ބިނާކޮށް ޤުދުރަތީ ޞިއްޙީ ތަޢުލީމު.\nމިނިވަން. ދެފުށް ފެންނަ. ހިލޭ.',
     footerExplore: 'ހޯދާ',
     footerExploreLinks: ['ލިޔުންތައް', 'ހެކި ލައިބްރަރީ', 'ނިއުސްލެޓަރ އާކައިވް', 'ފަށާ'],
@@ -114,27 +113,28 @@ const t = {
     footerConnect: 'ގުޅާ',
     footerConnectLinks: ['އިންސްޓަގްރާމް', 'ޔޫޓިއުބް', 'އެކްސް / ޓްވިޓަރ', 'އަޅުގަނޑުމެން', 'ގުޅޭ'],
     footerDisclaimer: 'މި ކޮންޓެންޓަކީ ތަޢުލީމީ ބޭނުމަށް އެކަނި ތައްޔާރުކޮށްފައިވާ އެއްޗެކެވެ. ޞިއްޙީ ލަފާ ދިނުމެއް ނޫނެވެ.',
-    footerCopy: '',
+    footerCopy: '© 2026 fen. ހުރިހާ ޙައްޤެއް ލިބިގެންވޭ.',
     articles: [
-      { id: 1, category: 'އެސެންޝަލް ފެޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#5A7A5A', title: 'އޮމެގާ-3: ސިކުނޑިއާއި ހިތަށް ހެދޭ ނުހެދޭ ތެޔޮ', excerpt: 'ދިވެހިރާއްޖެ ދުނިޔޭގައި އެންމެ ގިނައިން މަސް ކާ ގައުމެވެ — ނަމަވެސް ހުރިހާ ތޮނި ތޮންޏެއް ނޫނެވެ. EPA، DHA، 134,000 ބައިވެރިންގެ ދިރާސާ.', date: '25 އެޕްރީލް 2026', readTime: '14 މިނެޓް', url: '/articles/omega-3', image: '/images/omega-3.jpg' },
-      { id: 2, category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#5A7A5A', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް', url: '/articles/magnesium', image: '/images/featured.jpg' },
-      { id: 3, category: 'ފަތްޕިލާވެލީ ބޭސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#9B7A3A', title: 'ރީނދޫ vs. ކާކިއުމިން ސަޕްލިމެންޓްސް: ބަޔޯއެވެއިލަބިލިޓީ', excerpt: 'ރަން ހަވާދުގައި އެތައް ހާސް ދިރާސާއެއް — ގިނަ ސަޕްލިމެންޓްތައް ފެއިލްވަނީ އެއް ކަމެއްގައި.', date: 'އެޕްރީލް 4، 2026', readTime: '9 މިނެޓް', url: '#', image: '/images/article-3.jpg' },
-      { id: 4, category: 'ބުއިންތައް', tag: 'އުފެދެމުންދާ ދިރާސާ', tagColor: '#5A6E7A', title: 'ލަޔަންސް މެއިން ކޮފީ: ސިކުނޑީގެ ހައިޕް ނޫނީ ޙަޤީޤީ ނޫޓްރޮޕިކް؟', excerpt: 'މަޝްރޫމް ކޮފީ ކޮންމެ ތަނެއްގައި. 12 ދިރާސާ ބެލީމެވެ — މާކެޓިން އާއި ސައިންސް ވަކިކުރަން.', date: 'އެޕްރީލް 1، 2026', readTime: '8 މިނެޓް', url: '#', image: '/images/article-4.jpg' },
-      { id: 5, category: 'ކަސްރަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#5A7A5A', title: '7,000 ފިޔަވަޅު ހިނގުން: މަރުގެ ޑާޓާއިން ސާބިތުވާ އައު ތެރެޝޯލްޑް', excerpt: '10,000 ފިޔަވަޅު ހަނދާން ނެތިގެން. 47 ދިރާސާގެ މެޓާ-އެނާލިސިސް.', date: 'މާރިޗް 25، 2026', readTime: '7 މިނެޓް', url: '#', image: '/images/article-5.jpg' },
-      { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#9B7A3A', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޮޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް', url: '#', image: '/images/article-6.jpg' },
+      { id: 1, category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް' },
+      { id: 2, category: 'ފަތްޕިލާވެލީ ބޭސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'ރީނދޫ vs. ކާކިއުމިން ސަޕްލިމެންޓްސް: ބަޔޯއެވެއިލަބިލިޓީ', excerpt: 'ރަން ހަވާދުގައި އެތައް ހާސް ދިރާސާއެއް — ގިނަ ސަޕްލިމެންޓްތައް ފެއިލްވަނީ އެއް ކަމެއްގައި.', date: 'އެޕްރީލް 4، 2026', readTime: '9 މިނެޓް' },
+      { id: 3, category: 'ބުއިންތައް', tag: 'އުފެދެމުންދާ ދިރާސާ', tagColor: '#6c757d', title: 'ލަޔަންސް މެއިން ކޮފީ: ސިކުނޑީގެ ހައިޕް ނޫނީ ޙަޤީޤީ ނޫޓްރޮޕިކް؟', excerpt: 'މަޝްރޫމް ކޮފީ ކޮންމެ ތަނެއްގައި. 12 ދިރާސާ ބެލީމެވެ — މާކެޓިން އާއި ސައިންސް ވަކިކުރަން.', date: 'އެޕްރީލް 1، 2026', readTime: '8 މިނެޓް' },
+      { id: 4, category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އޮމެގާ-3 އިންޑެކްސް: ކޮލެސްޓްރޯލަށް ވުރެ މުހިންމު ޓެސްޓެއް', excerpt: 'އޮމެގާ-3 އިންޑެކްސް އަކީ ހިތުގެ ޞިއްޙަތުގެ އެންމެ ވަރުގަދަ ލަފާކުރާ.', date: 'މާރިޗް 28، 2026', readTime: '11 މިނެޓް' },
+      { id: 5, category: 'ކަސްރަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: '7,000 ފިޔަވަޅު ހިނގުން: މަރުގެ ޑާޓާއިން ސާބިތުވާ އައު ތެރެޝޯލްޑް', excerpt: '10,000 ފިޔަވަޅު ހަނދާން ނެތިގެން. 47 ދިރާސާގެ މެޓާ-އެނާލިސިސް.', date: 'މާރިޗް 25، 2026', readTime: '7 މިނެޓް' },
+      { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޮޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް' },
+      { id: 7, slug: 'sunlight', category: 'ޤުދުރަތީ ޞިއްޙަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އިރު، ރިވިއު ކޮށްލާ: ހިލާ ދޯދީ ތިބާގެ ޞިއްޙަތަށް ކުރާ ހަޤީޤީ އަސަރު', excerpt: 'ފަންސާސް އަހަރު ވިދާޅުވި: އިރުން ދުރުހެލިވޭ. ތަހުގީގުތަކުން ފެންނަ ތަސްވީރ ތަފާތު — ނިދި، 気分، ލޭ ޕްރެޝަރ، ސެލްތަކުގެ ހަކަތަ.', date: 'އެޕްރީލް 27، 2026', readTime: '16 މިނެޓް' },
     ],
     pillars: [
-      { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🪷' },
-      { name: 'ސަޕްލިމެންޓްސް', desc: 'ވިޓަމިންސް، މިނެރަލްސް ގެ ހެކީ ރޭޓިން', icon: '✦' },
-      { name: 'ސައި އާއި ކޮފީ', desc: 'ފަންކްޝަނަލް ބުއިންތަކުގެ ބޭސްވެރި ޕްރޮފައިލް', icon: '🫖' },
-      { name: 'ކަސްރަތު', desc: 'ޢަމަލީ ޕްރޮޓޮކޯލްތަކަށް ބަދަލުކޮށްފައިވާ ކަސްރަތު ސައިންސް', icon: '🌊' },
-      { name: 'ސިކުނޑި އާއި ދުޅަހެޔޮކަން', desc: 'ނިދި، ސްޓްރެސް، ރޯދަ، ގޮހޮރު-ސިކުނޑި ގުޅުން', icon: '🌙' },
+      { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🌿' },
+      { name: 'ސަޕްލިމެންޓްސް', desc: 'ވިޓަމިންސް، މިނެރަލްސް ގެ ހެކީ ރޭޓިން', icon: '💊' },
+      { name: 'ސައި އާއި ކޮފީ', desc: 'ފަންކްޝަނަލް ބުއިންތަކުގެ ބޭސްވެރި ޕްރޮފައިލް', icon: '🍵' },
+      { name: 'ކަސްރަތު', desc: 'ޢަމަލީ ޕްރޮޓޮކޯލްތަކަށް ބަދަލުކޮށްފައިވާ ކަސްރަތު ސައިންސް', icon: '🏃' },
+      { name: 'ސިކުނޑި އާއި ދުޅަހެޔޮކަން', desc: 'ނިދި، ސްޓްރެސް، ރޯދަ، ގޮހޮރު-ސިކުނޑި ގުޅުން', icon: '🧠' },
     ],
     evidence: [
-      { level: 'ވަރުގަދަ', color: '#5A7A5A', desc: 'ގިނަ ރެންޑަމައިޒްޑް ކޮންޓްރޯލްޑް ޓްރައަލް ނުވަތަ މެޓާ-އެނާލިސިސް، ތަފާތު މީހުންގެ ތެރޭގައި އެއް ގޮތް ނަތީޖާ.' },
-      { level: 'މެދުމިން', color: '#9B7A3A', desc: 'މަދު ޓްރައަލް ނުވަތަ ބެލުންތެރި ދިރާސާ. އުންމީދީ ނަމަވެސް އިތުރު ދިރާސާ ބޭނުންވޭ.' },
-      { level: 'އުފެދެމުންދާ', color: '#5A6E7A', desc: 'ޖަނަވާރު ދިރާސާ، ލެބޯޓަރީ ދިރާސާ، ނުވަތަ ކުދި ޕައިލެޓް ޓްރައަލް.' },
-      { level: 'ނުފުދޭ', color: '#8A6070', desc: 'އެނެކްޑޯޓަލް، ޒަމާނީ ބޭނުމެއް އެކަނި، ނުވަތަ ފުށުއެރުން ހޯދުން.' },
+      { level: 'ވަރުގަދަ', color: '#2d6a4f', desc: 'ގިނަ ރެންޑަމައިޒްޑް ކޮންޓްރޯލްޑް ޓްރައަލް ނުވަތަ މެޓާ-އެނާލިސިސް، ތަފާތު މީހުންގެ ތެރޭގައި އެއް ގޮތް ނަތީޖާ.' },
+      { level: 'މެދުމިން', color: '#b5651d', desc: 'މަދު ޓްރައަލް ނުވަތަ ބެލުންތެރި ދިރާސާ. އުންމީދީ ނަމަވެސް އިތުރު ދިރާސާ ބޭނުންވޭ.' },
+      { level: 'އުފެދެމުންދާ', color: '#6c757d', desc: 'ޖަނަވާރު ދިރާސާ، ލެބޯޓަރީ ދިރާސާ، ނުވަތަ ކުދި ޕައިލެޓް ޓްރައަލް.' },
+      { level: 'ނުފުދޭ', color: '#9e2a2b', desc: 'އެނެކްޑޯޓަލް، ޒަމާނީ ބޭނުމެއް އެކަނި، ނުވަތަ ފުށުއެރުން ހޯދުން.' },
     ],
   },
 };
@@ -177,14 +177,6 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      // URL param takes priority (e.g. coming back from /about?lang=dv)
-      const params = new URLSearchParams(window.location.search);
-      const urlLang = params.get('lang');
-      if (urlLang === 'dv' || urlLang === 'en') {
-        setLang(urlLang);
-        window.sessionStorage.setItem('fen-lang', urlLang);
-        return;
-      }
       const saved = window.sessionStorage.getItem('fen-lang');
       if (saved === 'dv') setLang('dv');
     } catch (e) {}
@@ -210,16 +202,6 @@ export default function Home() {
     ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif"
     : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
 
-  // Nav item index → section id OR page url
-  // navItems: ['Articles','Evidence Library','About','Newsletter']
-  const navSectionMap = ['articles', 'method', null, 'newsletter'];
-  const scrollToSection = (i) => {
-    if (i === 2) { window.location.href = `/about?lang=${lang}`; return; } // About → dedicated page, carry language
-    const id = navSectionMap[i];
-    const el = refs.current[id];
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <div dir={c.dir} style={{ fontFamily: bodyFont }}>
 
@@ -231,7 +213,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             {c.navItems.map((item, i) => (
-              <a key={i} className="nav-link" href="#" onClick={(e) => { e.preventDefault(); scrollToSection(i); }} style={{ fontFamily: bodyFont }}>
+              <a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
@@ -241,14 +223,13 @@ export default function Home() {
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter','DM Sans',sans-serif",
                 fontSize: 12,
                 background: 'none',
-                border: '1px solid rgba(45,53,48,0.22)',
+                border: '1px solid rgba(237,244,255,0.18)',
                 borderRadius: 999,
                 padding: '6px 16px',
                 cursor: 'pointer',
-                color: 'rgba(45,53,48,0.70)',
+                color: 'rgba(237,244,255,0.65)',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
-                lineHeight: '1.2',
                 transition: 'all 0.2s',
               }}
             >
@@ -264,11 +245,11 @@ export default function Home() {
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter',sans-serif",
                 fontSize: 12,
                 background: 'none',
-                border: '1px solid rgba(45,53,48,0.22)',
+                border: '1px solid rgba(237,244,255,0.18)',
                 borderRadius: 999,
                 padding: '4px 12px',
                 cursor: 'pointer',
-                color: 'rgba(45,53,48,0.70)',
+                color: 'rgba(237,244,255,0.65)',
               }}
             >
               {c.langLabel}
@@ -281,7 +262,7 @@ export default function Home() {
         {menuOpen && (
           <div className="mobile-menu">
             {c.navItems.map((item, i) => (
-              <a key={i} href="#" onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollToSection(i); }} style={{ fontFamily: bodyFont }}>
+              <a key={i} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
@@ -418,15 +399,15 @@ export default function Home() {
               </p>
               <div className="featured-footer">
                 <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].date}</span>
-                <span style={{ color: 'rgba(45,53,48,0.25)' }}>·</span>
+                <span style={{ color: 'rgba(237,244,255,0.2)' }}>·</span>
                 <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span>
               </div>
-              <a href={c.articles[0].url || '#'} className="cta-btn" style={{ fontFamily: bodyFont }}>
+              <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>
                 {c.readBtn}
               </a>
             </div>
             <div className="featured-editorial-image">
-              <img src={c.articles[0].image} alt={c.articles[0].title} />
+              <img src="/images/featured.jpg" alt={c.articles[0].title} />
             </div>
           </div>
         </div>
@@ -455,50 +436,55 @@ export default function Home() {
           </div>
 
           <div className="articles-editorial">
-            {c.articles.map((article, i) => (
-              <div
-                key={article.id}
-                className={`article-editorial-item fade-up stagger-${i + 1} ${isVisible('articles') ? 'visible' : ''}`}
-              >
-                <div className="article-editorial-index">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <div className="article-editorial-body">
-                  <div className="article-editorial-meta">
-                    <span
-                      className="evidence-tag evidence-tag-sm"
-                      style={{ background: article.tagColor, fontFamily: bodyFont }}
+            {c.articles.slice(1).map((article, i) => {
+              const Wrapper = article.slug ? 'a' : 'div';
+              const wrapperProps = article.slug
+                ? { href: `/articles/${article.slug}`, style: { textDecoration: 'none', color: 'inherit', display: 'block' } }
+                : {};
+              return (
+                <Wrapper
+                  key={article.id}
+                  className={`article-editorial-item fade-up stagger-${i + 1} ${isVisible('articles') ? 'visible' : ''}`}
+                  {...wrapperProps}
+                >
+                  <div className="article-editorial-index">
+                    {String(i + 2).padStart(2, '0')}
+                  </div>
+                  <div className="article-editorial-body">
+                    <div className="article-editorial-meta">
+                      <span
+                        className="evidence-tag evidence-tag-sm"
+                        style={{ background: article.tagColor, fontFamily: bodyFont }}
+                      >
+                        {article.tag}
+                      </span>
+                      <span className="article-category" style={{ fontFamily: bodyFont }}>
+                        {article.category}
+                      </span>
+                    </div>
+                    <h3
+                      className="article-title"
+                      style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.7 : undefined }}
                     >
-                      {article.tag}
-                    </span>
-                    <span className="article-category" style={{ fontFamily: bodyFont }}>
-                      {article.category}
-                    </span>
-                  </div>
-                  <h3
-                    className="article-title"
-                    style={{ fontFamily: headingFont, lineHeight: isRtl ? 1.7 : undefined }}
-                  >
-                    <a href={article.url || '#'} style={{ color: 'inherit', textDecoration: 'none' }}>
                       {article.title}
-                    </a>
-                  </h3>
-                  <p
-                    className="article-excerpt"
-                    style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
-                  >
-                    {article.excerpt}
-                  </p>
-                  <div className="article-footer" style={{ fontFamily: bodyFont }}>
-                    <span>{article.date}</span>
-                    <span>{article.readTime}</span>
+                    </h3>
+                    <p
+                      className="article-excerpt"
+                      style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2 : undefined }}
+                    >
+                      {article.excerpt}
+                    </p>
+                    <div className="article-footer" style={{ fontFamily: bodyFont }}>
+                      <span>{article.date}</span>
+                      <span>{article.readTime}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="article-thumbnail">
-                  <img src={article.image} alt={article.title} />
-                </div>
-              </div>
-            ))}
+                  <div className="article-thumbnail">
+                    <img src={`/images/article-${article.id}.jpg`} alt={article.title} />
+                  </div>
+                </Wrapper>
+              );
+            })}
           </div>
 
           <div className={`view-all fade-up stagger-6 ${isVisible('articles') ? 'visible' : ''}`}>
@@ -645,17 +631,7 @@ export default function Home() {
           <div className={`fade-up stagger-2 ${isVisible('about') ? 'visible' : ''}`}>
             <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP1}</p>
             <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP2}</p>
-            <a href="/about" style={{
-              display: 'inline-block', marginTop: '1.2rem',
-              fontFamily: bodyFont, fontSize: 14, fontWeight: 500,
-              color: '#7B6D3E', textDecoration: 'none',
-              borderBottom: '1px solid rgba(123,109,62,0.35)',
-              paddingBottom: 2,
-              letterSpacing: '0.01em',
-              transition: 'color 0.2s, border-color 0.2s',
-            }}>
-              {c.aboutLink}
-            </a>
+            <p className="about-text" style={{ fontFamily: bodyFont, lineHeight: isRtl ? 2.2 : undefined }}>{c.aboutP3}</p>
           </div>
         </div>
       </section>
@@ -666,7 +642,7 @@ export default function Home() {
           <div className="footer-grid">
             <div>
               <span className="footer-logo">
-                fen<span style={{ color: '#7B6D3E' }}>.</span>
+                fen<span style={{ color: '#00C4A0' }}>.</span>
               </span>
               <p
                 className="footer-tagline"
