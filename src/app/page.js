@@ -48,13 +48,13 @@ const t = {
     footerDisclaimer: 'Content is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for personal medical decisions.',
     footerCopy: '© 2026 fen. All rights reserved.',
     articles: [
-      { id: 1, category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read' },
+      { id: 7, slug: 'sunlight', category: 'NATURAL HEALTH', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'The Sun, Reconsidered: What the Science Actually Says About Sunlight and Your Health', excerpt: 'For fifty years the message was to avoid the sun. A growing body of research shows sunlight regulates sleep, mood, blood pressure, immunity, and cellular energy. Here is what 21 studies actually say.', date: 'Apr 27, 2026', readTime: '16 min read' },
+      { id: 4, slug: 'omega-3', category: 'NUTRITION SCIENCE', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Omega-3: The Essential Fat Your Brain and Heart Cannot Make', excerpt: 'The average Maldivian eats more tuna than anyone on earth — yet not all tuna is equal when it comes to omega-3. What 15 studies say about EPA, DHA, and when a supplement is worth it.', date: 'Apr 24, 2026', readTime: '14 min read' },
+      { id: 1, slug: 'magnesium', category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read' },
       { id: 2, category: 'HERBAL REMEDIES', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Turmeric vs. Curcumin Supplements: A Bioavailability Breakdown', excerpt: 'The golden spice has thousands of studies behind it — but most supplements fail at one critical thing.', date: 'Apr 4, 2026', readTime: '9 min read' },
       { id: 3, category: 'FUNCTIONAL BEVERAGES', tag: 'Emerging Research', tagColor: '#6c757d', title: "Lion's Mane Coffee: Cognitive Hype or Genuine Nootropic?", excerpt: "Mushroom coffee is everywhere. We examined 12 studies on lion's mane and neurogenesis to separate marketing from science.", date: 'Apr 1, 2026', readTime: '8 min read' },
-      { id: 4, slug: 'omega-3', category: 'NUTRITION SCIENCE', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Omega-3: The Essential Fat Your Brain and Heart Cannot Make', excerpt: 'The average Maldivian eats more tuna than anyone on earth — yet not all tuna is equal when it comes to omega-3. What 15 studies say about EPA, DHA, and when a supplement is worth it.', date: 'Apr 24, 2026', readTime: '14 min read' },
       { id: 5, category: 'MOVEMENT', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Walking 7,000 Steps: The New Threshold Backed by Mortality Data', excerpt: 'Forget 10,000 steps. A 2024 meta-analysis of 47 studies found the sweet spot may be lower than you think.', date: 'Mar 25, 2026', readTime: '7 min read' },
       { id: 6, category: 'GUT HEALTH', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'Probiotics After Antibiotics: Timing, Strains, and What Actually Helps', excerpt: 'We reviewed 22 RCTs to find which probiotic protocols have real evidence behind them.', date: 'Mar 21, 2026', readTime: '10 min read' },
-      { id: 7, slug: 'sunlight', category: 'NATURAL HEALTH', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'The Sun, Reconsidered: What the Science Actually Says About Sunlight and Your Health', excerpt: 'For fifty years the message was to avoid the sun. A growing body of research shows sunlight regulates sleep, mood, blood pressure, immunity, and cellular energy. Here is what 21 studies actually say.', date: 'Apr 27, 2026', readTime: '16 min read' },
     ],
     pillars: [
       { name: 'Herbal Remedies', desc: 'Traditional botanicals examined through modern research', icon: '🌿' },
@@ -115,13 +115,13 @@ const t = {
     footerDisclaimer: 'މި ކޮންޓެންޓަކީ ތަޢުލީމީ ބޭނުމަށް އެކަނި ތައްޔާރުކޮށްފައިވާ އެއްޗެކެވެ. ޞިއްޙީ ލަފާ ދިނުމެއް ނޫނެވެ.',
     footerCopy: '© 2026 fen. ހުރިހާ ޙައްޤެއް ލިބިގެންވޭ.',
     articles: [
-      { id: 1, category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް' },
+      { id: 7, slug: 'sunlight', category: 'ޤުދުރަތީ ޞިއްޙަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އިރު، ރިވިއު ކޮށްލާ: ހިލާ ދޯދީ ތިބާގެ ޞިއްޙަތަށް ކުރާ ހަޤީޤީ އަސަރު', excerpt: 'ފަންސާސް އަހަރު ވިދާޅުވި: އިރުން ދުރުހެލިވޭ. ތަހުގީގުތަކުން ފެންނަ ތަސްވީރ ތަފާތު — ނިދި، ލޭ ޕްރެޝަރ، ސެލްތަކުގެ ހަކަތަ.', date: 'އެޕްރީލް 27، 2026', readTime: '16 މިނެޓް' },
+      { id: 4, slug: 'omega-3', category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އޮމެގާ-3 އިންޑެކްސް: ކޮލެސްޓްރޯލަށް ވުރެ މުހިންމު ޓެސްޓެއް', excerpt: 'އޮމެގާ-3 އިންޑެކްސް އަކީ ހިތުގެ ޞިއްޙަތުގެ އެންމެ ވަރުގަދަ ލަފާކުރާ.', date: 'މާރިޗް 28، 2026', readTime: '11 މިނެޓް' },
+      { id: 1, slug: 'magnesium', category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް' },
       { id: 2, category: 'ފަތްޕިލާވެލީ ބޭސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'ރީނދޫ vs. ކާކިއުމިން ސަޕްލިމެންޓްސް: ބަޔޯއެވެއިލަބިލިޓީ', excerpt: 'ރަން ހަވާދުގައި އެތައް ހާސް ދިރާސާއެއް — ގިނަ ސަޕްލިމެންޓްތައް ފެއިލްވަނީ އެއް ކަމެއްގައި.', date: 'އެޕްރީލް 4، 2026', readTime: '9 މިނެޓް' },
       { id: 3, category: 'ބުއިންތައް', tag: 'އުފެދެމުންދާ ދިރާސާ', tagColor: '#6c757d', title: 'ލަޔަންސް މެއިން ކޮފީ: ސިކުނޑީގެ ހައިޕް ނޫނީ ޙަޤީޤީ ނޫޓްރޮޕިކް؟', excerpt: 'މަޝްރޫމް ކޮފީ ކޮންމެ ތަނެއްގައި. 12 ދިރާސާ ބެލީމެވެ — މާކެޓިން އާއި ސައިންސް ވަކިކުރަން.', date: 'އެޕްރީލް 1، 2026', readTime: '8 މިނެޓް' },
-      { id: 4, category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އޮމެގާ-3 އިންޑެކްސް: ކޮލެސްޓްރޯލަށް ވުރެ މުހިންމު ޓެސްޓެއް', excerpt: 'އޮމެގާ-3 އިންޑެކްސް އަކީ ހިތުގެ ޞިއްޙަތުގެ އެންމެ ވަރުގަދަ ލަފާކުރާ.', date: 'މާރިޗް 28، 2026', readTime: '11 މިނެޓް' },
       { id: 5, category: 'ކަސްރަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: '7,000 ފިޔަވަޅު ހިނގުން: މަރުގެ ޑާޓާއިން ސާބިތުވާ އައު ތެރެޝޯލްޑް', excerpt: '10,000 ފިޔަވަޅު ހަނދާން ނެތިގެން. 47 ދިރާސާގެ މެޓާ-އެނާލިސިސް.', date: 'މާރިޗް 25، 2026', readTime: '7 މިނެޓް' },
       { id: 6, category: 'ގޮހޮރުގެ ޞިއްޙަތު', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'އެންޓިބައޮޓިކަށް ފަހު ޕްރޯބައޮޓިކްސް: ޓައިމިން އާއި ސްޓްރެއިންސް', excerpt: '22 ރެންޑަމައިޒްޑް ޓްރައަލް ބެލީ ޙަޤީޤީ ހެކި ހުރި ޕްރޮޓޮކޯލް ހޯދަން.', date: 'މާރިޗް 21، 2026', readTime: '10 މިނެޓް' },
-      { id: 7, slug: 'sunlight', category: 'ޤުދުރަތީ ޞިއްޙަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އިރު، ރިވިއު ކޮށްލާ: ހިލާ ދޯދީ ތިބާގެ ޞިއްޙަތަށް ކުރާ ހަޤީޤީ އަސަރު', excerpt: 'ފަންސާސް އަހަރު ވިދާޅުވި: އިރުން ދުރުހެލިވޭ. ތަހުގީގުތަކުން ފެންނަ ތަސްވީރ ތަފާތު — ނިދި، 気分، ލޭ ޕްރެޝަރ، ސެލްތަކުގެ ހަކަތަ.', date: 'އެޕްރީލް 27، 2026', readTime: '16 މިނެޓް' },
     ],
     pillars: [
       { name: 'ފަތްޕިލާވެލީ ބޭސް', desc: 'ޒަމާނީ ދިރާސާއިން ބެލޭ ގަސްގަހާގެ ބޭސް', icon: '🌿' },
@@ -213,7 +213,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             {c.navItems.map((item, i) => (
-              <a key={i} className="nav-link" href="#" style={{ fontFamily: bodyFont }}>
+              <a key={i} className="nav-link" href={['#articles', '#pillars', '#about', '#newsletter'][i]} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
@@ -262,7 +262,7 @@ export default function Home() {
         {menuOpen && (
           <div className="mobile-menu">
             {c.navItems.map((item, i) => (
-              <a key={i} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
+              <a key={i} href={['#articles', '#pillars', '#about', '#newsletter'][i]} onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
@@ -402,7 +402,7 @@ export default function Home() {
                 <span style={{ color: 'rgba(237,244,255,0.2)' }}>·</span>
                 <span className="date-text" style={{ fontFamily: bodyFont }}>{c.articles[0].readTime}</span>
               </div>
-              <a href="/articles/magnesium" className="cta-btn" style={{ fontFamily: bodyFont }}>
+              <a href={c.articles[0].slug ? `/articles/${c.articles[0].slug}` : '#'} className="cta-btn" style={{ fontFamily: bodyFont }}>
                 {c.readBtn}
               </a>
             </div>
