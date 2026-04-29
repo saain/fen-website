@@ -407,7 +407,7 @@ export default function Home() {
               </a>
             </div>
             <div className="featured-editorial-image">
-              <img src="/images/featured.jpg" alt={c.articles[0].title} />
+              <img src={`/images/article-${c.articles[0].id}.jpg`} alt={c.articles[0].title} />
             </div>
           </div>
         </div>
