@@ -213,7 +213,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             {c.navItems.map((item, i) => (
-              <a key={i} className="nav-link" href={['#articles', '#pillars', '#about', '#newsletter'][i]} style={{ fontFamily: bodyFont }}>
+              <a key={i} className="nav-link" href={['#articles', '#pillars', '/about', '#newsletter'][i]} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
@@ -263,7 +263,7 @@ export default function Home() {
         {menuOpen && (
           <div className="mobile-menu">
             {c.navItems.map((item, i) => (
-              <a key={i} href={['#articles', '#pillars', '#about', '#newsletter'][i]} onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
+              <a key={i} href={['#articles', '#pillars', '/about', '#newsletter'][i]} onClick={() => setMenuOpen(false)} style={{ fontFamily: bodyFont }}>
                 {item}
               </a>
             ))}
