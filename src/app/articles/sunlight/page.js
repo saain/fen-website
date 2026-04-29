@@ -228,7 +228,7 @@ function SunlightArticleInner() {
             </a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(237,244,255,0.60)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(45,53,48,0.65)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
               ← Home
             </a>
             <button
@@ -236,12 +236,12 @@ function SunlightArticleInner() {
               title={warm ? 'Blue Light Blocker is active — tap to turn off' : 'Activate Blue Light Blocker for easier reading at night'}
               style={{
                 fontSize: 12,
-                background: warm ? 'rgba(160,80,20,0.22)' : 'transparent',
-                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(237,244,255,0.18)',
+                background: warm ? 'rgba(160,80,20,0.22)' : 'rgba(45,53,48,0.07)',
+                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(45,53,48,0.28)',
                 borderRadius: 20,
                 padding: '6px 13px',
                 cursor: 'pointer',
-                color: warm ? '#F5C9A0' : 'rgba(237,244,255,0.70)',
+                color: warm ? '#F5C9A0' : '#2D3530',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,

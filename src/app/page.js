@@ -222,15 +222,16 @@ export default function Home() {
               style={{
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter','DM Sans',sans-serif",
                 fontSize: 12,
-                background: 'rgba(255,255,255,0.15)',
-                border: '1.5px solid rgba(255,255,255,0.75)',
+                background: 'rgba(45,53,48,0.08)',
+                border: '1.5px solid rgba(45,53,48,0.35)',
                 borderRadius: 999,
                 padding: '6px 16px',
                 cursor: 'pointer',
-                color: '#FFFFFF',
+                color: '#2D3530',
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 transition: 'all 0.2s',
+                fontWeight: 500,
               }}
             >
               {c.langLabel}
@@ -244,12 +245,13 @@ export default function Home() {
               style={{
                 fontFamily: lang === 'en' ? "'Faruma','MV Waheed',Tahoma" : "'Inter',sans-serif",
                 fontSize: 12,
-                background: 'rgba(255,255,255,0.15)',
-                border: '1.5px solid rgba(255,255,255,0.75)',
+                background: 'rgba(45,53,48,0.08)',
+                border: '1.5px solid rgba(45,53,48,0.35)',
                 borderRadius: 999,
                 padding: '4px 12px',
                 cursor: 'pointer',
-                color: '#FFFFFF',
+                color: '#2D3530',
+                fontWeight: 500,
               }}
             >
               {c.langLabel}
