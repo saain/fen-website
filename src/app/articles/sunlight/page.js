@@ -254,7 +254,7 @@ function SunlightArticleInner() {
               }}
             >
               <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
-              <span>Blue Light Blocker</span>
+              <span className="toggle-label">Blue Light Blocker</span>
               {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
             </button>
           </div>
