@@ -439,7 +439,7 @@ export default function Home() {
             {c.articles.slice(1).map((article, i) => {
               const Wrapper = article.slug ? 'a' : 'div';
               const wrapperProps = article.slug
-                ? { href: `/articles/${article.slug}`, style: { textDecoration: 'none', color: 'inherit', display: 'block' } }
+                ? { href: `/articles/${article.slug}`, style: { textDecoration: 'none', color: 'inherit' } }
                 : {};
               return (
                 <Wrapper
