@@ -27,3 +27,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Drop cap working/backup files (originals + intermediate variants stay local-only)
+public/dropcap-*-original.png
+public/dropcap-*-without.png

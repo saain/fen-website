@@ -75,6 +75,83 @@ Nav buttons (Blue Light Blocker + language toggle):
 
 The "Blue Light Blocker" is a per-user warm-palette toggle (sepia-shifted reading mode). It persists in `localStorage` under key `fen-warm`. Every article supports it; do not strip it.
 
+## Dhivehi drop caps (decorative first-letter images)
+
+Some pages use a decorative drop cap on the first paragraph **only in Dhivehi mode** — a hand-drawn image of the opening letter (with its diacritic) that floats to the right of the paragraph and the rest of the text wraps around it. Currently in use:
+
+- `articles/magnesium/page.js` — subtitle paragraph, image of `ތަ`, file `public/dropcap-thaa.png`
+- `about/page.js` — opening paragraph, image of `އަ`, file `public/dropcap-alifu.png`
+
+### The pattern (copy verbatim, only swap the letter + filename)
+
+```jsx
+<p style={{ ...existingStyle, overflow: 'hidden', paddingTop: isRtl && c.X.startsWith('LETTER') ? 24 : 0 }}>
+  {isRtl && c.X.startsWith('LETTER') ? (
+    <>
+      <img
+        src="/dropcap-NAME.png"
+        alt="LETTER+DIACRITIC"
+        style={{
+          float: 'right',
+          height: 165,            // ~4 lines of text — keep consistent across pages
+          width: 'auto',
+          maxWidth: '40%',        // safety on narrow viewports
+          marginLeft: 18,
+          marginTop: -18,         // lifts cap so its bottom sits closer to first body line
+          marginBottom: 6,
+          shapeOutside: 'url(/dropcap-NAME.png)',  // text hugs the letter contour
+          shapeImageThreshold: 0.3,
+          shapeMargin: 10,
+        }}
+      />
+      {c.X.slice(2)}    // drop both the letter AND its diacritic — they're in the image
+    </>
+  ) : (
+    c.X
+  )}
+</p>
+```
+
+The `paddingTop: 24` is **not optional** — it cancels out the negative `marginTop` so the diacritic at the top of the image isn't clipped by `overflow: hidden`. We learned this the hard way.
+
+### Image requirements
+
+- **Filename: ASCII only.** `dropcap-thaa.png`, `dropcap-alifu.png`, etc. Never name files with Dhivehi characters — the URL has to be percent-encoded (`%DE%87%DE%A6.png`) and that breaks across servers, CDNs, and CLI tools.
+- **Format: transparent PNG.** Opaque images make `shape-outside` silently fall back to the bounding rectangle, so text wraps a square instead of the letter shape.
+- **Trim the canvas tight to the letter.** Whitespace in the canvas around the letter expands the bounding box `shape-outside` reads from. The processing script below does this.
+
+### Processing a new image
+
+When the user drops a raw decorative letter image into `public/`, run this Python (PIL is preinstalled in the sandbox) to clean near-zero alpha and crop to the letter:
+
+```python
+from PIL import Image
+img = Image.open('public/dropcap-NAME-original.png').convert('RGBA')
+pixels = img.load()
+w, h = img.size
+for y in range(h):
+    for x in range(w):
+        r, g, b, a = pixels[x, y]
+        if a < 30:                   # kill near-transparent crumbs
+            pixels[x, y] = (0, 0, 0, 0)
+bbox = img.getbbox()
+m = 6                                # tiny breathing margin
+trimmed = img.crop((max(0,bbox[0]-m), max(0,bbox[1]-m),
+                    min(w,bbox[2]+m), min(h,bbox[3]+m)))
+trimmed.save('public/dropcap-NAME.png', optimize=True)
+```
+
+Save the raw upload as `dropcap-NAME-original.png` first as a backup. The `.gitignore` excludes `public/dropcap-*-original.png` from the repo so backups stay local.
+
+### How to add a drop cap to a new page or article
+
+1. User saves the decorative letter image to `public/dropcap-<latin-name>-original.png` (or hands it to you in chat — then you ask them to save it themselves; you can't write binary files).
+2. Run the processing script above to produce `public/dropcap-<latin-name>.png`.
+3. Find the paragraph the image should attach to (must be in Dhivehi mode, must start with the letter shown in the image).
+4. Apply the JSX pattern above. Keep `height: 165` for consistency unless there's a reason to differ.
+5. Test in dev: toggle Dhivehi → check (a) the diacritic isn't clipped, (b) text wraps around the letter shape, (c) bottom of image aligns reasonably with the body text below.
+6. Commit only the live `dropcap-<name>.png` and the updated page file (the `-original.png` is gitignored).
+
 ## Deploy flow
 
 1. Edit files in `src/`.
@@ -101,6 +178,9 @@ Until this is rotated, do not paste git remote output into any chat, screenshot,
 - **Forgetting to add an article to both `en.articles` and `dv.articles`.** The new article won't appear in one of the languages. Always update both.
 - **Forgetting the Dhivehi label on the Blue Light button.** Magnesium uses `{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}`. Don't ship English-only.
 - **Adding only one language.** Every new article must have both `en` and `dv` content objects, the language toggle button, and `dir={isRtl ? 'rtl' : 'ltr'}`. The site treats Dhivehi as a first-class language, not an afterthought.
+- **Drop cap diacritic getting clipped at the top.** When adding a drop cap, the `<img>` uses `marginTop: -18` to lift the cap, and the parent `<p>` has `overflow: hidden` to contain the float. Without a matching `paddingTop` on the `<p>`, the lifted top of the image (= the diacritic) gets clipped. Always pair them. See the drop-caps section above.
+- **Unicode filenames in `public/`.** Files like `އަ.png` in `public/` look fine in Finder but are fragile in URLs (must be percent-encoded). Always rename to ASCII (`dropcap-alifu.png`, `dropcap-thaa.png`) before referencing from `src=`.
+- **Opaque drop cap image.** `shape-outside` requires a transparent PNG. An opaque image silently falls back to a rectangle wrap and the user thinks the CSS is broken. If the user reports text "on top of the letter" or "not following the shape," check the image's alpha channel before debugging CSS.
 
 ## When working on this repo, in priority order
 
