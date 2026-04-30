@@ -172,8 +172,30 @@ export default function AboutPage() {
         <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(123,109,62,0.40), transparent)', marginBottom: '2.8rem' }} />
 
         {/* Opening */}
-        <p style={{ ...pStyle, fontSize: 17, lineHeight: isRtl ? 2.2 : 1.80 }}>
-          {c.opening}
+        <p style={{ ...pStyle, fontSize: 17, lineHeight: isRtl ? 2.2 : 1.80, overflow: 'hidden', paddingTop: isRtl && c.opening.startsWith('އ') ? 24 : 0 }}>
+          {isRtl && c.opening.startsWith('އ') ? (
+            <>
+              <img
+                src="/dropcap-alifu.png"
+                alt="އަ"
+                style={{
+                  float: 'right',
+                  height: 165,
+                  width: 'auto',
+                  maxWidth: '40%',
+                  marginLeft: 18,
+                  marginTop: -18,
+                  marginBottom: 6,
+                  shapeOutside: 'url(/dropcap-alifu.png)',
+                  shapeImageThreshold: 0.3,
+                  shapeMargin: 10,
+                }}
+              />
+              {c.opening.slice(2)}
+            </>
+          ) : (
+            c.opening
+          )}
         </p>
 
         {/* Section 1 */}
