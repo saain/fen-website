@@ -57,12 +57,15 @@ If sections are added or removed (magnesium has 8 + a custom table; sunlight has
 These are accurate as of the last edit but **do not maintain this list as the canonical reference**. Read `magnesium/page.js` if there's any doubt; if it disagrees with this file, magnesium wins.
 
 Palette:
-- Primary green (evidence tag, CTA bg): `#2d6a4f`
+- Evidence tag (top-of-article badge): `#2d6a4f` (rich green)
+- CTA box bg (bottom-of-article newsletter call-to-action): `#4A5C42` (muted olive-green) with `borderRadius: 12`
+- Takeaway box accent — `TEAL` constant in code (heading colour + 4px border on the Key Takeaways box + table headers): `#4A5C42` warm-off / `#A03A18` warm-on
 - Footer dot accent: `#52b788`
 - Body text: `#3A3A3C` (warm-mode `#3D1A10`)
 - Page bg: `#FAF8F4` (warm-mode `#FCE4D0`)
-- Takeaway box accent (TEAL): `#0D7A6A`
 - Nav bar bg (from globals.css `.nav`): `rgba(237, 241, 236, 0.88)` — **light**, so all nav button text must be dark (`#2D3530`, `rgba(45,53,48,0.65)`), never light (`rgba(237,244,255,…)`). Light text on the light nav is invisible — this has bitten us multiple times.
+
+⚠️ **Two greens, do not mix them up:** `#2d6a4f` (evidence tag) and `#4A5C42` (CTA + TEAL accent) look similar in code but are perceptibly different on screen. The Key Takeaways heading and the CTA box must be `#4A5C42`. The "Strong Evidence" pill at the top must be `#2d6a4f`. Older versions of articles used `#0D7A6A` (true teal) for the takeaway accent — that is the OLD value; if you see it in any new file you're writing, replace it with `#4A5C42`.
 
 Nav buttons (Blue Light Blocker + language toggle):
 - Visible bg: `rgba(45,53,48,0.07)`
@@ -93,7 +96,7 @@ Until this is rotated, do not paste git remote output into any chat, screenshot,
 
 ## Common pitfalls (things that have actually gone wrong)
 
-- **Article styling drifts from magnesium.** Multiple articles have ended up with their own one-off colors (`#5A7A5A` for evidence tag, `#4A5C42` for CTA, `#00C4A0` for footer dot). Always copy from magnesium; don't carry forward old colors from existing files.
+- **Article styling drifts from magnesium.** Articles have ended up with their own one-off colors: `#5A7A5A` for evidence tag (should be `#2d6a4f`), `#0D7A6A` for the takeaway TEAL accent (should be `#4A5C42`), `#00C4A0` for footer dot (should be `#52b788`). Always copy from magnesium; don't carry forward old colors from existing files. **Sanity check** by diffing the hex colors used: `diff <(grep -oE "#[0-9a-fA-F]{3,8}" articles/<new>/page.js | sort -u) <(grep -oE "#[0-9a-fA-F]{3,8}" articles/magnesium/page.js | sort -u)` — output should be empty.
 - **Light-on-light nav text.** The nav background was changed to a light pale-green; any nav text in `rgba(237,244,255,…)` (the old dark-nav color) becomes invisible. All nav text must use `rgba(45,53,48,…)` or `#2D3530`.
 - **Forgetting to add an article to both `en.articles` and `dv.articles`.** The new article won't appear in one of the languages. Always update both.
 - **Forgetting the Dhivehi label on the Blue Light button.** Magnesium uses `{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}`. Don't ship English-only.
