@@ -369,7 +369,7 @@ function SunlightArticleInner() {
             </a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(237,244,255,0.60)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+            <a href="/" style={{ fontFamily: bf, fontSize: 13, color: 'rgba(45,53,48,0.65)', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
               {isRtl ? 'ފުރަތަމަ ←' : '← Home'}
             </a>
             <button
@@ -377,12 +377,12 @@ function SunlightArticleInner() {
               title={warm ? 'Blue Light Blocker is active — tap to turn off' : 'Activate Blue Light Blocker for easier reading at night'}
               style={{
                 fontSize: 12,
-                background: warm ? 'rgba(160,80,20,0.22)' : 'transparent',
-                border: warm ? '1px solid rgba(190,100,30,0.50)' : '1px solid rgba(237,244,255,0.18)',
+                background: warm ? 'rgba(160,80,20,0.18)' : 'rgba(45,53,48,0.07)',
+                border: warm ? '1.5px solid rgba(160,80,20,0.55)' : '1px solid rgba(45,53,48,0.28)',
                 borderRadius: 20,
                 padding: '6px 13px',
                 cursor: 'pointer',
-                color: warm ? '#F5C9A0' : 'rgba(237,244,255,0.70)',
+                color: warm ? '#7A3010' : '#2D3530',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
@@ -395,12 +395,12 @@ function SunlightArticleInner() {
               }}
             >
               <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
-              <span>Blue Light Blocker</span>
+              <span className="toggle-label">{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}</span>
               {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
-              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'none', border: '1px solid rgba(237,244,255,0.25)', borderRadius: 4, padding: '6px 12px', cursor: 'pointer', color: '#EDF4FF', whiteSpace: 'nowrap' }}
+              style={{ fontFamily: lang === 'en' ? "'Faruma',Tahoma" : "'DM Sans',sans-serif", fontSize: 13, background: 'rgba(45,53,48,0.07)', border: '1.5px solid rgba(45,53,48,0.30)', borderRadius: 6, padding: '6px 12px', cursor: 'pointer', color: '#2D3530', fontWeight: 500, whiteSpace: 'nowrap' }}
             >
               {lang === 'en' ? 'ދިވެހި' : 'English'}
             </button>
@@ -411,7 +411,7 @@ function SunlightArticleInner() {
       <article style={{ maxWidth: 720, margin: '0 auto', padding: '100px 24px 100px', background: PAGE_BG, transition: 'background 0.4s ease' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-            <span className="evidence-tag" style={{ background: '#5A7A5A', fontFamily: bf }}>
+            <span className="evidence-tag" style={{ background: '#2d6a4f', fontFamily: bf }}>
               {c.tag}
             </span>
             <span style={{ fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase', color: TEXT_MUTED, fontWeight: 500, fontFamily: bf }}>
@@ -484,7 +484,7 @@ function SunlightArticleInner() {
           {c.disc}
         </div>
 
-        <div style={{ marginTop: 48, padding: 32, background: '#4A5C42', borderRadius: 12, textAlign: 'center' }}>
+        <div style={{ marginTop: 48, padding: 32, background: '#2d6a4f', borderRadius: 8, textAlign: 'center' }}>
           <h3 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 28, color: '#faf9f6', marginBottom: 12 }}>
             {c.ctaT}
           </h3>
@@ -500,7 +500,7 @@ function SunlightArticleInner() {
       <footer className="footer">
         <div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
           <span className="footer-logo">
-            fen<span style={{ color: '#00C4A0' }}>.</span>
+            fen<span style={{ color: '#52b788' }}>.</span>
           </span>
           <p className="footer-copy">© 2026 fen. All rights reserved.</p>
         </div>
