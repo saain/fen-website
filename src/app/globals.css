@@ -114,12 +114,11 @@ body {
   position: relative;
   display: inline-block;
   line-height: 1;
-  /* fixed width matches the candle emoji's roughly 14px width — keeps the
-     flame centering predictable across fonts. Adjust if you change emoji size. */
-  width: 14px;
-  height: 14px;
-  text-align: center;
-  vertical-align: middle;
+  /* Natural width — sized to whatever the candle emoji actually renders.
+     The flame's centering then references the candle's true visual width.
+     If the flame ends up off-axis on a particular OS / emoji font, tune
+     --flame-x below (negative = nudge left, positive = nudge right). */
+  --flame-x: -4px;
 }
 
 .candle-lit {
@@ -140,10 +139,13 @@ body {
   /* top: negative pulls the flame above the wrapper. Larger negative = bigger
      gap between flame and candle. */
   top: -8px;
-  /* Centering: left: 50% of wrapper + translateX(-50%) of own width.
-     The wrapper's fixed width (14px) keeps this stable across emoji fonts. */
+  /* Centering: position the flame's centre at 50% of the wrapper, then nudge
+     by --flame-x (defined on .candle-wrapper) to compensate for the candle
+     emoji's wick being slightly off the geometric centre of its character box.
+     Apple's 🕯️ at fontSize 14 sits with the wick a few pixels left of the
+     emoji's bounding-box centre, hence the negative default. */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(calc(-50% + var(--flame-x, 0px)));
   width: 6px;
   height: 9px;
   border-radius: 50% 50% 35% 35% / 65% 65% 35% 35%;
