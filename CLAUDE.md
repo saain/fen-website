@@ -154,6 +154,14 @@ Save the raw upload as `dropcap-NAME-original.png` first as a backup. The `.giti
 5. Test in dev: toggle Dhivehi → check (a) the diacritic isn't clipped, (b) text wraps around the letter shape, (c) bottom of image aligns reasonably with the body text below.
 6. Commit only the live `dropcap-<name>.png` and the updated page file (the `-original.png` is gitignored).
 
+## Hero image
+
+- File: `public/images/hero.jpg` — referenced by `globals.css` `.hero-cinematic.has-photo::before { background-image: url('/images/hero.jpg') }`. To swap the hero, replace this exact file (the CSS doesn't need to change).
+- Currently: **Edvard Munch, *The Sun* (1911)** — public domain, sourced from Artvee. Replaces an earlier Hilma af Klint that was too visually busy behind hero text.
+- Target spec from `fen-redesign/docs/image-sourcing-guide.md`: 2000px-wide JPG (or WebP), under ~1 MB. The hero shows at 15% opacity behind text, so quality 70-75 is fine. macOS one-liner: `sips -Z 2000 hero.jpg && sips -s formatOptions 75 hero.jpg`.
+- Aesthetic anchor: keep the hero from the same five pillars documented in `fen-redesign/docs/image-sourcing-guide.md` (Klint mystical / Islamic geometric / botanical / symbolist spiritual / Kandinsky). Don't replace with stock photography.
+- Always update `CREDITS.md` when swapping the hero. List the new artist, work, year, and source.
+
 ## Notion (project tracking + CMS)
 
 This project has a Notion workspace mirroring the site as a lightweight CMS. **When the user asks "update notion" (or anything similar), do all of the following by default**:
