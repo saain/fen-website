@@ -80,6 +80,8 @@ The "Blue Light Blocker" is a per-user warm-palette toggle (sepia-shifted readin
 Some pages use a decorative drop cap on the first paragraph **only in Dhivehi mode** — a hand-drawn image of the opening letter (with its diacritic) that floats to the right of the paragraph and the rest of the text wraps around it. Currently in use:
 
 - `articles/magnesium/page.js` — subtitle paragraph, image of `ތަ`, file `public/dropcap-thaa.png`
+- `articles/sunlight/page.js` — subtitle paragraph, image of `ވޭ`, file `public/dropcap-vaavu.png`
+- `articles/omega-3/page.js` — subtitle paragraph, image of `ދު`, file `public/dropcap-dhaalu.png`
 - `about/page.js` — opening paragraph, image of `އަ`, file `public/dropcap-alifu.png`
 
 ### The pattern (copy verbatim, only swap the letter + filename)

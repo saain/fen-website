@@ -394,10 +394,32 @@ function Omega3ArticleInner() {
           <h1 style={{ fontFamily: hf, fontSize: isRtl ? 52 : 44, fontWeight: isRtl ? 700 : 400, lineHeight: isRtl ? '76px' : hlh, letterSpacing: isRtl ? 0 : '-0.02em', color: TEXT_PRIMARY, marginBottom: 20 }}>
             {c.title}
           </h1>
-          <p style={{ fontSize: isRtl ? 18 : 17, lineHeight: lh, color: TEXT_SECONDARY, fontWeight: 300, marginBottom: 20, fontFamily: bf }}>
-            {c.subtitle}
+          <p style={{ fontSize: isRtl ? 18 : 17, lineHeight: lh, color: TEXT_SECONDARY, fontWeight: 300, marginBottom: 20, fontFamily: bf, overflow: 'hidden', paddingTop: isRtl && c.subtitle.startsWith('ދ') ? 24 : 0 }}>
+            {isRtl && c.subtitle.startsWith('ދ') ? (
+              <>
+                <img
+                  src="/dropcap-dhaalu.png"
+                  alt="ދު"
+                  style={{
+                    float: 'right',
+                    height: 165,
+                    width: 'auto',
+                    maxWidth: '40%',
+                    marginLeft: 18,
+                    marginTop: -18,
+                    marginBottom: 6,
+                    shapeOutside: 'url(/dropcap-dhaalu.png)',
+                    shapeImageThreshold: 0.3,
+                    shapeMargin: 10,
+                  }}
+                />
+                {c.subtitle.slice(2)}
+              </>
+            ) : (
+              c.subtitle
+            )}
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', fontSize: 13, color: TEXT_MUTED, fontWeight: 300, paddingBottom: 24, borderBottom: `1px solid ${BORDER_MED}`, fontFamily: bf }}>
+          <div style={{ clear: 'both', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', fontSize: 13, color: TEXT_MUTED, fontWeight: 300, paddingBottom: 24, borderBottom: `1px solid ${BORDER_MED}`, fontFamily: bf }}>
             <span>{c.date}</span>
             <span>·</span>
             <span>{c.readTime}</span>
