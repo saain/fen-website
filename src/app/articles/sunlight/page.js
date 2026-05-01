@@ -398,7 +398,14 @@ function SunlightArticleInner() {
                 <span className={warm ? 'candle-lit' : 'candle-unlit'} style={{ fontSize: 14 }}>🕯️</span>
                 {warm && <span className="candle-flame" />}
               </span>
-              <span className="toggle-label" style={{ fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif" }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
+              <span className="toggle-label" style={{
+                fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif",
+                fontSize: isRtl ? 14 : 13,
+                fontWeight: warm ? 600 : 400,
+                lineHeight: 1,
+                display: 'inline-block',
+                verticalAlign: 'middle',
+              }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
