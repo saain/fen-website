@@ -71,7 +71,7 @@ Nav buttons (Blue Light Blocker + language toggle):
 - Visible bg: `rgba(45,53,48,0.07)`
 - Border: `1.5px solid rgba(45,53,48,0.30)` (lang) or `1px solid rgba(45,53,48,0.28)` (blue light)
 - Text: `#2D3530`
-- Blue Light label uses `<span className="toggle-label">` so globals.css can hide it on small screens; in Dhivehi the label is `'ނޫ އަލި ހުރަސް'`.
+- Blue Light label uses `<span className="toggle-label">` so globals.css can hide it on small screens. In Dhivehi the label is `'ނޫ އަލި ހުރަސް'` AND the span needs `fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif"` — without the override the span inherits the parent button's DM Sans, which has no Dhivehi glyphs and falls back to whatever ugly system font the OS happens to have.
 
 The "Blue Light Blocker" is a per-user warm-palette toggle (sepia-shifted reading mode). It persists in `localStorage` under key `fen-warm`. Every article supports it; do not strip it.
 
