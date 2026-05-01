@@ -532,7 +532,7 @@ function Omega3ArticleInner() {
       <footer className="footer">
         <div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
           <span className="footer-logo">
-            fen<span style={{ color: '#52b788' }}>.</span>
+            fen<span style={{ color: '#7B6D3E' }}>.</span>
           </span>
           <p className="footer-copy">© 2026 fen. All rights reserved.</p>
         </div>

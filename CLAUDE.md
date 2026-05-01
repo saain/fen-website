@@ -60,7 +60,7 @@ Palette:
 - Evidence tag (top-of-article badge): `#2d6a4f` (rich green)
 - CTA box bg (bottom-of-article newsletter call-to-action): `#4A5C42` (muted olive-green) with `borderRadius: 12`
 - Takeaway box accent — `TEAL` constant in code (heading colour + 4px border on the Key Takeaways box + table headers): `#4A5C42` warm-off / `#A03A18` warm-on
-- Footer dot accent: `#52b788`
+- Logo dot accent (header `.logo-dot` AND footer `.footer-logo` dot): `#7B6D3E` — the brand "Maldives gold/teal" colour. Used to be inconsistent — footers were on `#52b788` and the home page was on `#00C4A0`; both were wrong. Always `#7B6D3E` so the wordmark dot looks the same in header and footer of every page.
 - Body text: `#3A3A3C` (warm-mode `#3D1A10`)
 - Page bg: `#FAF8F4` (warm-mode `#FCE4D0`)
 - Nav bar bg (from globals.css `.nav`): `rgba(237, 241, 236, 0.88)` — **light**, so all nav button text must be dark (`#2D3530`, `rgba(45,53,48,0.65)`), never light (`rgba(237,244,255,…)`). Light text on the light nav is invisible — this has bitten us multiple times.
@@ -216,6 +216,7 @@ Until this is rotated, do not paste git remote output into any chat, screenshot,
 - **Light-on-light nav text.** The nav background was changed to a light pale-green; any nav text in `rgba(237,244,255,…)` (the old dark-nav color) becomes invisible. All nav text must use `rgba(45,53,48,…)` or `#2D3530`.
 - **Forgetting to add an article to both `en.articles` and `dv.articles`.** The new article won't appear in one of the languages. Always update both.
 - **Forgetting the Dhivehi label on the Blue Light button.** Magnesium uses `{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}`. Don't ship English-only.
+- **"fen." wordmark renders as ".fen" in RTL.** The brand is `fen<span>.</span>` in source — in RTL pages the dot flips to the left of "fen", which is wrong (it's a brand mark, not localized text). Globals.css forces `direction: ltr` on `.logo` and `.footer-logo` to prevent this. If you ever introduce a new logo placement, give it one of those classes (or its own `direction: ltr`).
 - **Adding only one language.** Every new article must have both `en` and `dv` content objects, the language toggle button, and `dir={isRtl ? 'rtl' : 'ltr'}`. The site treats Dhivehi as a first-class language, not an afterthought.
 - **Drop cap diacritic getting clipped at the top.** When adding a drop cap, the `<img>` uses `marginTop: -18` to lift the cap, and the parent `<p>` has `overflow: hidden` to contain the float. Without a matching `paddingTop` on the `<p>`, the lifted top of the image (= the diacritic) gets clipped. Always pair them. See the drop-caps section above.
 - **Unicode filenames in `public/`.** Files like `އަ.png` in `public/` look fine in Finder but are fragile in URLs (must be percent-encoded). Always rename to ASCII (`dropcap-alifu.png`, `dropcap-thaa.png`) before referencing from `src=`.

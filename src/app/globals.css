@@ -74,6 +74,15 @@ body {
   line-height: 1.2;
 }
 
+/* The "fen." wordmark is a brand mark, not localized text. Force LTR so the
+   dot always renders to the right of "fen" regardless of page direction.
+   Without this, RTL pages render the wordmark as ".fen" which breaks the brand. */
+.logo,
+.footer-logo {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
 /* Prevent base line-height 2.2 from making nav elements tall */
 [dir="rtl"] .nav-link,
 [dir="rtl"] .logo-dot {
