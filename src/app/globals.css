@@ -106,6 +106,34 @@ body {
   to   { transform: translateX(-50%); }
 }
 
+/* Candle flame flicker — used by the Blue Light Blocker (ނޫރަސް™) toggle.
+   When warm mode is ON the candle gets a subtle warm drop-shadow that pulses
+   like a real flame. When OFF the candle is desaturated to look "snuffed". */
+@keyframes candleFlicker {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(245, 160, 96, 0.55));
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    filter: drop-shadow(0 0 5px rgba(255, 145, 50, 0.85));
+    transform: translateY(-0.5px) scale(1.02);
+  }
+  60% {
+    filter: drop-shadow(0 0 4px rgba(245, 160, 96, 0.7));
+    transform: translateY(0) scale(1);
+  }
+}
+
+.candle-lit {
+  animation: candleFlicker 1.6s ease-in-out infinite;
+  display: inline-block;
+}
+
+.candle-unlit {
+  filter: grayscale(1) opacity(0.55);
+  display: inline-block;
+}
+
 @keyframes navSlide {
   from { opacity: 0; transform: translateY(-100%); }
   to   { opacity: 1; transform: translateY(0); }
