@@ -82,22 +82,26 @@ export default function AboutPage() {
     ? "'Faruma', 'MV Waheed', 'MV Boli', Tahoma, serif"
     : "'Cormorant Garamond', 'Instrument Serif', Georgia, serif";
 
+  // Text sizes — kept in lockstep with the magnesium article template.
+  // Dhivehi script renders proportionally smaller than Latin, so RTL gets
+  // a one-step bump on every size to land at the same perceived weight.
   const pStyle = {
     fontFamily: bodyFont,
-    fontSize: 16,
-    lineHeight: isRtl ? 2.2 : 1.78,
+    fontSize: isRtl ? 17 : 16,
+    lineHeight: isRtl ? 2.3 : 1.85,
     color: 'rgba(45,53,48,0.80)',
     marginBottom: '1.3rem',
   };
 
   const h3Style = {
     fontFamily: headingFont,
-    fontSize: 'clamp(1.25rem, 2.5vw, 1.65rem)',
-    fontWeight: 500,
-    letterSpacing: '-0.01em',
+    fontSize: isRtl ? 'clamp(1.5rem, 3vw, 2rem)' : 'clamp(1.25rem, 2.5vw, 1.65rem)',
+    fontWeight: isRtl ? 700 : 500,
+    letterSpacing: isRtl ? 0 : '-0.01em',
     color: '#2D3530',
     marginBottom: '1rem',
     marginTop: '3rem',
+    lineHeight: isRtl ? 1.7 : undefined,
   };
 
   return (
@@ -145,25 +149,38 @@ export default function AboutPage() {
 
         {/* Eyebrow */}
         <p style={{
-          fontFamily: bodyFont, fontSize: 11, fontWeight: 600,
-          letterSpacing: '0.2em', textTransform: 'uppercase',
-          color: '#7B6D3E', marginBottom: '1.2rem',
+          fontFamily: bodyFont,
+          fontSize: isRtl ? 14 : 11,
+          fontWeight: 600,
+          letterSpacing: isRtl ? 0 : '0.2em',
+          textTransform: isRtl ? 'none' : 'uppercase',
+          color: '#7B6D3E',
+          marginBottom: '1.2rem',
         }}>
           {c.eyebrow}
         </p>
 
         {/* Display title */}
         <h1 style={{
-          fontFamily: headingFont, fontWeight: 500,
-          fontSize: 'clamp(2.6rem, 6vw, 4rem)', lineHeight: 0.95,
-          letterSpacing: '-0.025em', color: '#2D3530', marginBottom: '0.6rem',
+          fontFamily: headingFont,
+          fontWeight: isRtl ? 700 : 500,
+          fontSize: isRtl ? 'clamp(3rem, 7vw, 4.6rem)' : 'clamp(2.6rem, 6vw, 4rem)',
+          lineHeight: isRtl ? 1.4 : 0.95,
+          letterSpacing: isRtl ? 0 : '-0.025em',
+          color: '#2D3530',
+          marginBottom: '0.6rem',
         }}>
           {c.title}
         </h1>
         <h2 style={{
-          fontFamily: headingFont, fontStyle: 'italic', fontWeight: 400,
-          fontSize: 'clamp(1.1rem, 2.5vw, 1.45rem)', lineHeight: isRtl ? 1.8 : 1.3,
-          color: '#7B6D3E', marginBottom: '2.8rem', letterSpacing: '-0.01em',
+          fontFamily: headingFont,
+          fontStyle: isRtl ? 'normal' : 'italic',
+          fontWeight: isRtl ? 600 : 400,
+          fontSize: isRtl ? 'clamp(1.4rem, 3vw, 1.8rem)' : 'clamp(1.1rem, 2.5vw, 1.45rem)',
+          lineHeight: isRtl ? 1.9 : 1.3,
+          color: '#7B6D3E',
+          marginBottom: '2.8rem',
+          letterSpacing: isRtl ? 0 : '-0.01em',
         }}>
           {c.subtitle}
         </h2>
@@ -172,7 +189,7 @@ export default function AboutPage() {
         <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(123,109,62,0.40), transparent)', marginBottom: '2.8rem' }} />
 
         {/* Opening */}
-        <p style={{ ...pStyle, fontSize: 17, lineHeight: isRtl ? 2.2 : 1.80, overflow: 'hidden', paddingTop: isRtl && c.opening.startsWith('އ') ? 24 : 0 }}>
+        <p style={{ ...pStyle, fontSize: isRtl ? 18 : 17, lineHeight: isRtl ? 2.3 : 1.80, overflow: 'hidden', paddingTop: isRtl && c.opening.startsWith('އ') ? 24 : 0 }}>
           {isRtl && c.opening.startsWith('އ') ? (
             <>
               <img
@@ -223,9 +240,12 @@ export default function AboutPage() {
           borderRadius: 14, padding: 'clamp(1.5rem, 3vw, 2.5rem)', marginTop: '3rem',
         }}>
           <h3 style={{
-            fontFamily: headingFont, fontStyle: 'italic', fontWeight: 400,
-            fontSize: 'clamp(1.2rem, 2.5vw, 1.55rem)', letterSpacing: '-0.01em',
-            color: '#2D3530', marginBottom: '1rem', lineHeight: isRtl ? 1.8 : 1.2,
+            fontFamily: headingFont,
+            fontStyle: isRtl ? 'normal' : 'italic',
+            fontWeight: isRtl ? 700 : 400,
+            fontSize: isRtl ? 'clamp(1.5rem, 3vw, 1.9rem)' : 'clamp(1.2rem, 2.5vw, 1.55rem)',
+            letterSpacing: isRtl ? 0 : '-0.01em',
+            color: '#2D3530', marginBottom: '1rem', lineHeight: isRtl ? 1.7 : 1.2,
           }}>
             {c.s4title}
           </h3>
@@ -235,20 +255,14 @@ export default function AboutPage() {
 
       </main>
 
-      {/* FOOTER */}
-      <footer style={{
-        background: '#232C28', padding: '2.5rem 28px', textAlign: 'center',
-        fontFamily: bodyFont,
-      }}>
-        <a href="/" style={{
-          fontFamily: headingFont, fontSize: '1.1rem', fontWeight: 400,
-          color: '#EDF1EC', textDecoration: 'none', letterSpacing: '-0.02em',
-        }}>
-          fen<span style={{ color: '#7B6D3E' }}>.</span>
-        </a>
-        <p style={{ marginTop: '0.6rem', color: 'rgba(237,241,236,0.40)', fontSize: 12, fontFamily: bodyFont }}>
-          {c.footer}
-        </p>
+      {/* FOOTER — identical to article footers */}
+      <footer className="footer">
+        <div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
+          <span className="footer-logo">
+            fen<span style={{ color: '#7B6D3E' }}>.</span>
+          </span>
+          <p className="footer-copy">© 2026 fen. All rights reserved.</p>
+        </div>
       </footer>
 
     </div>

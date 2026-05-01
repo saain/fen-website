@@ -49,6 +49,28 @@ If sections are added or removed (magnesium has 8 + a custom table; sunlight has
 - Language preference persists in `sessionStorage` under key `fen-lang`. Read it in `useEffect` so the choice carries across pages within a session.
 - Dhivehi font stack: body `'Faruma','MV Waheed',Tahoma,sans-serif`, headings `'MVWaheed','Faruma','MV Waheed',Tahoma,sans-serif`. English uses `'DM Sans',sans-serif` body and `'Instrument Serif',serif` headings.
 - Dhivehi runs at larger font sizes and taller line-heights — body `lineHeight: 2.3` vs English `1.85`; headings `1.7` vs `1.15`. Use the `isRtl ? X : Y` ternary throughout, the way magnesium does.
+
+### Canonical text sizes (used across articles + about page)
+
+These are the source-of-truth values. Don't drift from them. Same scale across all pages so the site feels consistent. RTL gets a one-step bump on every size because Dhivehi script renders proportionally smaller than Latin within the same font-size box.
+
+| Element | English | Dhivehi |
+|---|---|---|
+| Body paragraph | `fontSize: 16, lineHeight: 1.85` | `fontSize: 17, lineHeight: 2.3` |
+| Subtitle / opening | `fontSize: 17, lineHeight: 1.85` | `fontSize: 18, lineHeight: 2.3` |
+| H1 article title | `fontSize: 44, lineHeight: 1.15, fontWeight: 400` | `fontSize: 52, lineHeight: 76px, fontWeight: 700` |
+| H1 page title (about) | `clamp(2.6rem, 6vw, 4rem), lineHeight: 0.95` | `clamp(3rem, 7vw, 4.6rem), lineHeight: 1.4, fontWeight: 700` |
+| H2 section heading | `fontSize: 28, lineHeight: 1.2, fontWeight: 300` | `fontSize: 32, lineHeight: 1.8, fontWeight: 700` |
+| H2 page subtitle (about) | `clamp(1.1rem, 2.5vw, 1.45rem)` | `clamp(1.4rem, 3vw, 1.8rem), fontWeight: 600` |
+| H3 section (about) | `clamp(1.25rem, 2.5vw, 1.65rem)` | `clamp(1.5rem, 3vw, 2rem), fontWeight: 700` |
+| Eyebrow / category label | `fontSize: 11-12, uppercase, letter-spacing` | `fontSize: 14, no uppercase, no letter-spacing` |
+| References | `fontSize: 13, lineHeight: 1.7` (always LTR + DM Sans) | same |
+| Disclaimer | `fontSize: 13, lineHeight: 1.7` | `fontSize: 15, lineHeight: 2.2` |
+| Footer copy | inherits `.footer-copy` from globals.css | same |
+
+Dhivehi headings get `fontWeight: 700` (bold) while English headings get the lighter weight (300-400). This is because Dhivehi script needs the heavier stroke to read at the same visual weight as Cormorant Garamond / Instrument Serif at thin weights.
+
+In Dhivehi, drop `text-transform: uppercase` and `letter-spacing` — neither does anything meaningful with Thaana script and both can break rendering.
 - The references list always stays LTR + DM Sans, even in Dhivehi mode (`direction: 'ltr', textAlign: 'left'`), because URLs and citations are English text.
 - The home `<a>` link in the nav swaps to `'ފުރަތަމަ ←'` in Dhivehi.
 
