@@ -152,6 +152,35 @@ Save the raw upload as `dropcap-NAME-original.png` first as a backup. The `.giti
 5. Test in dev: toggle Dhivehi → check (a) the diacritic isn't clipped, (b) text wraps around the letter shape, (c) bottom of image aligns reasonably with the body text below.
 6. Commit only the live `dropcap-<name>.png` and the updated page file (the `-original.png` is gitignored).
 
+## Notion (project tracking + CMS)
+
+This project has a Notion workspace mirroring the site as a lightweight CMS. **When the user asks "update notion" (or anything similar), do all of the following by default**:
+
+1. **Update the affected article rows** in the fen database with: matching Title, normalised `URL Slug` (`/articles/<slug>`), Status `Published` if the article is live, accurate `Publish date`, Content Type `Articles`, and a one-line `Notes` field describing what changed (e.g. "Bilingual EN+DV; drop cap ތަ in DV; live URL: /articles/magnesium"). If the body content in Notion is clearly stale (e.g. still the original CMS template), replace it with the deployed English text.
+2. **Prepend a new dated entry** at the top of the **Site Changes** rolling-log page, summarising the session.
+
+Do not create a new "Site Changes" page per session — there is one canonical page that rolls forward.
+
+### Notion locations (read these directly with the notion-fetch tool to refresh)
+
+- **fen database** (the CMS) — `0bc3c672-a270-4fb9-9d2b-2e67832d37e5` — schema: Title, Content Type (Page / Blog Post / Landing Page / Product / Help Doc / Articles), Status (Backlog → Draft → In review → Scheduled → Published), Owner (person), URL Slug (text), Publish date (date), Last updated (auto), Keywords (multi-select), Meta description, SEO title, Notes
+- **Site Changes (rolling log)** — `3530ef04-95de-8116-8c4a-db771309847e` — top-of-page intro instructs prepending; each session gets a `## YYYY-MM-DD` heading with bullets for Articles / Visual / Repo hygiene / Open-next sections
+- **Article rows in the fen DB**:
+  - Magnesium — `14c5c932-f439-42c6-afea-0af493e1333b`
+  - Omega-3 — `3410ef04-95de-80b9-84e4-c89c54b884d8`
+  - Sunlight — `3510ef04-95de-818f-9503-fc9a542b684c`
+- **About fen** (parent for non-article pages like Site Changes) — `3490ef04-95de-8081-8fec-ecb94fecc764`
+
+If any of these IDs ever 404, search the workspace for "fen" (database) or "Site Changes" (page) and update this section.
+
+### What goes in a Site Changes entry
+
+A new dated entry at the top of the rolling log should follow the established structure: `### Articles`, `### About page` (if changed), `### Visual consistency` (if changed), `### Repo hygiene` (if changed), `### Open / next`. Each is a short bullet list. The goal is something the user can scan in 30 seconds to remember what shipped that day. Do not paste full file diffs — describe outcomes, not mechanics.
+
+### What goes in an article row's Notes field
+
+One line. Pattern: `"Bilingual (EN + DV). Drop cap on Dhivehi <subtitle|opening>: <letter>. Live URL: /articles/<slug>. <Anything else worth flagging>."` — e.g. omega-3 currently reads: "Bilingual (EN + DV) — Dhivehi translation added Apr 30 2026. No drop cap (subtitle starts with ދ/daalu — would need a daalu image). Live URL: /articles/omega-3."
+
 ## Deploy flow
 
 1. Edit files in `src/`.
