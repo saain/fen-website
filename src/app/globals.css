@@ -1323,12 +1323,15 @@ body {
   font-size: 52px !important;
 }
 
-/* Keep the marquee track LTR in RTL mode so the translateX(-50%) loop animation
-   works correctly. Without this, direction:rtl reverses the two flex-child
-   slide copies and the animation exposes empty space instead of looping.
-   The Dhivehi text inside each ticker-item still renders correctly because
-   Dhivehi characters are direction-aware in isolation. */
-[dir="rtl"] .ticker-track {
+/* Keep the entire ticker subtree LTR in RTL mode so the translateX(-50%) loop
+   animation works correctly. Without this, direction:rtl reverses the two
+   flex-child slide copies and changes the layout origin, so the animation
+   exposes empty space instead of looping. The Dhivehi text inside each
+   ticker-item still renders correctly because Dhivehi characters are
+   direction-aware in isolation. */
+[dir="rtl"] .ticker,
+[dir="rtl"] .ticker-track,
+[dir="rtl"] .ticker-slide {
   direction: ltr;
 }
 
