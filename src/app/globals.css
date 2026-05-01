@@ -106,32 +106,63 @@ body {
   to   { transform: translateX(-50%); }
 }
 
-/* Candle flame flicker — used by the Blue Light Blocker (ނޫރަސް™) toggle.
-   When warm mode is ON the candle gets a subtle warm drop-shadow that pulses
-   like a real flame. When OFF the candle is desaturated to look "snuffed". */
-@keyframes candleFlicker {
-  0%, 100% {
-    filter: drop-shadow(0 0 3px rgba(245, 160, 96, 0.55));
-    transform: translateY(0) scale(1);
-  }
-  45% {
-    filter: drop-shadow(0 0 5px rgba(255, 145, 50, 0.85));
-    transform: translateY(-0.5px) scale(1.02);
-  }
-  60% {
-    filter: drop-shadow(0 0 4px rgba(245, 160, 96, 0.7));
-    transform: translateY(0) scale(1);
-  }
+/* Candle flame — used by the Blue Light Blocker (ނޫރަސް™) toggle.
+   When warm mode is ON, a small CSS flame is positioned on top of the candle
+   emoji and gently flickers. When OFF, the candle is grayscaled to look snuffed.
+   Wrapper is position: relative so the flame can be absolutely positioned. */
+.candle-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .candle-lit {
-  animation: candleFlicker 1.6s ease-in-out infinite;
   display: inline-block;
+  filter: brightness(1.05) saturate(1.15);
 }
 
 .candle-unlit {
-  filter: grayscale(1) opacity(0.55);
   display: inline-block;
+  filter: grayscale(1) opacity(0.55);
+}
+
+/* The flame: a small teardrop shape (rounded top, slightly tapered bottom),
+   filled with a warm radial gradient and given a soft glow via box-shadow.
+   The animation pulses scale + opacity to simulate a real flame's flicker. */
+.candle-flame {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 9px;
+  border-radius: 50% 50% 35% 35% / 65% 65% 35% 35%;
+  background: radial-gradient(ellipse at 50% 70%,
+    #FFEDB0 0%,
+    #FFA640 40%,
+    #FF6A1F 75%,
+    rgba(255, 100, 30, 0) 100%);
+  box-shadow:
+    0 0 6px rgba(255, 145, 50, 0.85),
+    0 0 2px rgba(255, 220, 140, 0.9);
+  animation: candleFlame 1.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes candleFlame {
+  0%, 100% {
+    opacity: 0.92;
+    transform: translateX(-50%) scaleY(1) scaleX(1);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1.15) scaleX(0.92);
+  }
+  70% {
+    opacity: 0.88;
+    transform: translateX(-50%) scaleY(0.92) scaleX(1.05);
+  }
 }
 
 @keyframes navSlide {

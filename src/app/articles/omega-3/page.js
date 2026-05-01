@@ -367,7 +367,10 @@ function Omega3ArticleInner() {
                 boxShadow: warm ? '0 0 12px rgba(180,90,20,0.25)' : 'none',
               }}
             >
-              <span className={warm ? 'candle-lit' : 'candle-unlit'} style={{ fontSize: 14 }}>🕯️</span>
+              <span className="candle-wrapper">
+                <span className={warm ? 'candle-lit' : 'candle-unlit'} style={{ fontSize: 14 }}>🕯️</span>
+                {warm && <span className="candle-flame" />}
+              </span>
               <span className="toggle-label" style={{ fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif" }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
             </button>
             <button
