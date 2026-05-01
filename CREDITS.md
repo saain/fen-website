@@ -1,8 +1,37 @@
-# Image credits
+# Credits & first-use record
 
 All images on this site are public domain or used under permissive licenses.
-This file is the canonical record of where each image came from. Update it when
-adding or replacing any image in `public/`.
+Coined terms originating on fen are recorded here with their first-use date for
+trademark documentation purposes. Update this file when adding or replacing any
+image in `public/`, or when introducing a new coined term.
+
+---
+
+# Coined terms (first use on fen)
+
+## ނޫރަސް™ (*Noorus*)
+
+- **First public use:** May 2026 on this website (fen).
+- **Meaning:** A blue-light blocker / blue-light filter feature.
+- **Etymology:** Coined as a portmanteau of three Dhivehi words —
+  - `ނޫ` (*noo*, blue)
+  - `އަލި` (*ali*, light)
+  - `ހުރަސް` (*huras*, block / barrier)
+  with phonetic compression to `ނޫރަސް`. The result also rhymes with the
+  Arabic-derived root `ނޫރު` / *noor* (light), which gives Maldivian Muslim
+  readers an additional mnemonic resonance.
+- **Used on the site:** as the Dhivehi label of the Blue Light Blocker toggle
+  in every article (`articles/magnesium`, `articles/sunlight`, `articles/omega-3`).
+- **Trademark status:** common-law `™` claimed via consistent first use. Not yet
+  registered. To upgrade to registered (`®`), file with the Maldives Ministry
+  of Economic Development, Trademarks section.
+- **Style guide:** always written `ނޫރަސް™` in Dhivehi text. ™ visually appears
+  to the left of the word due to RTL bidi (the trailing position in RTL reading,
+  equivalent to a trailing ™ on an English word).
+
+---
+
+# Image credits
 
 ## Hero
 
