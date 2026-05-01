@@ -246,11 +246,15 @@ body {
   z-index: 0;
 }
 
-/* Photo mode — add class "has-photo" and place image at public/images/hero.jpg */
+/* Photo mode — add class "has-photo" and place image at public/images/hero.jpg.
+   Image runs at ~20% opacity per the design intent in fen-redesign/docs/image-sourcing-guide.md
+   ("hero overlays will be at 15% opacity anyway"). Keeps the photo atmospheric so the small
+   body and form text stays readable regardless of which hero image is in use. */
 .hero-cinematic.has-photo::before {
   background-image: url('/images/hero.jpg');
   background-size: cover;
   background-position: center center;
+  opacity: 0.25;
 }
 
 /* Gradient overlay — always on top of either gradient or photo */
