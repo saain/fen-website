@@ -332,7 +332,12 @@ function MagnesiumArticleInner() {
                 fontWeight: warm ? 600 : 400,
                 lineHeight: 1,
                 display: 'inline-block',
-                verticalAlign: 'middle',
+                /* Faruma renders Dhivehi glyphs high in the em-box, so flex
+                   centering of the BOX leaves the visible text looking high.
+                   translateY visually shifts the rendered text without affecting
+                   the layout box (so candle stays aligned). Tune this number
+                   if it still feels off. */
+                transform: isRtl ? 'translateY(2px)' : 'none',
               }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
             </button>
             <button

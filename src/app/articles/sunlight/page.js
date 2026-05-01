@@ -404,7 +404,7 @@ function SunlightArticleInner() {
                 fontWeight: warm ? 600 : 400,
                 lineHeight: 1,
                 display: 'inline-block',
-                verticalAlign: 'middle',
+                transform: isRtl ? 'translateY(2px)' : 'none',
               }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
             </button>
             <button
