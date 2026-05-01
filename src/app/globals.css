@@ -112,9 +112,14 @@ body {
    Wrapper is position: relative so the flame can be absolutely positioned. */
 .candle-wrapper {
   position: relative;
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   line-height: 1;
+  /* fixed width matches the candle emoji's roughly 14px width — keeps the
+     flame centering predictable across fonts. Adjust if you change emoji size. */
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .candle-lit {
@@ -132,7 +137,11 @@ body {
    The animation pulses scale + opacity to simulate a real flame's flicker. */
 .candle-flame {
   position: absolute;
-  top: -4px;
+  /* top: negative pulls the flame above the wrapper. Larger negative = bigger
+     gap between flame and candle. */
+  top: -8px;
+  /* Centering: left: 50% of wrapper + translateX(-50%) of own width.
+     The wrapper's fixed width (14px) keeps this stable across emoji fonts. */
   left: 50%;
   transform: translateX(-50%);
   width: 6px;
