@@ -258,9 +258,18 @@ function RefinedOilsArticleInner() {
                 boxShadow: warm ? '0 0 12px rgba(180,90,20,0.25)' : 'none',
               }}
             >
-              <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
-              <span className="toggle-label" style={{ fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif" }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
-              {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
+              <span className="candle-wrapper">
+                <span className={warm ? 'candle-lit' : 'candle-unlit'} style={{ fontSize: 14 }}>🕯️</span>
+                {warm && <span className="candle-flame" />}
+              </span>
+              <span className="toggle-label" style={{
+                fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif",
+                fontSize: isRtl ? 14 : 13,
+                fontWeight: warm ? 600 : 400,
+                lineHeight: 1,
+                display: 'inline-block',
+                transform: isRtl ? 'translateY(2px)' : 'none',
+              }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
             </button>
             <button
               onClick={() => changeLang(lang === 'en' ? 'dv' : 'en')}
@@ -357,7 +366,7 @@ function RefinedOilsArticleInner() {
       <footer className="footer">
         <div className="container" style={{ textAlign: 'center', padding: '20px 0' }}>
           <span className="footer-logo">
-            fen<span style={{ color: '#52b788' }}>.</span>
+            fen<span style={{ color: '#7B6D3E' }}>.</span>
           </span>
           <p className="footer-copy">© 2026 fen. All rights reserved.</p>
         </div>
