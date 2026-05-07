@@ -6,6 +6,10 @@ This file is auto-loaded by Claude Code and Cowork at the start of every session
 
 **fen** is a bilingual (English + Dhivehi/RTL) editorial site about evidence-based natural health, aimed at a Maldivian audience. Built with Next.js 14 (app router, JS not TS), deployed on Vercel via GitHub auto-deploy on push to `main`.
 
+## Where the repo lives
+
+The single working copy of this repo is `~/Downloads/fen-website` on the user's Mac. **Do not maintain mirror copies anywhere else.** If a stale clone turns up in `~/Documents`, `~/Desktop`, an old `fen-redesign` folder, etc., confirm with the user and delete it — duplicate clones inevitably drift and one of them gets edited by mistake. Cowork sessions for this project should select `~/Downloads/fen-website` as the working folder.
+
 ## Repo layout
 
 ```
@@ -226,15 +230,13 @@ If a `.git/index.lock` blocks a commit, `rm -f .git/index.lock` first. If runnin
 
 ## Security: do NOT embed PATs in the git remote URL
 
-The current remote is set as `https://saain:ghp_...@github.com/saain/fen-website.git` — the GitHub personal access token is in the URL. This is logged in shell history, visible to anyone who runs `git remote -v`, and gets copied any time the repo is cloned. **Rotate that token at https://github.com/settings/tokens, then use one of:**
-- macOS Keychain: `git config --global credential.helper osxkeychain`, push once, enter the new token when prompted, never appears in URLs again.
-- SSH remote: `git remote set-url origin git@github.com:saain/fen-website.git` and add an SSH key to GitHub.
+The remote is now SSH: `git@github.com:saain/fen-website.git`. Auth uses `~/.ssh/id_ed25519_github` (a dedicated key for this repo) selected via a `Host github.com` block in `~/.ssh/config` with `IdentitiesOnly yes`. The old PAT-in-URL pattern (`https://saain:ghp_...@github.com/...`) has been removed; the corresponding token should be revoked at https://github.com/settings/tokens if not already.
 
-Until this is rotated, do not paste git remote output into any chat, screenshot, or document.
+**Never switch back to HTTPS-with-token.** That pattern leaks the token into shell history, `git remote -v` output, terminal scrollback, and every clone of the repo — and once a token is in any of those places, rotating it is the only safe response. If SSH ever stops working (key deleted, machine moved, GitHub revokes the key), debug the SSH setup — regenerate the key with `ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_github -N ""`, re-add the public key at https://github.com/settings/keys, and confirm `~/.ssh/config` still has the `Host github.com` block. Do not paper over it with a fresh PAT in the URL.
 
 ## Common pitfalls (things that have actually gone wrong)
 
-- **Article styling drifts from magnesium.** Articles have ended up with their own one-off colors: `#5A7A5A` for evidence tag (should be `#2d6a4f`), `#0D7A6A` for the takeaway TEAL accent (should be `#4A5C42`), `#00C4A0` for footer dot (should be `#52b788`). Always copy from magnesium; don't carry forward old colors from existing files. **Sanity check** by diffing the hex colors used: `diff <(grep -oE "#[0-9a-fA-F]{3,8}" articles/<new>/page.js | sort -u) <(grep -oE "#[0-9a-fA-F]{3,8}" articles/magnesium/page.js | sort -u)` — output should be empty.
+- **Article styling drifts from magnesium.** Articles have ended up with their own one-off colors: `#5A7A5A` for evidence tag (should be `#2d6a4f`), `#0D7A6A` for the takeaway TEAL accent (should be `#4A5C42`), `#00C4A0` for footer dot (should be `#7B6D3E`). Always copy from magnesium; don't carry forward old colors from existing files. **Sanity check** by diffing the hex colors used: `diff <(grep -oE "#[0-9a-fA-F]{3,8}" articles/<new>/page.js | sort -u) <(grep -oE "#[0-9a-fA-F]{3,8}" articles/magnesium/page.js | sort -u)` — output should be empty.
 - **Light-on-light nav text.** The nav background was changed to a light pale-green; any nav text in `rgba(237,244,255,…)` (the old dark-nav color) becomes invisible. All nav text must use `rgba(45,53,48,…)` or `#2D3530`.
 - **Forgetting to add an article to both `en.articles` and `dv.articles`.** The new article won't appear in one of the languages. Always update both.
 - **Forgetting the Dhivehi label on the Blue Light button.** Magnesium uses `{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}`. Don't ship English-only.
