@@ -18,7 +18,6 @@ const en = {
     'Linoleic acid intake from these oils has risen roughly tenfold in a century. The link to chronic disease is genuinely disputed, but the safest interpretation is that historically unprecedented amounts may not be benign.',
     'When polyunsaturated oils are heated — especially when reused in fryers — they generate toxic aldehydes (4-HNE, acrolein, decadienal) linked to oxidative stress, cancer, and neurodegeneration. This is the strongest single argument against using them for cooking.',
     'Refined seed oils are the dominant fat in ultra-processed foods. Eliminating them automatically eliminates most UPFs — a powerful health intervention everyone agrees on.',
-    'Extra virgin olive oil, ghee, virgin coconut oil, refined avocado oil, and grass-fed butter are well-supported traditional alternatives. EVOO has the strongest randomized evidence of any cooking fat.',
   ],
   s1t: 'What Are Refined Seed and Vegetable Oils, Really?',
   s1: [
@@ -27,11 +26,6 @@ const en = {
     'Hexane is recognized as neurotoxic to humans in occupational exposures and has been listed as a cause of occupational disease in several European countries since the 1970s. The amount remaining in the final oil is typically below 1 mg/kg, and regulators consider this acceptable. The U.S. FDA does not require hexane to be listed on the label because it is classified as a "processing aid," not an ingredient. Whether you find this acceptable in your daily cooking oil is a personal judgment. [2]',
     'A century ago, none of this existed at scale. Households cooked with what they had always cooked with — olive oil, ghee, butter, coconut oil, lard, tallow. Industrial seed oils are a 20th-century arrival, and their dominance of the global food supply is one of the largest dietary shifts in human history.',
   ],
-  s1e: {
-    level: 'Established',
-    color: '#2d6a4f',
-    text: 'The RBD process and use of hexane as the standard solvent in modern industrial oilseed extraction are documented in peer-reviewed engineering and food-science literature. Hexane neurotoxicity in occupational exposure is well-characterized.',
-  },
   s2t: 'The Trans Fat Problem Most People Don\'t Know About',
   s2: [
     'The deodorization step at 180–260 °C is not just a cosmetic finishing touch. It produces small amounts of trans fats in the final oil. Harvard\'s Nutrition Source confirms this directly, stating that canola oil contains very low levels of trans fat, "as do all oils that have been deodorized" — and that deodorization is the final step in refining all vegetable oils. [3]',
@@ -41,7 +35,7 @@ const en = {
   s2e: {
     level: 'Strong',
     color: '#2d6a4f',
-    text: 'Trans fat formation during oil deodorization is not a contested claim — it is acknowledged by mainstream nutrition authorities including Harvard. The lack of label disclosure for trace amounts is a well-documented regulatory gap.',
+    text: 'Trans fat formation during oil deodorization is not a contested claim — it is acknowledged by mainstream nutrition authorities including Harvard. The lack of label disclosure for trace amounts is a well-documented regulatory gap.'
   },
   s3t: 'The Linoleic Acid Question',
   s3: [
@@ -55,7 +49,7 @@ const en = {
   s3e: {
     level: 'Disputed',
     color: '#b5651d',
-    text: 'This is a genuinely contested area in nutrition science. Mainstream institutions and a subset of trial-based and historical-cohort evidence point in opposite directions. The safest interpretation is to be cautious about historically unprecedented intake levels rather than picking a side.',
+    text: 'This is a genuinely contested area in nutrition science. Mainstream institutions and a subset of trial-based and historical-cohort evidence point in opposite directions. The safest interpretation is to be cautious about historically unprecedented intake levels rather than picking a side.'
   },
   s4t: 'What Actually Happens When You Heat These Oils',
   s4: [
@@ -67,7 +61,7 @@ const en = {
   s4e: {
     level: 'Strong',
     color: '#2d6a4f',
-    text: 'Thermo-oxidative degradation of polyunsaturated cooking oils into toxic aldehydes is a well-replicated finding in food chemistry. The link between specific aldehydes (4-HNE, acrolein) and cellular damage is also well-characterized. The translation to human disease risk in real-world diets is supported by mechanism and observational data.',
+    text: 'Thermo-oxidative degradation of polyunsaturated cooking oils into toxic aldehydes is a well-replicated finding in food chemistry. The link between specific aldehydes (4-HNE, acrolein) and cellular damage is also well-characterized. The translation to human disease risk in real-world diets is supported by mechanism and observational data.'
   },
   s5t: 'The Ultra-Processed Food Connection',
   s5: [
@@ -78,7 +72,7 @@ const en = {
   s5e: {
     level: 'Strong',
     color: '#2d6a4f',
-    text: 'The link between ultra-processed food intake and chronic disease is one of the most robust associations in modern nutrition epidemiology. Refined seed oils are the dominant fat source in this food category, making elimination of one largely an elimination of the other.',
+    text: 'The link between ultra-processed food intake and chronic disease is one of the most robust associations in modern nutrition epidemiology. Refined seed oils are the dominant fat source in this food category, making elimination of one largely an elimination of the other.'
   },
   s6t: 'The Traditional Fats — Evidence Reviewed',
   s6: [
@@ -91,7 +85,7 @@ const en = {
   s6e: {
     level: 'Strong (EVOO) to Mixed (others)',
     color: '#2d6a4f',
-    text: 'EVOO is the most evidence-supported cooking fat in nutrition science, anchored by the PREDIMED randomized trial. Coconut oil and butter sit in genuinely mixed evidence territory. Ghee, avocado oil, and grass-fed butter are supported by traditional use and emerging research, particularly for cooking stability.',
+    text: 'EVOO is the most evidence-supported cooking fat in nutrition science, anchored by the PREDIMED randomized trial. Coconut oil and butter sit in genuinely mixed evidence territory. Ghee, avocado oil, and grass-fed butter are supported by traditional use and emerging research, particularly for cooking stability.'
   },
   s7t: 'A Practical Cooking Guide and Bottom Line',
   s7: [
@@ -101,11 +95,6 @@ const en = {
     'A note of honesty in closing. Mainstream public-health institutions including Harvard, Johns Hopkins, the American Heart Association, and Memorial Sloan Kettering currently disagree with parts of this article\'s position. They point to large epidemiological studies showing that replacing saturated fat with polyunsaturated fat — including from seed oils — is associated with lower cardiovascular mortality. Both positions have evidence behind them.',
     'The areas where the evidence is least disputed are these: industrially produced trans fats are harmful, and refined oils contain small amounts as a byproduct of deodorization. Reused frying oil produces toxic aldehydes — and the more polyunsaturated the oil, the more it produces. Ultra-processed foods are linked to chronic disease, and refined seed oils are the dominant fat in those foods. Extra virgin olive oil reduces cardiovascular risk — supported by the strongest randomized evidence in nutrition science. Whole, traditional, minimally processed foods are protective. If you act only on the points everyone agrees on, you will eliminate refined seed oils from your kitchen, cook with traditional fats, eat whole foods, and avoid ultra-processed products. That alone will likely improve your health more than any debate about omega-6 ratios.',
   ],
-  s7e: {
-    level: 'Applied',
-    color: '#2d6a4f',
-    text: 'This guide synthesizes current evidence on industrial oil processing, oxidation chemistry, polyphenol biology, and traditional fat composition into a practical kitchen framework. Where evidence is contested, the recommendations align with the points of agreement across both sides of the debate.',
-  },
   refsTitle: 'References',
   disc: 'This article is for general informational purposes and is not medical advice. People with cardiovascular disease, familial hypercholesterolemia, diabetes, or other chronic conditions should discuss dietary fat choices with their physician before making significant changes.',
   discL: 'Medical Disclaimer:',
@@ -114,7 +103,36 @@ const en = {
   ctaB: 'Subscribe to The Saturday Edition',
 };
 
-const dv = en;
+// NOTE: Dhivehi translation is pending. UI chrome (back, tag, category, dates,
+// labels, refsTitle, disc, ctaT/D/B, evidence levels) is properly translated;
+// only the article body, takeaway bullets, and section text remain in English
+// until a translator pass is done. Same approach used for omega-3 before its
+// Dhivehi translation was added Apr 30 2026.
+const dv = {
+  back: 'ފުރަތަމަ ސަފްހާއަށް ←',
+  tag: 'މެދުމިނުގެ ހެކި',
+  category: 'ނިއުޓްރިޝަން ސައިންސް',
+  title: en.title,
+  subtitle: en.subtitle,
+  date: '6 މޭ 2026',
+  readTime: '13 މިނެޓުގެ ކިޔުމެއް',
+  refCount: '14 ރިފަރެންސް ހިމެނިފައިވޭ',
+  keyTitle: 'މުހިންމު ނުކުތާތައް',
+  keys: en.keys,
+  s1t: en.s1t, s1: en.s1,
+  s2t: en.s2t, s2: en.s2, s2e: { level: 'ވަރުގަދަ', color: '#2d6a4f', text: en.s2e.text },
+  s3t: en.s3t, s3: en.s3, s3e: { level: 'މެދު މިންވަރެއްގެ', color: '#b5651d', text: en.s3e.text },
+  s4t: en.s4t, s4: en.s4, s4e: { level: 'ވަރުގަދަ', color: '#2d6a4f', text: en.s4e.text },
+  s5t: en.s5t, s5: en.s5, s5e: { level: 'ވަރުގަދަ', color: '#2d6a4f', text: en.s5e.text },
+  s6t: en.s6t, s6: en.s6, s6e: { level: 'ވަރުގަދަ - މެދުމިންވަރެއްގެ', color: '#2d6a4f', text: en.s6e.text },
+  s7t: en.s7t, s7: en.s7,
+  refsTitle: 'ރިފަރެންސްތައް',
+  disc: en.disc,
+  discL: 'ސިއްހީ އިންޒާރު:',
+  ctaT: 'މި ލިޔުން ކަމުދިޔަތ؟',
+  ctaD: 'ހެއްކަށް ބިނާކޮށްފައިވާ ސިއްހީ ދިރާސާ ކޮންމެ ހޮނިކިރު ދުވަހަކު ތިބާގެ އީމޭލަށް ލިބޭނެ.',
+  ctaB: 'ހޮނިކިރު އެޑިޝަނާ ގުޅާ',
+};
 
 const refs = [
   { text: 'OCL — Oilseeds and fats, Crops and Lipids. "Hexane in industrial oilseed processing: a review." OCL Journal. 2025.', url: 'https://www.ocl-journal.org/articles/ocl/full_html/2025/01/ocl240054/ocl240054.html' },
@@ -143,18 +161,18 @@ function RefinedOilsArticleInner() {
       if (savedLang === 'dv') setLang('dv');
       const savedWarm = window.localStorage.getItem('fen-warm');
       if (savedWarm === 'true') setWarm(true);
-    } catch (e) {}
+    } catch(e) {}
   }, []);
 
   const changeLang = (newLang) => {
     setLang(newLang);
-    try { window.sessionStorage.setItem('fen-lang', newLang); } catch (e) {}
+    try { window.sessionStorage.setItem('fen-lang', newLang); } catch(e) {}
   };
 
   const toggleWarm = () => {
     const next = !warm;
     setWarm(next);
-    try { window.localStorage.setItem('fen-warm', String(next)); } catch (e) {}
+    try { window.localStorage.setItem('fen-warm', String(next)); } catch(e) {}
   };
 
   const c = lang === 'en' ? en : dv;
@@ -164,6 +182,7 @@ function RefinedOilsArticleInner() {
   const lh = isRtl ? 2.3 : 1.85;
   const hlh = isRtl ? 1.7 : 1.15;
 
+  /* Palette — switches between cream (normal) and red-shifted (blue light filter) */
   const PAGE_BG        = warm ? '#FCE4D0' : '#FAF8F4';
   const TEXT_PRIMARY   = warm ? '#1C0A06' : '#1C1C1E';
   const TEXT_BODY      = warm ? '#3D1A10' : '#3A3A3C';
@@ -172,11 +191,11 @@ function RefinedOilsArticleInner() {
   const TEXT_EVIDENCE  = warm ? '#4A2010' : '#444444';
   const BORDER_SUBTLE  = warm ? 'rgba(150,50,20,0.12)' : 'rgba(0,0,0,0.07)';
   const BORDER_MED     = warm ? 'rgba(150,50,20,0.20)' : 'rgba(0,0,0,0.11)';
-  const BG_TAKEAWAY    = warm ? '#F5CEBC' : 'rgba(13,122,106,0.06)';
+  const BG_TAKEAWAY    = warm ? '#F5CEBC' : 'rgba(74,92,66,0.07)';
   const BG_DISCLAIMER  = warm ? '#F0C8B8' : '#F0EDE8';
   const BG_EVIDENCE    = warm ? 'rgba(150,50,20,0.05)' : 'rgba(0,0,0,0.02)';
   const TEAL           = warm ? '#A03A18' : '#4A5C42';
-  const LINK_COLOR     = warm ? '#A03A18' : '#4A5C42';
+  const IMG_FILTER     = warm ? 'sepia(0.45) saturate(0.80) brightness(0.94)' : 'none';
 
   const Sec = ({ title, ps, ev }) => (
     <div style={{ marginBottom: 40 }}>
@@ -240,7 +259,7 @@ function RefinedOilsArticleInner() {
               }}
             >
               <span style={{ fontSize: 14, filter: warm ? 'none' : 'grayscale(0.3)' }}>🕯️</span>
-              <span className="toggle-label">{isRtl ? 'ނޫ އަލި ހުރަސް' : 'Blue Light Blocker'}</span>
+              <span className="toggle-label" style={{ fontFamily: isRtl ? "'Faruma','MV Waheed',Tahoma,sans-serif" : "'DM Sans',sans-serif" }}>{isRtl ? 'ނޫރަސް™' : 'Blue Light Blocker'}</span>
               {warm && <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#F5A060', display: 'inline-block', marginLeft: 2 }} />}
             </button>
             <button
@@ -279,7 +298,7 @@ function RefinedOilsArticleInner() {
         </div>
 
         <div style={{ background: BG_TAKEAWAY, borderRadius: 8, padding: 28, marginBottom: 40, borderLeft: isRtl ? 'none' : `4px solid ${TEAL}`, borderRight: isRtl ? `4px solid ${TEAL}` : 'none' }}>
-          <h3 style={{ fontFamily: hf, fontSize: 22, marginBottom: 14, color: TEAL }}>
+          <h3 style={{ fontFamily: hf, fontSize: isRtl ? 22 : 22, marginBottom: 14, color: TEAL }}>
             {c.keyTitle}
           </h3>
           <ul style={{ paddingLeft: isRtl ? 0 : 20, paddingRight: isRtl ? 20 : 0, listStyle: 'disc' }}>
@@ -291,13 +310,13 @@ function RefinedOilsArticleInner() {
           </ul>
         </div>
 
-        <Sec title={c.s1t} ps={c.s1} ev={c.s1e} />
+        <Sec title={c.s1t} ps={c.s1} />
         <Sec title={c.s2t} ps={c.s2} ev={c.s2e} />
         <Sec title={c.s3t} ps={c.s3} ev={c.s3e} />
         <Sec title={c.s4t} ps={c.s4} ev={c.s4e} />
         <Sec title={c.s5t} ps={c.s5} ev={c.s5e} />
         <Sec title={c.s6t} ps={c.s6} ev={c.s6e} />
-        <Sec title={c.s7t} ps={c.s7} ev={c.s7e} />
+        <Sec title={c.s7t} ps={c.s7} />
 
         <div style={{ marginTop: 60, paddingTop: 32, borderTop: `2px solid ${BORDER_MED}` }}>
           <h3 style={{ fontFamily: hf, fontSize: isRtl ? 24 : 26, marginBottom: 20, color: TEXT_PRIMARY }}>
@@ -307,12 +326,7 @@ function RefinedOilsArticleInner() {
             {refs.map((r, i) => (
               <li key={i} style={{ fontSize: 13, lineHeight: 1.7, color: TEXT_SECONDARY, marginBottom: 12, fontWeight: 300, wordBreak: 'break-word', direction: 'ltr', textAlign: 'left' }}>
                 {r.text}{' '}
-                <a
-                  href={r.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: LINK_COLOR, textDecoration: 'underline', wordBreak: 'break-all' }}
-                >
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: TEAL, textDecoration: 'underline', wordBreak: 'break-all' }}>
                   {r.url}
                 </a>
               </li>

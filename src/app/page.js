@@ -48,7 +48,7 @@ const t = {
     footerDisclaimer: 'Content is for educational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for personal medical decisions.',
     footerCopy: '© 2026 fen. All rights reserved.',
     articles: [
-      { id: 8, slug: 'refined-oils', image: 'oils.jpg', category: 'NUTRITION SCIENCE', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'The Oils on Your Shelf: Why It\'s Time to Rethink Refined Vegetable and Seed Oils', excerpt: 'A hundred years ago, almost nobody cooked with sunflower, soybean, corn, or canola oil. Today these industrial oils dominate kitchens, restaurants, and packaged foods. Here is what 14 peer-reviewed sources actually say about how they are made, what happens when they are heated, and the traditional alternatives worth stocking.', date: 'May 6, 2026', readTime: '13 min read' },
+      { id: 8, slug: 'refined-oils', category: 'NUTRITION SCIENCE', tag: 'Moderate Evidence', tagColor: '#b5651d', title: 'The Oils on Your Shelf: Why It\'s Time to Rethink Refined Vegetable and Seed Oils', excerpt: 'A hundred years ago, almost nobody cooked with sunflower, soybean, corn, or canola oil. Today these industrial oils dominate kitchens, restaurants, and packaged foods. Here is what 14 peer-reviewed sources actually say about how they are made, what happens when they are heated, and the traditional alternatives worth stocking.', date: 'May 6, 2026', readTime: '13 min read' },
       { id: 7, slug: 'sunlight', category: 'NATURAL HEALTH', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'The Sun, Reconsidered: What the Science Actually Says About Sunlight and Your Health', excerpt: 'For fifty years the message was to avoid the sun. A growing body of research shows sunlight regulates sleep, mood, blood pressure, immunity, and cellular energy. Here is what 21 studies actually say.', date: 'Apr 27, 2026', readTime: '16 min read' },
       { id: 4, slug: 'omega-3', category: 'NUTRITION SCIENCE', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Omega-3: The Essential Fat Your Brain and Heart Cannot Make', excerpt: 'The average Maldivian eats more tuna than anyone on earth — yet not all tuna is equal when it comes to omega-3. What 15 studies say about EPA, DHA, and when a supplement is worth it.', date: 'Apr 24, 2026', readTime: '14 min read' },
       { id: 1, slug: 'magnesium', category: 'SUPPLEMENTS', tag: 'Strong Evidence', tagColor: '#2d6a4f', title: 'Magnesium: The Most Underrated Mineral in Modern Nutrition', excerpt: "Over 50% of adults don't get enough magnesium. Here's what 34 clinical trials reveal about supplementation, dosage, and the forms that actually work.", date: 'Apr 7, 2026', readTime: '12 min read' },
@@ -116,7 +116,7 @@ const t = {
     footerDisclaimer: 'މި ކޮންޓެންޓަކީ ތަޢުލީމީ ބޭނުމަށް އެކަނި ތައްޔާރުކޮށްފައިވާ އެއްޗެކެވެ. ޞިއްޙީ ލަފާ ދިނުމެއް ނޫނެވެ.',
     footerCopy: '© 2026 fen. ހުރިހާ ޙައްޤެއް ލިބިގެންވޭ.',
     articles: [
-      { id: 8, slug: 'refined-oils', image: 'oils.jpg', category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'The Oils on Your Shelf: Why It\'s Time to Rethink Refined Vegetable and Seed Oils', excerpt: 'A hundred years ago, almost nobody cooked with sunflower, soybean, corn, or canola oil. Today these industrial oils dominate kitchens, restaurants, and packaged foods. (Dhivehi translation forthcoming.)', date: 'މޭ 6، 2026', readTime: '13 މިނެޓް' },
+      { id: 8, slug: 'refined-oils', category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'މެދުމިނުގެ ހެކި', tagColor: '#b5651d', title: 'The Oils on Your Shelf: Why It\'s Time to Rethink Refined Vegetable and Seed Oils', excerpt: 'A hundred years ago, almost nobody cooked with sunflower, soybean, corn, or canola oil. Today these industrial oils dominate kitchens, restaurants, and packaged foods. (Dhivehi translation forthcoming.)', date: 'މޭ 6، 2026', readTime: '13 މިނެޓް' },
       { id: 7, slug: 'sunlight', category: 'ޤުދުރަތީ ޞިއްޙަތު', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އިރު، ރިވިއު ކޮށްލާ: ހިލާ ދޯދީ ތިބާގެ ޞިއްޙަތަށް ކުރާ ހަޤީޤީ އަސަރު', excerpt: 'ފަންސާސް އަހަރު ވިދާޅުވި: އިރުން ދުރުހެލިވޭ. ތަހުގީގުތަކުން ފެންނަ ތަސްވީރ ތަފާތު — ނިދި، ލޭ ޕްރެޝަރ، ސެލްތަކުގެ ހަކަތަ.', date: 'އެޕްރީލް 27، 2026', readTime: '16 މިނެޓް' },
       { id: 4, slug: 'omega-3', category: 'ނިއުޓްރިޝަން ސައިންސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'އޮމެގާ-3 އިންޑެކްސް: ކޮލެސްޓްރޯލަށް ވުރެ މުހިންމު ޓެސްޓެއް', excerpt: 'އޮމެގާ-3 އިންޑެކްސް އަކީ ހިތުގެ ޞިއްޙަތުގެ އެންމެ ވަރުގަދަ ލަފާކުރާ.', date: 'މާރިޗް 28، 2026', readTime: '11 މިނެޓް' },
       { id: 1, slug: 'magnesium', category: 'ސަޕްލިމެންޓްސް', tag: 'ވަރުގަދަ ހެކި', tagColor: '#2d6a4f', title: 'މެގްނީޒިއަމް: ޒަމާނީ ނިއުޓްރިޝަންގައި އެންމެ ދަށް އަގު ކުރެވޭ މިނެރަލް', excerpt: 'ބޮޑެތި މީހުންގެ 50% އަށް ވުރެ ގިނައިން އެކަށީގެންވާ މެގްނީޒިއަމް ނުލިބޭ. 34 ކްލިނިކަލް ޓްރައަލް އިން ހާމަވާ ގޮތް.', date: 'އެޕްރީލް 7، 2026', readTime: '12 މިނެޓް' },
@@ -409,7 +409,7 @@ export default function Home() {
               </a>
             </div>
             <div className="featured-editorial-image">
-              <img src={c.articles[0].image ? `/images/${c.articles[0].image}` : `/images/article-${c.articles[0].id}.jpg`} alt={c.articles[0].title} />
+              <img src={`/images/article-${c.articles[0].id}.jpg`} alt={c.articles[0].title} />
             </div>
           </div>
         </div>
@@ -483,7 +483,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="article-thumbnail">
-                    <img src={article.image ? `/images/${article.image}` : `/images/article-${article.id}.jpg`} alt={article.title} />
+                    <img src={`/images/article-${article.id}.jpg`} alt={article.title} />
                   </div>
                 </Wrapper>
               );
